@@ -1,0 +1,450 @@
+ID = 1001
+TIPO = diversidade
+COMANDO = Briófitas e pteridófitas (plantas vasculares sem semente) apresentam várias características em comum, mas também diferem em muitos aspectos. Assinale a característica que pertence a apenas um desses grupos de plantas:
+IMAGEM = 
+PRIMEIRA = Ter tecidos de transporte
+SEGUNDA = Necessitar de água para reproduzir-se
+TERCEIRA = Não ter flores, sementes e frutos
+QUARTA = Crescer preferencialmente em solos úmidos e sombreados
+
+ID = 1002
+TIPO = diversidade 
+COMANDO = Considere os seguintes organismos: <br>I. Algas <br>II. Briófitas <br>III. Pteridófitas (plantas vasculares sem semente)<br> IV. Angiospermas <br> Gametas masculinos flagelados, que necessitam de água para encontrar os gametas femininos, são encontrados SOMENTE em:
+IMAGEM =  
+PRIMEIRA = I e II
+SEGUNDA = III e IV
+TERCEIRA = I, II e III
+QUARTA = I, III e IV
+
+ID = 1003
+TIPO = ecologia e fisiologia vegetal
+COMANDO = O Jardim Botânico do Rio de Janeiro tem mais de 200 anos de existência. Em sua área cultivada, podemos observar cerca de 9.00 exemplares de árvores, pertencentes a cerca de 1.500 espécies. Já nas estufas, encontramos mais de 1.000 espécies de orquídeas e bromélias, distribuídas em mais de 8.000 vasos. Árvores, orquídeas e bromélias são organismos que pertencem ao Reino Plantae. São classificadas, quanto à sua nutrição, como autótrofos. Os organismos autótrofos são aqueles que sintetizam moléculas orgânicas a partir de:
+IMAGEM = 
+PRIMEIRA = Água e CO2
+SEGUNDA = Água e glicose
+TERCEIRA = Substâncias orgânicas
+QUARTA = Água, O2 e proteínas
+
+ID = 1004
+TIPO = ecologia e fisiologia vegetal
+COMANDO = “Uma fruta podre no cesto pode estragar todo o resto”. Esse dito popular se baseia no fundamento biológico de que a liberação de um hormônio volátil pelo fruto mais maduro estimula a maturação dos demais frutos. Esse hormônio é denominado de:
+IMAGEM = 
+PRIMEIRA = Etileno
+SEGUNDA = Auxina
+TERCEIRA = Citocinina
+QUARTA = Giberelina
+
+ID = 1005
+TIPO = ecologia e fisiologia vegetal
+COMANDO = São processos biológicos relacionados diretamente a transformações energéticas nas células das plantas:
+IMAGEM = 
+PRIMEIRA = Respiração e fotossíntese
+SEGUNDA = Digestão e excreção
+TERCEIRA = Respiração e excreção
+QUARTA = Digestão e osmose
+
+ID = 1006
+TIPO = morfologia e anatomia vegetal
+COMANDO = As trocas gasosas, realizadas nas folhas, ocorrem por meio de numerosas aberturas epidérmicas denominadas:
+IMAGEM = 
+PRIMEIRA = Estômatos
+SEGUNDA = Parênquimas
+TERCEIRA = Células-guarda
+QUARTA = Acúleos
+
+ID = 1007
+TIPO = morfologia e anatomia vegetal
+COMANDO = Em pesquisas desenvolvidas com eucaliptos, constatou-se que, a partir das gemas de um único ramo, é possível se gerar cerca de 200.000 novas plantas, em aproximadamente duzentos dias. Outros métodos tradicionais permitem a obtenção de apenas cerca de cem mudas a partir de um mesmo ramo. A cultura de tecido é feita a partir de:
+IMAGEM = 
+PRIMEIRA = Células meristemáticas
+SEGUNDA = Células da epiderme
+TERCEIRA = Células do lenho
+QUARTA = Células do súber
+
+ID = 1008
+TIPO = morfologia e anatomia vegetal
+COMANDO = As células vegetais jovens (meristemáticas) possuem inúmeras e pequenas bolsas membranosas que se fundem com o amadurecimento celular e em cujo interior encontra-se uma solução aquosa de proteínas, açúcares, íons inorgânicos, pigmentos hidrossolúveis e enzimas hidrolíticas. Essas estruturas são denominadas:
+IMAGEM = 
+PRIMEIRA = Vacúolos
+SEGUNDA = Lisossomos
+TERCEIRA = Cloroplatos
+QUARTA = Complexo de Golgi
+
+ID = 1009
+TIPO = morfologia e anatomia vegetal
+COMANDO =  No corpo de uma planta superior, qual é o tecido que apresenta numerosas mitoses, sendo sempre formado por células indiferenciadas?
+IMAGEM =  
+PRIMEIRA = Meristema primário
+SEGUNDA = Parênquima paliçádico
+TERCEIRA = Colênquima angular
+QUARTA = Colênquima tabular
+
+ID = 1010
+TIPO = morfologia e anatomia vegetal
+COMANDO = Cortando-se a casca do caule de uma planta em forma de anel, a parte situada entre o corte e a raiz não é nutrida e morre. O fluxo de seiva elaborada, com substâncias nutritivas, ocorre, das folhas para a raiz, no:
+IMAGEM =  
+PRIMEIRA = Floema
+SEGUNDA = Xilema
+TERCEIRA = Meristema
+QUARTA = Parênquima
+
+ID = 1011
+TIPO = morfologia e anatomia vegetal
+COMANDO = São importantes tecidos de sustentação dos vegetais:
+IMAGEM =  
+PRIMEIRA = Colênquima e esclerênquima
+SEGUNDA = Floema e xilema
+TERCEIRA = Súber e ritidoma
+QUARTA = Parênquima de reserva
+
+ID = 1012
+TIPO = morfologia e anatomia vegetal
+COMANDO = É característica típica das plantas terrestres vasculares a presença de folhas, que constituem expansões laminares verdes, especializadas na função fotossintética. No entanto, em ambientes áridos, encontram-se muitas vezes plantas sem evidência de folhas e com espinhos, como as cactáceas. Essa característica tem relação com o habitat porque permite:
+IMAGEM =  
+PRIMEIRA = A adaptação especial voltada à redução na perda de água
+SEGUNDA = A adaptação temporária até que o ambiente mude
+TERCEIRA = O aumento da taxa de fotossíntese e de matéria orgânica formada
+QUARTA = O aumento das velocidades de fotossíntese e transpiração
+
+ID = 1013
+TIPO = morfologia e anatomia vegetal
+COMANDO = Árvores adultas normalmente possuem um sistema de raiz bem desenvolvido e profundo. Isso permite que algumas delas tenham um porte grande e dezenas de metros de altura. O mesmo não acontece com o milho, que, com suas raízes superficiais, tem altura variando entre 70 centímetros a 2,5 metros. O sistema radicular do milho é do tipo:
+IMAGEM =  
+PRIMEIRA = Fasciculado
+SEGUNDA = Pivotante
+TERCEIRA = Escora
+QUARTA = Tabular
+
+ID = 1014
+TIPO = morfologia e anatomia vegetal
+COMANDO = Até cerca de 405 milhões de anos atrás, parece que a vida esteve limitada à água. A existência terrestre trouxe consigo sérios problemas como, por exemplo, o risco de dessecamento. Características que permitissem aos vegetais a redução de perda d’água em suas partes aéreas foram selecionadas positivamente pelo ambiente por facilitar a adaptação. 
+A economia de água é permitida pelo seguinte tecido vegetal:
+IMAGEM =  
+PRIMEIRA = Súber
+SEGUNDA = Floema
+TERCEIRA = Colênquima
+QUARTA = Parênquima de assimilação
+
+ID = 1015
+TIPO = morfologia e anatomia vegetal
+COMANDO = Plantas que têm caules suculentos, folhas reduzidas e sistema radicular extenso, estão adaptadas para viver em:
+IMAGEM =  
+PRIMEIRA = Regiões semi-áridas
+SEGUNDA = Ambiente aquático
+TERCEIRA = Regiões úmidas
+QUARTA = Solo com alto teor salino
+
+ID = 1016
+TIPO = morfologia e anatomia vegetal
+COMANDO = A sobrevivência de qualquer espécie depende de sua capacidade de deixar descendentes. No decorrer do processo evolutivo, as plantas desenvolveram inúmeras adaptações para a disseminação de frutos e sementes. O fruto adaptado à dispersão pela água é o:
+IMAGEM =  
+PRIMEIRA = Coco-da-baía
+SEGUNDA = Dente-de-leão
+TERCEIRA = Frutos de carrapicho
+QUARTA = Tomate
+
+ID = 1017
+TIPO = morfologia e anatomia vegetal
+COMANDO = O Parque Moscoso, o mais antigo da cidade de Vitória (ES), foi reformado em 2012 e entregue à população capixaba. Passeando por suas alamedas, é comum encontrar troncos de árvores cobertos de musgos e seus galhos contendo samambaias, bromélias e orquídeas. Em alguns lugares, observam-se árvores com flores grandes, vermelhas, com néctar abundante e pouco viscoso. Essas características das flores indicam que a polinização nessa espécie é realizada: 
+IMAGEM =  
+PRIMEIRA = Por aves e por insetos
+SEGUNDA = Por insetos e pela luz
+TERCEIRA = Pelo vento e por mamíferos
+QUARTA = Pelo vento e pela água
+
+ID = 1018
+TIPO = diversidade
+COMANDO = A figura mostra a face inferior de uma folha onde se observam estruturas reprodutivas: <br> Com base nessa foto, a que grupo de plantas pertence essa folha e o que é produzido em suas estruturas reprodutivas?
+IMAGEM = https://educador.brasilescola.uol.com.br/estrategias-ensino/aula-pratica-sobre-pteridofitas.htm
+PRIMEIRA = Pteridófitas (plantas vasculares sem semente); esporo
+SEGUNDA = Angiospermas; grão de pólen
+TERCEIRA = Briófitas; esporo
+QUARTA = Briófitas; grão de pólen
+
+ID = 1019
+TIPO = diversidade
+COMANDO = Constituem exemplos de vegetais intermediários e foram as primeiras plantas a conquistar realmente o ambiente terrestre:
+IMAGEM =  
+PRIMEIRA = Samambaias
+SEGUNDA = Pinheiros
+TERCEIRA = Musgos
+QUARTA = Cactos
+
+ID = 1020
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Os frutos de exportação devem chegar ao destino saudáveis e perfeitos. Para evitar seu amadurecimento antes de chegar ao destino, eles devem ser colocados em ambientes com baixa temperatura e na presença de monóxido de carbono (CO). Com isso, evita-se a liberação do seguinte hormônio responsável pelo amadurecimento:
+IMAGEM =  
+PRIMEIRA = Etileno
+SEGUNDA = Auxina
+TERCEIRA = Giberelina
+QUARTA = Citocinina
+
+ID = 1021
+TIPO = ecologia e fisiologia vegetal
+COMANDO = As auxinas são:
+IMAGEM =  
+PRIMEIRA = Hormônios vegetais que controlam o desenvolvimento de frutos
+SEGUNDA = Proteínas contráteis encontradas em células animais
+TERCEIRA = Hormônios animais responsáveis pelos caracteres sexuais secundários
+QUARTA = Estruturas epidérmicas que controlam a entrada e saída de gases da planta
+
+ID = 1022
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Frutas bem maduras e podres liberam um gás conhecido como:
+IMAGEM =  
+PRIMEIRA = Etileno
+SEGUNDA = Ácido abscísico
+TERCEIRA = Ácido indolil-acético
+QUARTA = Auxinas
+
+ID = 1023
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Observe a equação simplificada representada a seguir: <br>6CO2 + 12H2O = C6H12O6) + 6H2O + 6O2 <br> Esta reação ocorre nos organoides celulares denominados:
+IMAGEM =  
+PRIMEIRA = Plastos
+SEGUNDA = Mitocôndrias
+TERCEIRA = Ribossomos
+QUARTA = Lisossomos
+
+ID = 1024
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Fritz Went, trabalhando com coleóptilo de aveia, verificou que este, quando iluminado por uma fonte de luz, apresentava um crescimento em curvatura, provocado pelo acúmulo de uma substância de crescimento no lado oposto à incidência da luz. Essa substância, responsável por essa resposta fototrópica, é denominada: 
+IMAGEM =  
+PRIMEIRA = Auxina
+SEGUNDA = Citocinína
+TERCEIRA = Giberelina
+QUARTA = Etileno
+
+ID = 1025
+TIPO = diversidade
+COMANDO = Considerando as fases gametofítica e esporofítica dos vegetais, a primeira é predominante sobre a segunda apenas no grupo das:
+IMAGEM =  
+PRIMEIRA = Briófitas
+SEGUNDA = Pteridófitas (plantas vasculares sem semente)
+TERCEIRA = Gimnospermas
+QUARTA = Angiospermas
+
+ID = 1026
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Em certa ocasião, alguns trechos de floresta Amazônica foram derrubados para dar lugar a grandes plantações de castanha-do-Pará. Entretanto, a experiência foi um desastre: com a derrubada da floresta, a única espécie de abelha que visita as flores dessa árvore sumiu da região. <br> Dessa forma, a produção de castanha não aconteceu. Qual foi o processo afetado com a alteração do ambiente?
+IMAGEM =  
+PRIMEIRA = Polinização
+SEGUNDA = Inquilinismo
+TERCEIRA = Parasitismo
+QUARTA = Herbivoria
+
+ID = 1027
+TIPO = diversidade
+COMANDO = Em relação aos indivíduos do reino vegetal, pode-se afirmar que:
+IMAGEM = 
+PRIMEIRA = Os frutos das angiospermas se originam a partir do desenvolvimento do ovário
+SEGUNDA = As briófitas não dependem diretamente da água para sua reprodução
+TERCEIRA = As flores das pteridófitas (plantas vasculares sem semente) são frutos modificados
+QUARTA = As gimnospermas possuem flores e frutos verdadeiros
+
+ID = 1028
+TIPO = diversidade
+COMANDO = As angiospermas se distinguem de todas as outras plantas pelo fato de apresentarem:
+IMAGEM = 
+PRIMEIRA = Flores
+SEGUNDA = Alternância de geração haploide e diploide
+TERCEIRA = Estômatos nas folhas
+QUARTA = Sementes
+
+ID = 1029
+TIPO = morfologia e anatomia vegetal
+COMANDO = Os frutos são órgãos vegetais que se desenvolvem a partir dos ovários, após a fecundação de seus óvulos. Entretanto, pode ocorrer a formação do fruto, sem que tenha ocorrido fecundação. Como exemplo, temos:
+IMAGEM = 
+PRIMEIRA = Banana
+SEGUNDA = Abacate
+TERCEIRA = Caju
+QUARTA = Acerola
+
+ID = 1030
+TIPO = diversidade
+COMANDO = Considerando que quanto mais partes um vegetal possui, mais complexo ele é, podemos afirmar que, das alternativas a seguir, o vegetal mais complexo é:
+IMAGEM = 
+PRIMEIRA = O abacateiro
+SEGUNDA = O musgo
+TERCEIRA = A samambaia
+QUARTA = O pinheiro
+
+ID = 1031
+TIPO = diversidade
+COMANDO = O aparecimento de sementes e frutos - estruturas que atuam como meios de propagação da espécie - justifica o grande sucesso adaptativo, ao meio terrestre, das plantas do grupo
+IMAGEM = 
+PRIMEIRA = Angiospermas
+SEGUNDA = Pteridófitas (plantas vasculares sem semente)
+TERCEIRA = Gimnospermas
+QUARTA = Briófitas
+
+ID = 1032
+TIPO = diversidade
+COMANDO = Na evolução das angiospermas desenvolveu-se uma estrutura única entre os vegetais, que está certamente relacionada com a ampla distribuição geográfica do grupo. Trata-se:
+IMAGEM = 
+PRIMEIRA = Dos frutos
+SEGUNDA = Do tubo polínico
+TERCEIRA = Dos grãos de pólen alados
+QUARTA = Das sementes
+
+ID = 1033
+TIPO = diversidade
+COMANDO = As angiospermas são as plantas de evolução mais recente, apresentando frutos. A presença do fruto é característica ligada a modificações de qual sistema presente nas plantas?
+IMAGEM = 
+PRIMEIRA = Reprodutor
+SEGUNDA = Condutor
+TERCEIRA = Radicular
+QUARTA = Fotossíntese
+
+ID = 1034
+TIPO = diversidade
+COMANDO = O pinhão, estrutura comestível produzida por pinheiros da espécie Araucaria angustifolia, corresponde a que parte da planta?
+IMAGEM = 
+PRIMEIRA = semente envolta por tegumento
+SEGUNDA = cone (estróbilo) masculino repleto de pólen
+TERCEIRA = fruto simples sem pericarpo
+QUARTA = folha especializada no acúmulo de substâncias de reserva
+
+ID = 1035
+TIPO = diversidade
+COMANDO = Por que as briófitas são plantas que geralmente não atingem grandes alturas?
+IMAGEM = 
+PRIMEIRA = Elas não apresentam vasos condutores
+SEGUNDA = Elas se reproduzem por alternância de gerações
+TERCEIRA = Elas dependem da água para a reprodução
+QUARTA = Elas não apresentam sementes nem frutos
+
+ID = 1036
+TIPO = diversidade
+COMANDO = As pteridófitas (plantas vasculares sem semente), diferentemente das briófitas, possuem vasos condutores. Apesar dessa diferença, o que esses dois grupos ainda possuem em comum?
+IMAGEM = 
+PRIMEIRA = Dependem de água para sua reprodução
+SEGUNDA = Possuem folhas e sementes
+TERCEIRA = A fase gametofítica é a dominante em seu ciclo de vida
+QUARTA = A fase esporofítica é a dominante em seu ciclo de vida
+
+ID = 1037
+TIPO = diversidade
+COMANDO = As briófitas apresentam ciclo de vida com alternância de gerações e dependente de água. A figura abaixo representa uma das etapas do ciclo de vida de um musgo, que se caracteriza por ser transitória e diploide. <br> Qual alternativa indica corretamente o nome dessa etapa do ciclo de vida das briófitas?
+IMAGEM = https://www.biologianet.com/botanica/briofitas.htm
+PRIMEIRA = Esporófito
+SEGUNDA = Gametófito
+TERCEIRA = Prótalo
+QUARTA = Oosfera
+
+ID = 1038
+TIPO = diversidade
+COMANDO = O que podemos afirmar em relação ao ciclo reprodutivo das briófitas e pteridófitas (plantas vasculares sem semente)?
+IMAGEM = 
+PRIMEIRA = É necessário água do meio para ocorrer a fecundação
+SEGUNDA = Os esporófitos são haploides
+TERCEIRA = A fase predominante é a diploide
+QUARTA = Os gametófitos são fotossintetizantes e diploides
+
+ID = 1039
+TIPO = diversidade
+COMANDO = Nos musgos, uma divisão meiótica originará
+IMAGEM = 
+PRIMEIRA = Esporos
+SEGUNDA = Anterozoides
+TERCEIRA = Oosferas
+QUARTA = Óvulos
+
+ID = 1040
+TIPO = diversidade
+COMANDO = Assinale a única alternativa que caracteriza corretamente as briófitas:
+IMAGEM = 
+PRIMEIRA = Nesses vegetais, a planta adulta é representada pelo gametófito (geração haploide)
+SEGUNDA = Esses vegetais produzem cones masculino e feminino, em indivíduos diferentes
+TERCEIRA = O transporte de substâncias é feito pelos vasos lenhosos, por todo o corpo do vegetal
+QUARTA = Apresentam os órgãos de nutrição completamente diferenciados e com estrutura complexa
+
+ID = 1041
+TIPO = diversidade
+COMANDO = Os musgos que crescem nos muros úmidos são:
+IMAGEM = 
+PRIMEIRA = Gametófitos de briófitas
+SEGUNDA = Gametófitos de pteridófitas (plantas vasculares sem semente)
+TERCEIRA = Esporófitos de pteridófitas (plantas vasculares sem semente)
+QUARTA = Esporófitos de gimnospermas
+
+ID = 1042
+TIPO = diversidade
+COMANDO = Nas samambaias, cada esporo haploide dá origem a um(a):
+IMAGEM = 
+PRIMEIRA = Gametófito
+SEGUNDA = Anterídio
+TERCEIRA = Esporófito
+QUARTA = Arquegônio
+
+ID = 1043
+TIPO = diversidade
+COMANDO = Dizemos que as gimnospermas conseguiram definitivamente conquistar o ambiente terrestre, uma vez que essas plantas não necessitam de água para a sua fecundação. Marque o nome da estrutura que permitiu essa independência da água.
+IMAGEM = 
+PRIMEIRA = Grãos de pólen
+SEGUNDA = Fruto
+TERCEIRA = Flores
+QUARTA = Sementes
+
+ID = 1044
+TIPO = diversidade
+COMANDO = Na maioria das angiospermas, o fruto é uma estrutura formada a partir do desenvolvimento de qual estrutura?
+IMAGEM = 
+PRIMEIRA = Ovário
+SEGUNDA = Óvulo fecundado
+TERCEIRA = Zigoto
+QUARTA = Parede do epicarpo
+
+ID = 1045
+TIPO = diversidade
+COMANDO = As gimnospermas e angiospermas são consideradas plantas superiores, possuindo, em comum, todas as partes, com exceção de:
+IMAGEM = 
+PRIMEIRA = Fruto
+SEGUNDA = Semente
+TERCEIRA = Flor
+QUARTA = Endosperma
+
+ID = 1046
+TIPO = diversidade
+COMANDO = As únicas plantas que formam sementes num estágio de sua vida são:
+IMAGEM = 
+PRIMEIRA = Gimnospermas e angiospermas
+SEGUNDA = Angiospermas e briófitas
+TERCEIRA = Gimnospermas e pteridófitas (plantas vasculares sem semente)
+QUARTA = Briófitas e pteridófitas (plantas vasculares sem semente)
+
+ID = 1047
+TIPO = morfologia e anatomia vegetal
+COMANDO = As folhas são estruturas de formato, geralmente, laminar que são responsáveis por grande parte do processo de fotossíntese de uma planta. Observe as alternativas a seguir e marque aquela em que se encontra o nome dado à superfície achatada das folhas:
+IMAGEM = 
+PRIMEIRA = Limbo
+SEGUNDA = Pecíolo
+TERCEIRA = Bainha
+QUARTA = Estípula
+
+ID = 1048
+TIPO = morfologia e anatomia vegetal
+COMANDO = As folhas são estruturas bastante versáteis em um vegetal, desempenhando os mais variados processos vitais. Analise as alternativas abaixo e marque aquela que NÃO indica uma atividade que pode ser atribuída à folha:
+IMAGEM = 
+PRIMEIRA = As folhas absorvem água e sais minerais
+SEGUNDA = As folhas realizam fotossíntese
+TERCEIRA = As folhas realizam o processo de respiração
+QUARTA = As folhas eliminam água no estado líquido pelo processo de gutação
+
+ID = 1049
+TIPO = diversidade
+COMANDO = São organismos que apresentam dependência de água para a fecundação:
+IMAGEM = 
+PRIMEIRA = Briófitas e pteridófitas (plantas vasculares sem semente)
+SEGUNDA = Pteridófitas (plantas vasculares sem semente) e angiospermas
+TERCEIRA = Briófitas e gimnospermas
+QUARTA = Gimnospermas e angiospermas
+
+ID = 1050
+TIPO = morfologia e anatomia vegetal
+COMANDO = Dentre as opções abaixo, assinale aquela que NÃO corresponde a um anexo epidérmico dos vegetais:
+IMAGEM = 
+PRIMEIRA = Espinhos
+SEGUNDA = Acúleos
+TERCEIRA = Estômatos
+QUARTA = Tricomas

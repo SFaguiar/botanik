@@ -1,0 +1,383 @@
+ID = 4001
+TIPO = ecologia e fisiologia vegetal
+COMANDO =     1. (ENEM 2010) A lavoura arrozeira na planície costeira da região sul do Brasil comumente sofre perdas elevadas devido a salinização da água de irrigação, que ocasiona prejuízos diretos, como a redução de produção da lavoura. Solos com processo de salinização avançado não são indicados, por exemplo, para o cultivo de arroz. As plantas retiram a água do solo quando as forças de embebição dos tecidos das raízes são superiores às forças com que a água é retida no solo (WINKEL, H.L.; TSCHIEDEL, M. Cultura do arroz: salinização de solos em cultivo do arroz. Disponível em: http://agropage.tripod.com/saliniza.hml). A presença de sais na solução do solo faz com que seja dificultada a absorção de água pelas plantas, o que provoca o fenômeno conhecido por seca fisiológica, caracterizada pelo(a):
+IMAGEM = 
+PRIMEIRA = Aumento da salinidade, em que a água do solo atinge uma concentração de sais maior que a das células das raízes das plantas, impedindo, assim, que a água seja absorvida
+SEGUNDA = Aumento da salinidade, em que o solo atinge nível muito baixo de água, e as plantas não têm força de sucção para absorver a água
+TERCEIRA = Diminuição da salinidade, que atinge um nível em que as plantas não têm força de sucção, fazendo com que a água não seja absorvida
+QUARTA = Aumento da salinidade, que atinge um nível em que as plantas têm muita sudação, não tendo força de sucção para superá-la
+
+ID = 4002
+TIPO = ecologia e fisiologia vegetal
+COMANDO = A produção de hormônios vegetais (como a auxina, ligada ao crescimento vegetal) e sua distribuição pelo organismo são fortemente influenciadas por fatores ambientais. Diversos são os estudos que buscam compreender melhor essas influências. O experimento seguinte integra um desses estudos. O fato de a planta do experimento crescer na direção horizontal, e não na vertical, pode ser explicado pelo argumento de que o giro faz com que a auxina se:
+IMAGEM = https://www.google.com/url?sa=i&url=https%3A%2F%2Fprofwarles.blogspot.com%2F2017%2F08%2Fenemcienciasnatureza20102ap.html&psig=AOvVaw2oCaqENrucRq_sxER9vnkb&ust=1592593962229000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiFsYKJjOoCFQAAAAAdAAAAABAX
+PRIMEIRA = Distribua uniformemente nas faces do caule, estimulando o crescimento de todas elas de forma igual
+SEGUNDA = Acumule na face inferior do caule e, por isso, determine um crescimento maior dessa parte
+TERCEIRA = Concentre na extremidade do caule e, por isso, iniba o crescimento nessa parte
+QUARTA = Distribua uniformemente nas faces do caule e, por isso, iniba o crescimento de todas elas
+
+ID = 4003
+TIPO = morfologia e anatomia vegetal
+COMANDO = A figura ilustra o movimento da seiva do xilema em uma planta. Mesmo que essa planta viesse a sofrer ação contínua do vento e sua copa crescesse voltada para baixo, essa seiva continuaria naturalmente seu percurso. O que garante o transporte dessa seiva é a:
+IMAGEM = https://www.google.com/url?sa=i&url=http%3A%2F%2Fbiologiaegeologiatiago.blogspot.com%2F2010%2F06%2Ftensao-coesao-adesao.html&psig=AOvVaw2GVnPDUIvkbIlRzk_bvWBc&ust=1592594158784000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJic4uCJjOoCFQAAAAAdAAAAABAP
+PRIMEIRA = Transpiração
+SEGUNDA = Gutação
+TERCEIRA = Gravidade
+QUARTA = Fotossíntese
+
+ID = 4004
+TIPO = morfologia e anatomia vegetal
+COMANDO = Muitas espécies de plantas lenhosas são encontradas no cerrado brasileiro. Para a sobrevivência nas condições de longos períodos de seca e queimadas periódicas, próprias desse ecossistema, essas plantas desenvolveram estruturas muito peculiares. As estruturas adaptativas mais apropriadas para a sobrevivência desse grupo de plantas nas condições ambientais do referido ecossistema são:
+IMAGEM = 
+PRIMEIRA = Gemas apicais com densa pilosidade
+SEGUNDA = Cascas finas e sem sulcos ou fendas
+TERCEIRA = Caules estreitos e retilíneos
+QUARTA = Folhas estreitas e membranosas
+
+ID = 4005
+TIPO = ecologia e fisiologia vegetal
+COMANDO = (http://www.sobiologia.com.br/conteudos/Morfofisiologia_vegetal/morfovegetal30.php) As auxinas são um grupo fitormônio, que dentre outras funções, induzem o crescimento de várias partes de uma planta, conforme ilustra o gráfico. Relacionando as informações contidas no gráfico com a ação de auxinas em diferentes órgãos vegetais, observa-se que:
+IMAGEM = SIM. VER .doc NA QUESTÃO 5.
+PRIMEIRA = A raiz é mais sensível a ação de auxinas do que o caule e o botão vegetativo
+SEGUNDA = Pequenas concentrações de auxinas inibem o crescimento do caule
+TERCEIRA = O caule é mais sensível a ação de auxinas que a raiz e o botão vegetativo
+QUARTA = As auxinas só provocam inibição do crescimento na raiz em alta concentração
+
+ID = 4006
+TIPO = morfologia e anatomia vegetal
+COMANDO = “Mandacaru é uma planta arbustiva, xerófita, nativa do Brasil, disseminada no Semiárido do Nordeste. Pertence à família das cactáceas, gênero Cactus ou cacto e o nome científico da espécie é Cereus jamacaru, conhecida também na região em destaque pelo nome “cardeiro”... A espécie típica do Bioma Caatinga pode atingir 5 até 6 metros de altura... Por ter espinhos no lugar das folhas não faz sombra nem dá encosto para pessoas ou bichos. Com base nessas características morfológicas, gerou-se uma sentença popular. Quando alguém quer detrair pessoa destituída de espírito solidário, usa o seguinte simbolismo verbal: “fulano é igual a mandacaru, nem dá sombra nem encosto” (Disponível em: https://www.ecodebate.com.br/2012/10/22/mandacaru-um-remedio-paliativo-artigo-de-juracy-nunes/). Uma adaptação presente no mandacaru que está associada à sua sobrevivência é a presença de:
+IMAGEM = http://www.ecodebate.com.br/foto/mandacaru01.jpg
+PRIMEIRA = Folhas reduzidas a espinhos, reduzindo a perda de água para o ambiente
+SEGUNDA = Caule do tipo bulbo, para armazenamento de substâncias nutritivas
+TERCEIRA = Cutícula espessa, aumentando a perde de água para o ambiente
+QUARTA = Raízes pouco profundas, reduzindo a absorção de água no solo
+
+ID = 4007
+TIPO = morfologia e anatomia vegetal
+COMANDO = No esquema abaixo, podemos observar a disposição dos vasos condutores no caule de uma dicotiledônea. As estruturas 1 (azul), 2 (amarelo) e 3 (roxo) em destaque, representam, respectivamente:
+IMAGEM = https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.anatomiavegetal.ib.ufu.br%2Fexercicios-html%2FCaule.htm&psig=AOvVaw3zUzHFcFJBYHHuvtrnbfHO&ust=1592595816605000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjsn_KPjOoCFQAAAAAdAAAAABAa
+PRIMEIRA = Xilema, floema e câmbio
+SEGUNDA = Xilema, câmbio e floema
+TERCEIRA = Tubos, xilema e floema
+QUARTA = Epiderme, floema e câmbio
+
+ID = 4008
+TIPO = morfologia e anatomia vegetal
+COMANDO = Analise o desenho esquemático abaixo e assinale a alternativa que apresenta corretamente a identificação das estruturas numeradas, respectivamente, de 1 a 5.
+IMAGEM = https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.agrolink.com.br%2Ffertilizantes%2Fnutricao-via-folhas---anatomia-foliar_361454.html&psig=AOvVaw30HHx0pFI2IYXj3EYZ4qCo&ust=1592597116011000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCYoN-UjOoCFQAAAAAdAAAAABAP
+PRIMEIRA = Cutícula, epiderme superior, parênquima lacunoso, tricoma e estômato
+SEGUNDA = Epiderme inferior, floema, parênquima clorofilado, tricoma e ostíolo
+TERCEIRA = Cutina, xilema, aerênquima, radícula e estômato
+QUARTA = Epiderme superior, floema, parênquima paliçádico, prolongamento epidérmico e ostíolo
+
+ID = 4009
+TIPO = morfologia e anatomia vegetal
+COMANDO = Observe a figura, onde são mostrados caules eretos. Qual das alternativas apresenta, na ordem, as denominações corretas?
+IMAGEM = https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fimages%2Folive-tree-hand-drawn-vector-illustration-realistic-sketch%2F197586878&psig=AOvVaw3Cq8JltQcE7DO7mTzAmbhX&ust=1592602273918000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjLi5mojOoCFQAAAAAdAAAAABAD; https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F476326098074538960%2F&psig=AOvVaw2hyu7zyxkpCVLrUjoMHxmw&ust=1592602363933000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMDGr6WojOoCFQAAAAAdAAAAABAU; https://www.google.com/url?sa=i&url=https%3A%2F%2Fdesign.tutsplus.com%2Ftutorials%2Fhow-to-draw-a-palm-tree--cms-30927&psig=AOvVaw1iG9qnjHtoBXX1DVHojJcu&ust=1592602309515000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjR4ouojOoCFQAAAAAdAAAAABAD; https://www.google.com/url?sa=i&url=https%3A%2F%2Fetc.usf.edu%2Fclipart%2F7500%2F7549%2Fcorn_7549.htm&psig=AOvVaw3lG6a5InvK4UV1LRJWgzaR&ust=1592602450203000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC86tGojOoCFQAAAAAdAAAAABAJ; https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fvector%2Fsaguaro-cactus-illustration-drawing-engraving-ink-line-art-vector-gm913847124-251549599&psig=AOvVaw34KWlYRPibp65Iqphv1jNW&ust=1592602497238000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPiJ_OiojOoCFQAAAAAdAAAAABAX
+PRIMEIRA = Tronco, haste, estipe, colmo e cladódio
+SEGUNDA = Cladódio, haste, estipe, colmo e tronco suculento
+TERCEIRA = Estipe, haste, tronco, cladódio e colmo
+QUARTA = Tronco, colmo, cladódio, haste e estipe
+
+ID = 4010
+TIPO = morfologia e anatomia vegetal
+COMANDO = Correlacione as regiões de uma raiz e suas respectivas funções. A sequência, de cima para baixo, deve ser:
+IMAGEM = SIM. VER .doc NA QUESTÃO 10.
+PRIMEIRA = II – I – III - IV
+SEGUNDA = I – II – III - IV
+TERCEIRA = I – IV – II - III
+QUARTA = IV – III – I – II
+
+ID = 4011
+TIPO = morfologia e anatomia vegetal
+COMANDO = Considerando-se uma planta de laranjeira (Citrus sp.). O órgão, o tecido e a organela onde se realiza o processo fisiológico da fotossíntese é:
+IMAGEM = 
+PRIMEIRA = Órgão: folha; tecido: mesófilo; organela: cloroplasto
+SEGUNDA = Órgão: folha; tecido: mesófilo; organela: mitocôndrio
+TERCEIRA = Órgão: caule; tecido: meristema; organela: cloroplasto
+QUARTA = Órgão: caule; tecido: meristema; organela: mitocôndrio
+
+ID = 4012
+TIPO = morfologia e anatomia vegetal
+COMANDO = Um aluno, ao estudar um fruto, verificou que ele possuía as seguintes características: Se você tivesse de classificar esse fruto, apenas com os dados obtidos pelo aluno, que opção escolheria?
+IMAGEM = 
+PRIMEIRA = Baga
+SEGUNDA = Drupa
+TERCEIRA = Vagem
+QUARTA = Pixídio
+
+ID = 4013
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Observe este esquema exemplificando um experimento e assinale a alternativa correta:
+IMAGEM = https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjkm5f6nYzqAhV4HrkGHXJWBO0QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.sobiologia.com.br%2Fconteudos%2FMorfofisiologia_vegetal%2Fmorfovegetal30.php&psig=AOvVaw1UHiQQWknFtWSp5niPjTMa&ust=1592599552840434
+PRIMEIRA = A aplicação de AIA nas flores induz a formação de frutos partenocárpicos
+SEGUNDA = O pericarpo do fruto obtido pela aplicação de AIA é haploide
+TERCEIRA = O AIA substitui os grãos de pólen, realizando também a fecundação
+QUARTA = A espécie usada no experimento poderia ser uma gimnosperma
+
+ID = 4014
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Observe o experimento representado nas figuras abaixo. De acordo com o esquema, o aumento da concentração de auxina no lado inferior da planta determinou, para as células desse lado:
+IMAGEM = http://www.educabras.com/media/emtudo_img/upload/_img/20141215_110033.gif
+PRIMEIRA = Estimulação do crescimento no caule e inibição na raiz
+SEGUNDA = Inibição do crescimento no caule e estimulação na raiz
+TERCEIRA = Inibição do crescimento no caule e na raiz
+QUARTA = Estimulação do crescimento no caule e na raiz
+
+ID = 4015
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Os hormônios produzidos pelos vegetais são substâncias que, em mínimas proporções, são capazes de agir no crescimento das plantas. São representados pelas:
+IMAGEM = 
+PRIMEIRA = Auxinas, giberelinas e citocininas;
+SEGUNDA = Auxinas, citocininas e clorocruorinas
+TERCEIRA = Citocininas, ficobilinas e flaronas
+QUARTA = Adenosinas, ficobilinas e auxinas
+
+ID = 4016
+TIPO = ecologia e fisiologia vegetal
+COMANDO = A seguir, são descritos dois procedimentos realizados em um experimento com flores de tomateiro (Solanum lycopersicum): A partir do exposto acima, podemos prever que:
+IMAGEM = SIM. VER .doc NA QUESTÃO 16.
+PRIMEIRA = A partir da flor A, tenha se desenvolvido tomate com semente
+SEGUNDA = A partir da flor A, tenha se desenvolvido tomate sem semente
+TERCEIRA = A partir da flor B, tenha se desenvolvido tomate com semente
+QUARTA = A partir da flor B, tenham se desenvolvido apenas sementes e não fruto
+
+ID = 4017
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Considere os átomos de carbono de uma molécula de amido armazenada na semente de uma árvore. O carbono volta ao ambiente, na forma inorgânica, se o amido for:
+IMAGEM = 
+PRIMEIRA = Digerido e a glicose resultante for usada na respiração pelo embrião da planta ou por um herbívoro
+SEGUNDA = Usado diretamente como substrato da respiração pelo embrião da planta ou por um herbívoro
+TERCEIRA = Digerido por um herbívoro e a glicose resultante for usada na síntese de substâncias de reserva
+QUARTA = Usado diretamente como substrato da fotossíntese pelo embrião da planta
+
+ID = 4018
+TIPO = diversidade
+COMANDO = O grande sucesso do grupo das espermatófitas (antigo grupo das fanerógamas, formado por gimnospermas e angiospermas) pode ser atribuído, dentre outras causas, a duas importantes adaptações desses organismos ao ambiente terrestre, que consistem em:
+IMAGEM = 
+PRIMEIRA = Independência da água para reprodução e propagação por meio de sementes
+SEGUNDA = Propagação por meio de frutos e por meio de sementes
+TERCEIRA = Independência da água para reprodução e propagação por meio de frutos
+QUARTA = Reprodução por meio de esporos e propagação por meio de sementes
+
+ID = 4019
+TIPO = morfologia e anatomia vegetal
+COMANDO = (UFABC – SP) “Eu carrego um sertão dentro de mim, e o mundo no qual vivo é também o sertão. As aventuras não têm tempo, não têm princípio nem fim. E meus livros são aventuras, para mim são a minha maior aventura. Escrevendo, descubro sempre um novo pedaço do infinito. Vivo no infinito, o momento não conta” (João Guimarães Rosa). Guimarães Rosa identifica-se com o sertão, região de baixa pluviosidade, cujos vegetais possuem como características adaptativas:
+IMAGEM = 
+PRIMEIRA = Folhas transformadas em espinhos, reduzindo a perda de água por transpiração, parênquima aquífero e raízes cobrindo grandes superfícies, que contribuem para armazenamento e absorção de água
+SEGUNDA = Folhas largas com estômatos em criptas, que reduzem a incidência de raios luminosos, cutícula espessa, reduzindo a transpiração cuticular, caules suberosos, evitando os efeitos da elevada temperatura
+TERCEIRA = Folhas com estômatos na região ventral, evitando a incidência de raios luminosos, com predominância de caules claros que refletem os raios luminosos, e raízes fasciculadas que diminuem a perda de água
+QUARTA = Folhas com estômatos pequenos e em pequeno número, parênquima amilífero que supre as necessidades energéticas e raízes com pneumatóforos e grande pressão osmótica, facilitando absorção de água
+
+ID = 4020
+TIPO = diversidade
+COMANDO = (UECE) As plantas, assim como todos os demais seres vivos, possuem ancestrais aquáticos e desta forma sua história evolutiva encontra-se relacionada à ocupação progressiva do ambiente terrestre. Para que isso pudesse acontecer algumas características foram selecionadas e dentre elas podemos destacar: I. Sistema vascular; II. Esporófito dominante; III. Filoides; IV. esporófito não-ramificado. São características próprias de pteridófitas (plantas vasculares sem sementes) e briófitas, respectivamente:
+IMAGEM = 
+PRIMEIRA = I e II; III e IV
+SEGUNDA = I e III; II e IV
+TERCEIRA = II e IV; I e III
+QUARTA = III e IV; I e II
+
+ID = 4021
+TIPO = morfologia e anatomia vegetal
+COMANDO = (UFF) “No Brasil, a grande maioria dos produtos alimentícios disponíveis no mercado apresenta soja (Glycine max) ou milho (Zea mays) em sua composição, adicionados na forma natural do grão ou como proteína, gordura, óleo, amido, extrato ou lecitina” (Ciência Hoje 34: 38, 2004). Assinale a alternativa correta sobre estes dois vegetais são amplamente cultivados em todas as regiões do país:
+IMAGEM = 
+PRIMEIRA = A soja faz parte das dicotiledôneas que geralmente possuem caule lenhoso, folhas com nervuras reticuladas e sementes com 2 cotilédones, enquanto o milho faz parte das monocotiledôneas que geralmente possuem caule reduzido, folhas com nervuras paralelas e sementes com 1 cotilédone
+SEGUNDA = A soja faz parte das dicotiledôneas que geralmente possuem caule reduzido, folhas com nervuras reticuladas e sementes com 2 cotilédones, enquanto o milho faz parte das monocotiledôneas que geralmente possuem caule lenhoso, folhas com nervuras paralelas e sementes com 1 cotilédone
+TERCEIRA = A soja faz parte das monocotiledôneas que geralmente possuem caule reduzido, folhas com nervuras paralelas e sementes com 1 cotilédone, enquanto o milho faz parte das dicotiledôneas que geralmente possuem caule lenhoso, folhas com nervuras reticuladas e sementes com 2 cotilédones
+QUARTA = A soja faz parte das monocotiledôneas que geralmente possuem caule reduzido, folhas com nervuras reticuladas e sementes com 2 cotilédones, enquanto o milho faz parte das dicotiledôneas que geralmente possuem caule lenhoso, folhas com nervuras paralelas e sementes com 1 cotilédone
+
+ID = 4022
+TIPO = morfologia e anatomia vegetal
+COMANDO = A cana-de-açúcar (Saccharum sp.) é usada para a produção de açúcar e etanol. Nesse processo são produzidos a vinhaça, a torta de filtro e o bagaço, considerados, até pouco tempo, como subprodutos que não tinham utilidade e que deveriam ser descartados. Com os avanços científicos, tem sido possível o uso alternativo desses produtos como, por exemplo, a vinhaça na adubação da lavoura e o bagaço na cogeração de energia elétrica. No cultivo da cana-de-açúcar, as lavouras são alternadas com o plantio de amendoim (Arachis hypogaea) ou soja (Glycine max), para que haja o enriquecimento do solo. A parte da cana-de-açúcar usada nas usinas, o amendoim e a soja consumidos pelas pessoas são, respectivamente, as seguintes partes de uma planta:
+IMAGEM = 
+PRIMEIRA = Caule, semente e semente
+SEGUNDA = Caule, raiz e semente
+TERCEIRA = Fruto, semente e semente
+QUARTA = Fruto, raiz e raiz
+
+ID = 4023
+TIPO = morfologia e anatomia vegetal
+COMANDO = A análise do líquido coletado pelo aparelho bucal de certos pulgões, que o inseriram no caule de um feijoeiro (Phaseolus vulgaris) adulto, revelou quantidades apreciáveis de açúcares, além de outras substâncias orgânicas. Plântulas de feijão, recém-germinadas, que se desenvolveram sobre algodão umedecido apenas com água e sob iluminação natural, tiveram seus órgãos de reserva alimentar (folhas primordiais modificadas) sugadas por outros pulgões. A análise do líquido coletado dos aparelhos bucais destes pulgões também revelou a presença de nutrientes orgânicos. Os resultados destas análises indicam que os pulgões que sugaram o feijoeiro adulto e os que sugaram as plântulas recém-germinadas inseriram seus aparelhos bucais, respectivamente, no:
+IMAGEM = 
+PRIMEIRA = Xilema e cotilédones
+SEGUNDA = Floema e súber
+TERCEIRA = Parênquima clorofiliano e súber
+QUARTA = Floema e cotilédones
+
+ID = 4024
+TIPO = morfologia e anatomia vegetal
+COMANDO = A primavera é a estação do ano em que flores enfeitam casas, ruas e jardins. Elas são bem diversificadas aos nossos olhos. A figura apresenta o esquema de uma flor e destaca algumas de suas estruturas. Observe a figura e marque a alternativa incorreta sobre as estruturas florais:
+IMAGEM = https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.sobiologia.com.br%2Fconteudos%2FMorfofisiologia_vegetal%2Fmorfovegetal8.php&psig=AOvVaw0WpvMKuYuwfrMECqV-r8bJ&ust=1592603024153000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNi2sOWqjOoCFQAAAAAdAAAAABAD
+PRIMEIRA = Mesmo com observação detalhada e completa de suas estruturas (os verticilos florais), não seria possível identificar a planta como mono- ou dicotiledônea
+SEGUNDA = Nos estames estão os sacos polínicos correspondentes aos microsporângios, onde ocorre meiose, formando os micrósporos
+TERCEIRA = Nos macrosporângios ocorrem meioses seguidas de mitoses para formação, no saco embrionário, de oito núcleos haploides, sendo um deles a oosfera
+QUARTA = Mesmo sendo monóclina, nessa flor, dependendo de suas características estruturais e adaptativas, poderá ocorrer autogamia ou alogamia
+
+ID = 4025
+TIPO = diversidade
+COMANDO = Os vegetais são classificados em quatro grandes grupos, briófitas, pteridófitas (vasculares sem sementes), gimnospermas e angiospermas, sendo este último o maior, com aproximadamente 250.000 espécies conhecidas. Existem algumas características que são exclusivas das angiospermas; dentre elas, pode-se citar a:
+IMAGEM = 
+PRIMEIRA = Dupla fecundação, com a formação do embrião e do endosperma triploide
+SEGUNDA = Produção de gametas femininos imóveis, protegidos no interior do arquegônio
+TERCEIRA = Produção de grãos de pólen, com capacidade de formar o tubo polínico
+QUARTA = Semente protegida por um tegumento, que envolve o embrião
+
+ID = 4026
+TIPO = morfologia e anatomia vegetal
+COMANDO = A história da evolução das plantas está relacionada com a ocupação progressiva do ambiente terrestre e o aumento de sua independência da água para a reprodução. O aparecimento do floema e do xilema solucionou o problema do transporte de água e dos alimentos nas plantas que crescem em ambientes terrestres. Com base no texto e em seus conhecimentos sobre o tema, assinale a alternativa correta.
+IMAGEM = 
+PRIMEIRA = O floema, além de açúcares, transporta aminoácidos, lipídios, micronutrientes, hormônios, estímulos florais, numerosas proteínas e RNA
+SEGUNDA = O xilema, principal tecido condutor de água, também está envolvido na condução das substâncias orgânicas, na sustentação e no armazenamento de substâncias
+TERCEIRA = As principais células de condução do xilema são os elementos crivados e as células companheiras, e as principais células de condução do floema são os elementos traqueais e os elementos de vasos xilemáticos
+QUARTA = As plantas vasculares, briófitas, gimnospermas e angiospermas possuem xilema e floema. como exemplo, podemos citar musgos, carvalhos e pinheiros, respectivamente
+
+ID = 4027
+TIPO = morfologia e anatomia vegetal
+COMANDO = A seguir, encontra-se o trecho do poema “História da Pátria”, de autoria de Oswald de Andrade:
+
+[…]
+Lá vem uma barquinha cheinha de índios
+Outra de degradados
+Outra de pau de tinta
+
+Até que o mar inteiro
+Se coalhou de transatlânticos
+E as barquinhas ficaram
+Jogando prenda coa raça misturada
+No litoral azul de meu Brasil.
+
+O texto acima faz referência ao “pau de tinta”, conhecido também como pau-brasil (Paubrasilia echinata). O pau-brasil é uma dicotiledônea que possui como característica:
+IMAGEM = 
+PRIMEIRA = Caule com crescimento em espessura devido à existência do câmbio
+SEGUNDA = Esporófitos pouco duradouros e dependentes do gametófito
+TERCEIRA = Estrutura trímera em suas flores
+QUARTA = Raízes organizadas em “cabeleira”, pois seus ramos radiculares são equivalentes, não tendo eixo principal
+
+ID = 4028
+TIPO = morfologia e anatomia vegetal
+COMANDO = Observe esquema abaixo, que representa o corte transversal de uma folha. Com base em seu conhecimento, assinale a alternativa incorreta:
+IMAGEM = SIM. VER .doc NA QUESTÃO 28.
+PRIMEIRA = III representa parênquima lacunoso, cuja função é armazenar nutrientes
+SEGUNDA = IV representa uma estrutura com função de trocas gasosas
+TERCEIRA = II representa parênquima paliçádico, cuja função é realizar biossíntese de compostos orgânicos
+QUARTA = I representa a epiderme, com função de revestimento e proteção
+
+ID = 4029
+TIPO = ecologia e fisiologia vegetal
+COMANDO = (UFC – CE) A teoria de Dixon é uma das hipóteses que tenta explicar o transporte de água da raiz até as folhas de árvores com mais de30 metros de altura, como a castanheira-do-brasil (Bertholletia excelsa). Assinale a alternativa que contém aspectos nos quais se baseia essa teoria.
+IMAGEM = 
+PRIMEIRA = Coesão entre as moléculas de água, adesão entre essas moléculas e as paredes do xilema, tensão gerada no interior dos vasos pela transpiração foliar
+SEGUNDA = Aumento da concentração osmótica no interior dos vasos xilemáticos da raiz, entrada de água por osmose, impulsão da seiva para cima
+TERCEIRA = Semelhança dos vasos do xilema a tubos de diâmetro microscópico, propriedades de adesão e coesão das moléculas de água, ocorrência do fenômeno da capilaridade
+QUARTA = Permeabilidade seletiva das células do córtex da raiz, presença da endoderme com as estrias de caspary, transporte ascendente da seiva bruta
+
+ID = 4030
+TIPO = morfologia e anatomia vegetal
+COMANDO = (https://www.qconcursos.com/questoes-de-vestibular/questoes/1aa67691-6f) Leia o poema abaixo de J. G. de Araújo Jorge, que está no livro Espera…, 1960):
+
+“Rosa… Espinho…”
+Pago a impaciência
+desta paixão ansiosa
+por te querer
+em meu caminho…
+Quis colher a rosa,
+Feriu-me o espinho…
+
+Analisando o verso em destaque, do ponto de vista biológico, podemos afirmar que:
+IMAGEM = 
+PRIMEIRA = Está incorreto, pois a roseira apresenta acúleos, que são projeções epidérmicas, pontiagudas, resistentes, facilmente destacáveis e com função de proteção
+SEGUNDA = Está incorreto, pois a roseira apresenta tricomas, que são projeções da epiderme caulinar, com função protetora
+TERCEIRA = Está correto, pois a roseira apresenta espinhos como elementos de defesa contra predadores
+QUARTA = Está correto, pois os espinhos são folhas modificadas que, além da função de proteção, também evitam a perda de água por transpiração
+
+ID = 4031
+TIPO = morfologia e anatomia vegetal
+COMANDO = As plantas são grupos basicamente terrestres, que desenvolveram um número de características especializadas que permitiram sua adaptação à vida na Terra. Essas características são melhor desenvolvidas entre as plantas vasculares, o grupo dominante. Sobre esse grupo de plantas, assinale somente a alternativa que contempla a afirmativa correta.
+IMAGEM = 
+PRIMEIRA = Presença de uma cutícula cerosa, com aberturas especializadas, representadas pelos ostíolos dos estômatos
+SEGUNDA = Presença de um eficiente sistema de condução, no qual o xilema transporta os produtos da fotossíntese para toda a planta e o floema, água e sais minerais
+TERCEIRA = O crescimento em espessura, resultante da atividade cambial presente em todas as angiospermas, é capaz de adicionar células indefinidas ao corpo da planta
+QUARTA = O gametófito (n), no seu ciclo reprodutivo, constitui a fase mais desenvolvida, representada pela planta completa, e o esporófito (n) constitui a fase menos desenvolvida, representada pelo tubo polínico e saco embrionário
+
+ID = 4032
+TIPO = morfologia e anatomia vegetal
+COMANDO = Um casal de namorados, com auxílio de um canivete, faz a inscrição de seus nomes ao redor do tronco de uma árvore. Passados seis meses, o casal se separa. O rapaz vai até a árvore e retira um anel da casca, circundando o tronco na região que continha a inscrição. Após algum tempo, o casal se reconcilia e volta à árvore para refazer a prova de amor, mas, para sua surpresa, encontram-na morta, porque o anel de casca que foi retirado continha:
+IMAGEM = 
+PRIMEIRA = Além da periderme, o floema
+SEGUNDA = Além da periderme, o xilema
+TERCEIRA = Apenas o floema
+QUARTA = Apenas o xilema
+
+ID = 4033
+TIPO = morfologia e anatomia vegetal
+COMANDO = O estado físico dos compostos químicos pode ser reconhecido e justificado por meio das ligações que ocorrem, respectivamente, entre os átomos que formam as moléculas e entre as próprias moléculas. A água, por exemplo, em condições ambientais, é um solvente líquido, e as suas moléculas possuem um tipo especial de atração entre si, como decorrência da presença de polos opostos em sua estrutura molecular. Trata-se da ligação hidrogênio ou ponte de hidrogênio. Constata-se, ainda, que fenômenos fisiológicos como o transporte de algumas substâncias no corpo de uma árvore resultam de tais interações.  Nas árvores, as interações que ocorrem entre as moléculas de água representam uma base teórica para explicar a:
+IMAGEM = 
+PRIMEIRA = Condução da seiva bruta ao longo dos vasos do xilema
+SEGUNDA = Condução da seiva bruta ao longo dos vasos do floema
+TERCEIRA = Condução da seiva elaborada ao longo dos vasos do xilema
+QUARTA = Condução da seiva elaborada ao longo dos vasos do floema
+
+ID = 4034
+TIPO = morfologia e anatomia vegetal
+COMANDO = Durante uma aula de Botânica, a fim de destacar a importância econômica de vários produtos de origem vegetal, um professor de biologia ressaltou que: a) da raiz tuberosa da mandioca (Manihot sculenta) retiramos vários produtos importantes para a alimentação, ricos, principalmente, em amido; b) dos caules de árvores, como o angelim-pedra (Hymenolobium petraeum), o mogno (Swietenia macrophylla, o cedro (Cedrela fissilis), a peroba (Aspidosperma polyneuron) e o pinho (Pinus sp.), retiramos uma grande variedade de madeiras; c) do caule do sobreiro (Quercus suber) é extraída a grossa camada externa, conhecida como cortiça; d) do caule da seringueira brasileira (Hevea brasiliensis) é extraído o látex, que fornece a preciosa borracha. Os produtos citados pelo professor e destacados no texto – amido, madeiras, cortiça e látex – se relacionam a diferentes tipos de tecidos vegetais, respectivamente:
+IMAGEM = 
+PRIMEIRA = Parênquima de reserva; vasos lenhosos; tecido suberoso; tecido secretor
+SEGUNDA = Tecido de sustentação; parênquima de reserva; vasos lenhosos; tecido suberoso
+TERCEIRA = Tecido secretor; parênquima de reserva; vasos lenhosos; tecido suberoso
+QUARTA = Parênquima de reserva; tecido suberoso; vasos lenhosos; tecido secretor
+
+ID = 4035
+TIPO = morfologia e anatomia vegetal
+COMANDO = (UFLAVRAS) “Da mesma maneira que nos animais, os tecidos de proteção são especializados no revestimento do vegetal, protegendo-o contra os diversos agentes agressores que podem danificá-lo. Além disso, regulam o intercâmbio de substâncias entre a planta e o meio ambiente. Os tecidos de revestimento também evitam perda excessiva de água contribuindo, assim, para a adaptação dos vegetais à vida terrestre”. Baseando-se no texto, assinale a opção que contenha o tecido de proteção e sua adaptação para trocas gasosas.  
+IMAGEM = 
+PRIMEIRA = Epiderme – estômatos
+SEGUNDA = Súber – estômatos
+TERCEIRA = Periderme – estômatos
+QUARTA = Felogênio – lenticelas
+
+ID = 4036
+TIPO = morfologia e anatomia vegetal
+COMANDO = A imagem abaixo ilustra um tipo de planta que, ao longo do processo evolutivo, sofreu a modificação de suas folhas em espinhos, tendo em vista as condições ambientais e seu relacionamento com outros seres ao redor. Essa modificação atendeu auxiliou essa planta a evitar quais fenômenos?
+IMAGEM = https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMammillaria_spinosissima&psig=AOvVaw0WinrufVQbilKZi0EmWt7N&ust=1592604595107000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCxis6wjOoCFQAAAAAdAAAAABAD
+PRIMEIRA = Evaporação e predatismo
+SEGUNDA = Fixação e comensalismo
+TERCEIRA = Absorção e inquilinismo
+QUARTA = Circulação e parasitismo
+
+ID = 4037
+TIPO = morfologia e anatomia vegetal
+COMANDO = A planta Cuscuta sp. (cipó-chumbo) é considerada parasita de certos tipos de vegetais, dos quais ela extrai, com suas raízes especiais, a seiva elaborada. Essas raízes são chamadas __________ e alcançam o __________ situado mais __________ ao __________. Os espaços devem ser preenchidos correta- e respectivamente por:  
+IMAGEM = 
+PRIMEIRA = Haustórios, floema, externamente e xilema
+SEGUNDA = Haustórios, xilema, internamente e floema 
+TERCEIRA = Hidatódios, floema, externamente e xilema
+QUARTA = Hidatódios, xilema, internamente e floema 
+
+ID = 4038
+TIPO = morfologia e anatomia vegetal
+COMANDO = As ilustrações adiante representam algumas características morfológicas das angiospermas, usadas para classificá-las em monocotiledôneas e dicotiledôneas. Assinale a alternativa que apresenta apenas características comumente encontradas nas monocotiledôneas. 
+IMAGEM = https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.carlsonstockart.com%2Fphoto%2Fmonocot-dicot-plants-comparison-examples%2F&psig=AOvVaw1erpVCiMaUqm0qvm5oxbOR&ust=1592604816691000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDC4bqxjOoCFQAAAAAdAAAAABAT
+PRIMEIRA = 2, 6, e 7 
+SEGUNDA = 1, 3, 5 e 6
+TERCEIRA = 2, 5, 6 e 7
+QUARTA = 1, 3, 7 e 8
+
+ID = 4039
+TIPO = morfologia e anatomia vegetal
+COMANDO = Durante o processo evolutivo, algumas espécies vegetais apresentam características que as tornaram capazes de sobreviver fora da água e deixar descendentes. As figuras a seguir reproduzem algumas adaptações encontradas em diferentes grupos de plantas. A planta que possui uma adaptação vantajosa para a reprodução vegetal em ambiente terrestre, é a de número:
+IMAGEM = https://www.google.com/url?sa=i&url=http%3A%2F%2Feremita.di.uminho.pt%2Fgutenberg%2F4%2F6%2F1%2F5%2F46155%2F46155-h%2F46155-h.htm&psig=AOvVaw1uJuIL7JfJ65YI76zBXGc9&ust=1592605537767000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDCx8u0jOoCFQAAAAAdAAAAABAD; https://www.google.com/url?sa=i&url=https%3A%2F%2Fpublicdomainvectors.org%2Fpt%2Fvetorial-gratis%2FIlustra%25C3%25A7%25C3%25A3o-em-vetor-Gavinha%2F32207.html&psig=AOvVaw29FdJWpEGj-ooGVvrFahQY&ust=1592605699062000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLikwNy0jOoCFQAAAAAdAAAAABAD
+PRIMEIRA = 4
+SEGUNDA = 3
+TERCEIRA = 2
+QUARTA = 1
+
+ID = 4040
+TIPO = ecologia e fisiologia vegetal
+COMANDO = Plantas insetívoras são plantas que, embora fotossintetizantes, alimentam-se de insetos e outros pequenos animais devido às estruturas foliares especialmente adaptadas à captura. Nessas estruturas há a produção de enzimas hidrolíticas que digerem a presa fornecendo matéria orgânica à planta. Os compostos que mais podem interessar a uma planta insetívora são:
+IMAGEM = 
+PRIMEIRA = Compostos nitrogenados
+SEGUNDA = Celulose
+TERCEIRA = Amido
+QUARTA = Glicose
+
