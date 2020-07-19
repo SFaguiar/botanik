@@ -21,7 +21,7 @@ const botaoPula = document.getElementById('botaoPula')
 const botaoCancelar = document.getElementById('botaoCancelar')
 
 
-let perguntasEmbaralhadas, indiceDaPerguntaAtual, score, resposta, ajudas
+let perguntasEmbaralhadas, indiceDaPerguntaAtual, score, resposta, ajudas, nivelAtual
 
 var windowHeight = 0
 var windowWidth = 0
@@ -57,32 +57,52 @@ function iniciarJogo(){
     containerDaPergunta.classList.remove('hidden')
     mostrarBotoesAlternativas()
     // embaralha as perguntas
-    perguntasEmbaralhadas = perguntas.sort(() => Math.random() - .5)
+    perguntasEmbaralhadas = []
+    perguntasEmbaralhadas[1] = perguntas[1].sort(() => Math.random() - .5)
+    perguntasEmbaralhadas[2] = perguntas[2].sort(() => Math.random() - .5)
+    perguntasEmbaralhadas[3] = perguntas[3].sort(() => Math.random() - .5)
+    perguntasEmbaralhadas[4] = perguntas[4].sort(() => Math.random() - .5)
     // seta o índice da pergunta e o score para 0
     //  cartas, convidados, placas, pula
     ajudas = [true, true, true, 3]
     indiceDaPerguntaAtual = 0
     score = 0
-    numeroDePerguntas = perguntasEmbaralhadas.length
+    nivelAtual = 0
+    numeroDePerguntas = 30
     setProximaPergunta()
+}
+
+function calcularNivel(indiceDaPerguntaAtual){
+    if (indiceDaPerguntaAtual >= 0 && indiceDaPerguntaAtual <= 9){
+        return 1
+    } else if (indiceDaPerguntaAtual >= 10 && indiceDaPerguntaAtual <= 19){
+        return 2
+    } else if (indiceDaPerguntaAtual >= 20 && indiceDaPerguntaAtual <= 29){
+        return 3
+    } else if (indiceDaPerguntaAtual >= 30){
+        return 4
+    } else {
+        return 0
+    }
 }
 
 function setProximaPergunta(){
     resetStatus()
+    nivelAtual = calcularNivel(indiceDaPerguntaAtual)
     // seleciona a pergunta
-    mostrarPergunta(perguntasEmbaralhadas[indiceDaPerguntaAtual])
+    mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
     displayScore.innerText ='PONTUAÇÃO: ' + score
-    resposta = perguntasEmbaralhadas[indiceDaPerguntaAtual].alternativa1
+    resposta = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa1
 
     let numeroAleatorio = Math.floor((Math.random() * 3) + 2)
     if (numeroAleatorio === 2) {
-        respostaErradaAleatoria = perguntasEmbaralhadas[indiceDaPerguntaAtual].alternativa2
+        respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa2
     }
     else if (numeroAleatorio === 3) {
-        respostaErradaAleatoria = perguntasEmbaralhadas[indiceDaPerguntaAtual].alternativa3
+        respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa3
     }
     else if (numeroAleatorio === 4) {
-        respostaErradaAleatoria = perguntasEmbaralhadas[indiceDaPerguntaAtual].alternativa4
+        respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa4
     }
 
     mostrarBotoesAlternativas()
@@ -159,6 +179,7 @@ function selecionarResposta(e){
         botaoProximo.classList.remove('hidden')
     } else {
         //fluxo se terminou
+        textoDaPergunta.innerText = 'VOCÊ GANHOU! PARABÉNS!!!!!1!!!!!!!!!11111!!!1!!!!'
         botaoStart.innerText = 'Reiniciar'
         botaoProximo.classList.add('hidden')
         botaoStart.classList.remove('hidden')
@@ -286,4 +307,10 @@ function olharPlacas(){
     } else {
         console.log('Ajuda já utilizada!')
     }
+}
+
+function ABRACADABRA123(){
+    botao2.classList.add('hidden')
+    botao3.classList.add('hidden')
+    botao4.classList.add('hidden')
 }

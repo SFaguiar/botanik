@@ -1,17 +1,32 @@
 <?php 
     include("conexao.php");
-    $query = 'select * from perguntas_jogo';
-    $stmt = $conexao->query($query);
-    $perguntas = $stmt->fetchAll();
-?>
 
+    function prepararListaDePerguntas($nivel, $conexao){
+        
+        $query = "SELECT * FROM `perguntas_jogo` WHERE `imagem` = '' AND `nivel` = ".$nivel;
+        $stmt = $conexao->query($query);
+        $listaPronta = $stmt->fetchAll();
+        return $listaPronta;
+    }
+
+    $perguntasProntas = array(
+        1 => prepararListaDePerguntas(1, $conexao),
+        2 => prepararListaDePerguntas(2, $conexao),
+        3 => prepararListaDePerguntas(3, $conexao),
+        4 => prepararListaDePerguntas(4, $conexao),
+    );
+
+    // print_r($perguntasProntas);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script> var perguntas = <?php echo json_encode($perguntas); ?>; </script>
+    <script>
+        var perguntas = <?php echo json_encode($perguntasProntas)?>
+    </script>
     <script defer src="game.js"></script>
     <title>BOTANIK</title>
 </head>
@@ -28,7 +43,7 @@
                 <button id="botaoAlternativa4" class="hidden">Alternativa #4</button>
             </div>
         </div>
-        <div id="containerDosControles" class="controles">
+        <div id="containerDosControles" class="containerDosControles">
             <button id="botaoStart" class="">Começar</button>
             <button id="botaoRegras" class="">Regras</button>
             <button id="botaoConfiguracoes" class="">Configurações</button>

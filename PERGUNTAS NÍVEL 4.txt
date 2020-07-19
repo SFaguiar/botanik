@@ -25,7 +25,7 @@ SEGUNDA = Gutação
 TERCEIRA = Gravidade
 QUARTA = Fotossíntese
 
-ID = 4004
+ID = 4004**********************
 TIPO = morfologia e anatomia vegetal
 COMANDO = Muitas espécies de plantas lenhosas são encontradas no cerrado brasileiro. Para a sobrevivência nas condições de longos períodos de seca e queimadas periódicas, próprias desse ecossistema, essas plantas desenvolveram estruturas muito peculiares. As estruturas adaptativas mais apropriadas para a sobrevivência desse grupo de plantas nas condições ambientais do referido ecossistema são:
 IMAGEM = 
