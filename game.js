@@ -113,6 +113,8 @@ function resetStatus(){
     while (elementoDosBotoesDeResposta.firstChild){
         elementoDosBotoesDeResposta.removeChild(elementoDosBotoesDeResposta.firstChild)
     }
+    botaoAjuda.classList.remove('hidden')
+    displayScore.classList.remove('hidden')
 }
 
 function mostrarPergunta(pergunta){
@@ -158,15 +160,18 @@ function selecionarResposta(e){
     if(botaoSelecionado.innerText === resposta){
         //fluxo para acerto
         acertou = true
-        textoDaPergunta.innerText = 'ACERTOU!'
+        textoDaPergunta.innerHTML = 'ACERTOU! <br>'
+        displayScore.classList.add('hidden')
+        botaoAjuda.classList.add('hidden')
         ocultarBotoesAlternativas()
         score += 1
 
     } else {
         //fluxo para erro
         acertou = false
-        textoDaPergunta.innerText = 'GAME OVER!'
+        textoDaPergunta.innerHTML = 'GAME OVER! PONTUAÇÃO FINAL: ' + score
         botaoStart.innerText = 'Reiniciar'
+        displayScore.classList.add('hidden')
         botaoStart.classList.remove('hidden')
         botaoProximo.classList.add('hidden')
         botaoAjuda.classList.add('hidden')
@@ -179,7 +184,6 @@ function selecionarResposta(e){
         botaoProximo.classList.remove('hidden')
     } else {
         //fluxo se terminou
-        textoDaPergunta.innerText = 'VOCÊ GANHOU! PARABÉNS!!!!!1!!!!!!!!!11111!!!1!!!!'
         botaoStart.innerText = 'Reiniciar'
         botaoProximo.classList.add('hidden')
         botaoStart.classList.remove('hidden')
@@ -198,6 +202,14 @@ function mostrarBotoesAlternativas(){
     botao2.classList.remove('hidden')
     botao3.classList.remove('hidden')
     botao4.classList.remove('hidden')
+}
+
+function mostrarAjudasRestantesParaUsuario(){
+    document.getElementById("pulosRestantes").innerHTML = `Você ainda tem {ajudas[3]} pulos.`
+    if (ajudas[0] === true){}
+    if (ajudas[1] === true){}
+    if (ajudas[2] === true){}
+
 }
 
 function setBotao1(pergunta){

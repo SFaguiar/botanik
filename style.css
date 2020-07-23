@@ -1,4 +1,6 @@
 body{
+    background-color: rgb(50,50,50);
+    color: white;
     padding: 0;
     margin: 0;
 }
@@ -14,7 +16,6 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     padding: 2px 2px 12px 2px;
-    border: 1px solid black;
 }
 
 .botao-grid {
@@ -25,13 +26,10 @@ body{
 }
 
 .janelaAjuda {
-    max-width: 80%;
+    background-color: rgb(50,50,50);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 2px 2px 12px 2px;
-    border: 2px solid black;
-    background-color: gray;
 }
 
