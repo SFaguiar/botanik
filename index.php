@@ -22,11 +22,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <script>
             var perguntas = <?php echo json_encode($perguntasProntas)?>
         </script>
-        <script defer src="game.js"></script>
+        <script defer src="js/game.js"></script>
         <title>BOTANIK</title>
     </head>
     <body onresize="getTamanhoDaJanela()">
@@ -68,7 +68,7 @@
                         - Os convidados, que darão a resposta para você; e <br>
                         - A plateia, que dirá o que acha, com uma pequena chance de errar. <br>
                         Você também tem direito a pular até 3 questões. A questão pulada não será contada como acerto.</p>
-                        <p id="pulosRestantes"></script></p>        
+                        <p id="pulosRestantes"></p>        
                     </div>
                     <div class="modal-footer text-center">
                         <button id="botaoCartas" class="btn btn-dark">Utilizar cartas</button>
