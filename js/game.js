@@ -129,24 +129,24 @@ function mostrarPergunta(pergunta){
     }
 
     if (posicionamento == 1){
+        setBotao4(pergunta)
+        setBotao3(pergunta)
         setBotao2(pergunta)
         setBotao1(pergunta)
-        setBotao3(pergunta)
-        setBotao4(pergunta)
     }
 
     if (posicionamento == 2){
-        setBotao2(pergunta)
         setBotao3(pergunta)
-        setBotao1(pergunta)
         setBotao4(pergunta)
+        setBotao1(pergunta)
+        setBotao2(pergunta)
     }
 
     if (posicionamento == 3){
         setBotao2(pergunta)
-        setBotao3(pergunta)
-        setBotao4(pergunta)
         setBotao1(pergunta)
+        setBotao4(pergunta)
+        setBotao3(pergunta)
     }
     
 }
@@ -205,36 +205,32 @@ function mostrarBotoesAlternativas(){
 
 function mostrarPulosRestantes(){
     if (ajudas[3] > 0) {
-        document.getElementById("pulosRestantes").innerHTML = `Você ainda tem ${ajudas[3]} pulos.`
+        document.getElementById("pulosRestantes").innerHTML = `<b>Você ainda tem ${ajudas[3]} pulos.</b>`
     } else {
-        document.getElementById("pulosRestantes").innerHTML = `Não há mais pulos restantes.`
+        document.getElementById("pulosRestantes").innerHTML = `<b>Não há mais pulos restantes.</b>`
     }
 }
 
 function setBotao1(pergunta){
     botao1.innerText = pergunta.alternativa1
-    botao1.classList.add('botao')
     botao1.addEventListener('click', selecionarResposta)
     elementoDosBotoesDeResposta.appendChild(botao1)
 }
 
 function setBotao2(pergunta){
     botao2.innerText = pergunta.alternativa2
-    botao2.classList.add('botao')
     botao2.addEventListener('click', selecionarResposta)
     elementoDosBotoesDeResposta.appendChild(botao2)
 }
 
 function setBotao3(pergunta){
     botao3.innerText = pergunta.alternativa3
-    botao3.classList.add('botao')
     botao3.addEventListener('click', selecionarResposta)
     elementoDosBotoesDeResposta.appendChild(botao3)
 }
 
 function setBotao4(pergunta){
     botao4.innerText = pergunta.alternativa4
-    botao4.classList.add('botao')
     botao4.addEventListener('click', selecionarResposta)
     elementoDosBotoesDeResposta.appendChild(botao4)
 }
@@ -245,10 +241,16 @@ function acionarAjuda(){
 }
 
 function redirecionarParaSiteDeRegras(){
+    /* TO DO
+        ADICIONAR SITE DAS REGRAS
+    */
     window.location.href = "regras.php";
 }
 
 function abrirConfiguracoes(){
+    /* TO DO
+        ADICIONAR CONFIGURAÇÕES
+    */
     console.log('FINGE QUE AS CONFIGURAÇÕES ABRIRAM')
 }
 
@@ -268,12 +270,8 @@ function pularPergunta(){
             containerDaAjuda.classList.add('hidden')
             ajudas[3] -= 1
             if (ajudas[3] === 0){
-                botaoPula.disabled = true
-                botaoPula.classList.remove('btn-dark')
-                botaoPula.classList.add('btn-danger')
+                travarBotao(botaoPula)
             }
-        } else {
-            console.log('Impossível pular pergunta!')
         }
     }
 }
@@ -282,6 +280,9 @@ function abrirCartas() {
     if (ajudas[0] === true) {
         cartaAberta = Math.floor((Math.random() * 3) + 1)
         console.log('Carta aberta! Mate ' + cartaAberta + ' alternativas erradas!')
+        /* TO DO
+            ADICIONAR ESPAÇO PARA ESCOLHER A CARTA
+        */
         if (cartaAberta === 1 ) {
             botao2.classList.add('hidden')
         } else if (cartaAberta === 2 ) {
@@ -293,9 +294,7 @@ function abrirCartas() {
             botao4.classList.add('hidden')
         }
         ajudas[0] = false
-        botaoCartas.disabled = true
-        botaoCartas.classList.remove('btn-dark')
-        botaoCartas.classList.add('btn-danger')
+        travarBotao(botaoCartas)
     }
 }
 
@@ -303,18 +302,19 @@ function pedirAjudaConvidados(){
     if (ajudas[1] === true) {
         let chance = Math.floor((Math.random() * 100))
         if (chance > 10){
+            /* TO DO
+                ADICIONAR IMAGEM DOS CONVIDADOS
+            */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${resposta}.`)
             ajudas[1] = false
-            botaoConvidados.disabled = true
-            botaoConvidados.classList.remove('btn-dark')
-            botaoConvidados.classList.add('btn-danger')
-        }
-        else {
+            travarBotao(botaoConvidados)
+        } else {
+            /* TO DO
+                ADICIONAR IMAGEM DOS CONVIDADOS
+            */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${respostaErradaAleatoria}.`)
             ajudas[1] = false
-            botaoConvidados.disabled = true
-            botaoConvidados.classList.remove('btn-dark')
-            botaoConvidados.classList.add('btn-danger')
+            travarBotao(botaoConvidados)
         }
     }
 }
@@ -322,12 +322,21 @@ function pedirAjudaConvidados(){
 function olharPlacas(){
     if (ajudas[2] === true){
         let porcentagemExibida = Math.floor((Math.random() * 50) + 50)
+        /* TO DO
+            ADICIONAR IMAGEM DAS PLACAS
+        */
         console.log(`${porcentagemExibida}% da plateia disse que a alternativa correta é ${resposta}.`)
         ajudas[2] = false
         botaoPlacas.disabled = true
         botaoPlacas.classList.remove('btn-dark')
         botaoPlacas.classList.add('btn-danger')
     }
+}
+
+function travarBotao(botao){
+    botao.disabled = true
+    botao.classList.remove('btn-dark')
+    botao.classList.add('btn-danger')
 }
 
 function ABRACADABRA123(){

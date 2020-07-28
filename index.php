@@ -32,8 +32,8 @@
     <body onresize="getTamanhoDaJanela()">
         <div class="janela">
             <div class="clearfix">
-                <div class="display-4 float-left">BOTANIK</div>
-                <div id="score" class="float-right h4 hidden">PONTUAÇÃO </div>
+                <div id="titulo" class="display-4 float-left">BOTANIK</div>
+                <div id="score" class="float-right h4 hidden">PONTUAÇÃO</div>
             </div>
             <div id="containerDaPergunta" class="hidden">
                 <div id="pergunta" class="">Pergunta</div>
