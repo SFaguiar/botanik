@@ -1,6 +1,14 @@
+const menuPrincipal = document.getElementById('menuPrincipal')
+const menuConfiguracoes = document.getElementById('menuConfiguracoes')
+const jogo = document.getElementById('jogo')
+const titulo = document.getElementById('titulo')
 const botaoStart = document.getElementById('botaoStart')
 const botaoRegras = document.getElementById('botaoRegras')
 const botaoConfiguracoes = document.getElementById('botaoConfiguracoes')
+
+const botaoSalaDeAula = document.getElementById('botaoSalaDeAula')
+const botaoSozinho = document.getElementById('botaoSozinho')
+const sairMenuConfiguracoes = document.getElementById('voltarAoMenuPrincipal')
 
 const containerDaPergunta = document.getElementById('containerDaPergunta')
 const displayScore = document.getElementById('score')
@@ -11,15 +19,18 @@ const botao2 = document.getElementById('botaoAlternativa2')
 const botao3 = document.getElementById('botaoAlternativa3')
 const botao4 = document.getElementById('botaoAlternativa4')
 const botaoProximo = document.getElementById('botaoProximo')
+const botaoImagem = document.getElementById('botaoImagem')
 const botaoAjuda = document.getElementById('botaoAjuda')
+const botaoReiniciar = document.getElementById('botaoReiniciar')
 
 const containerDaAjuda = document.getElementById('containerDaAjuda')
+const containerDaImagem = document.getElementById('containerDaImagem')
 const botaoCartas = document.getElementById('botaoCartas')
 const botaoConvidados = document.getElementById('botaoConvidados')
 const botaoPlacas = document.getElementById('botaoPlacas')
 const botaoPula = document.getElementById('botaoPula')
 const botaoCancelar = document.getElementById('botaoCancelar')
-
+const botaoFecharImagem = document.getElementById('botaoFecharImagem')
 
 let perguntasEmbaralhadas, indiceDaPerguntaAtual, score, resposta, ajudas, nivelAtual
 
@@ -31,31 +42,29 @@ botaoStart.addEventListener('click', iniciarJogo)
 botaoRegras.addEventListener('click', redirecionarParaSiteDeRegras)
 botaoConfiguracoes.addEventListener('click', abrirConfiguracoes)
 
+sairMenuConfiguracoes.addEventListener('click', fecharConfiguracoes)
+
 botaoProximo.addEventListener('click', passarParaProximaPergunta)
-botaoAjuda.addEventListener('click', acionarAjuda)
+botaoAjuda.addEventListener('click', abrirContainerAjuda)
+botaoImagem.addEventListener('click', abrirContainerImagem)
+botaoReiniciar.addEventListener('click', iniciarJogo)
  
 botaoCartas.addEventListener('click', abrirCartas) 
 botaoConvidados.addEventListener('click', pedirAjudaConvidados)
 botaoPlacas.addEventListener('click', olharPlacas)
 botaoPula.addEventListener('click', pularPergunta) 
 botaoCancelar.addEventListener('click', fecharContainerAjuda)
+botaoFecharImagem.addEventListener('click', fecharContainerImagem)
 
-function getTamanhoDaJanela(){
-    windowHeight = window.innerHeight
-    windowWidth = window.innerWidth
-}
 
 function iniciarJogo(){
     // esconde os botões
-    botaoStart.classList.add('hidden')
-    botaoRegras.classList.add('hidden')
-    botaoConfiguracoes.classList.add('hidden')
+    menuPrincipal.classList.add('hidden')
     // mostra os textos
-    textoDaPergunta.classList.remove('hidden')
-    displayScore.classList.remove('hidden')
-    botaoAjuda.classList.remove('hidden')
-    containerDaPergunta.classList.remove('hidden')
+    jogo.classList.remove('hidden')
+    destravarTodasAjudas()
     mostrarBotoesAlternativas()
+    botaoReiniciar.classList.add('hidden')
     // embaralha as perguntas
     perguntasEmbaralhadas = []
     perguntasEmbaralhadas[1] = perguntas[1].sort(() => Math.random() - .5)
@@ -92,6 +101,7 @@ function setProximaPergunta(){
     // seleciona a pergunta
     mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
     displayScore.innerText ='PONTUAÇÃO: ' + score
+    perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
     resposta = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa1
 
     let numeroAleatorio = Math.floor((Math.random() * 3) + 2)
@@ -105,6 +115,12 @@ function setProximaPergunta(){
         respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa4
     }
     mostrarBotoesAlternativas()
+    if (perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].imagem != "") {
+        botaoImagem.classList.remove('hidden')
+        if (perguntaAtual.id == (document.getElementById('img' + perguntaAtual.id).id).slice(3)) {
+            document.getElementById('img' + perguntaAtual.id).classList.remove('hidden')
+        }
+    } 
 }
 
 function resetStatus(){
@@ -118,7 +134,6 @@ function resetStatus(){
 
 function mostrarPergunta(pergunta){
     textoDaPergunta.innerText = pergunta.comando
-
     posicionamento = Math.floor(Math.random() * 4)
 
     if (posicionamento == 0){
@@ -162,6 +177,10 @@ function selecionarResposta(e){
         textoDaPergunta.innerHTML = 'ACERTOU! <br>'
         displayScore.classList.add('hidden')
         botaoAjuda.classList.add('hidden')
+        if (botaoImagem.classList.contains('hidden') != false) {
+            botaoImagem.classList.add('hidden')
+        }
+        botaoImagem.classList.add('hidden')
         ocultarBotoesAlternativas()
         score += 1
 
@@ -169,10 +188,12 @@ function selecionarResposta(e){
         //fluxo para erro
         acertou = false
         textoDaPergunta.innerHTML = 'GAME OVER! PONTUAÇÃO FINAL: ' + score
-        botaoStart.innerText = 'Reiniciar'
         displayScore.classList.add('hidden')
-        botaoStart.classList.remove('hidden')
+        botaoReiniciar.classList.remove('hidden')
         botaoProximo.classList.add('hidden')
+        if (botaoImagem.classList.contains('hidden') != false) {
+            botaoImagem.classList.add('hidden')
+        }
         botaoAjuda.classList.add('hidden')
         ocultarBotoesAlternativas()
     }
@@ -183,9 +204,8 @@ function selecionarResposta(e){
         botaoProximo.classList.remove('hidden')
     } else {
         //fluxo se terminou
-        botaoStart.innerText = 'Reiniciar'
         botaoProximo.classList.add('hidden')
-        botaoStart.classList.remove('hidden')
+        botaoReiniciar.classList.remove('hidden')
     }
 }
 
@@ -235,10 +255,8 @@ function setBotao4(pergunta){
     elementoDosBotoesDeResposta.appendChild(botao4)
 }
 
-function acionarAjuda(){
-    containerDaAjuda.classList.remove('hidden')
-    mostrarPulosRestantes()
-}
+
+
 
 function redirecionarParaSiteDeRegras(){
     /* TO DO
@@ -248,10 +266,13 @@ function redirecionarParaSiteDeRegras(){
 }
 
 function abrirConfiguracoes(){
-    /* TO DO
-        ADICIONAR CONFIGURAÇÕES
-    */
-    console.log('FINGE QUE AS CONFIGURAÇÕES ABRIRAM')
+   menuPrincipal.classList.add('hidden')
+   menuConfiguracoes.classList.remove('hidden')
+}
+
+function fecharConfiguracoes(){
+   menuPrincipal.classList.remove('hidden')
+   menuConfiguracoes.classList.add('hidden')
 }
 
 function passarParaProximaPergunta(){
@@ -261,6 +282,19 @@ function passarParaProximaPergunta(){
 
 function fecharContainerAjuda(){
     containerDaAjuda.classList.add('hidden')
+}
+
+function abrirContainerAjuda(){
+    containerDaAjuda.classList.remove('hidden')
+    mostrarPulosRestantes()
+}
+
+function abrirContainerImagem(){
+    containerDaImagem.classList.remove('hidden')    
+}
+
+function fecharContainerImagem(){
+    containerDaImagem.classList.add('hidden')
 }
 
 function pularPergunta(){
@@ -327,16 +361,28 @@ function olharPlacas(){
         */
         console.log(`${porcentagemExibida}% da plateia disse que a alternativa correta é ${resposta}.`)
         ajudas[2] = false
-        botaoPlacas.disabled = true
-        botaoPlacas.classList.remove('btn-dark')
-        botaoPlacas.classList.add('btn-danger')
+        travarBotao(botaoPlacas)
     }
 }
+
 
 function travarBotao(botao){
     botao.disabled = true
     botao.classList.remove('btn-dark')
     botao.classList.add('btn-danger')
+}
+
+function destravarBotao(botao){
+    botao.disabled = false
+    botao.classList.add('btn-dark')
+    botao.classList.remove('btn-danger')
+}
+
+function destravarTodasAjudas(){
+    destravarBotao(botaoPula)
+    destravarBotao(botaoCartas)
+    destravarBotao(botaoConvidados)
+    destravarBotao(botaoPlacas)
 }
 
 function ABRACADABRA123(){
