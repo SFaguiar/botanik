@@ -36,18 +36,25 @@
         <title>BOTANIK</title>
     </head>
     <body>
-        <div id="menuPrincipal" class="menuPrincipal">
-            <div id="titulo" class="titulo display-4">BOTANIK</div>
+        <div class="bg">
+        <div class="margem">
+        <!--- MENU PRINCIPAL --->
+        <div id="menuPrincipal">
+            <div id="cabecalho" class="cabecalho">
+                <div id="titulo" class="titulo">BOTANIK</div>
+                <div id="subtitulo" class="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</div>
+            </div>
             <div id="grupoBotoesMenuPrincipal" class="grupoBotoesMenuPrincipal btn-group-vertical">
                 <button id="botaoStart" class="botaoDoMenuPrincipal">Começar</button>
                 <button id="botaoRegras" class="botaoDoMenuPrincipal">Regras</button>
                 <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal">Configurações</button>
             </div>
         </div>
+        <!--- MENU DE CONFIGURAÇÕES --->
         <div id="menuConfiguracoes" class="menuConfiguracoes hidden">
-            <div id="tituloConfiguracoes" class="titulo display-4">CONFIGURAÇÕES</div>
-            <div id="botoesConfiguracoes" >
-                <div class="botoesConfiguracoes">
+            <div id="tituloConfiguracoes" class="display-4 tituloConfiguracoes">CONFIGURAÇÕES</div>
+            <div id="grupoBotoesConfiguracoes" class="grupoBotoesConfiguracoes" >
+                <div id="ambienteDeAplicacao">
                     <h4>Ambiente de aplicação:</h4> 
                     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group mr-1">
@@ -61,78 +68,45 @@
                 </div>
             </div>
         </div>
+        <!--- O JOGO --->
         <div id="jogo" class="jogo hidden">
-            <div class="janela">
-                <div class="clearfix">
-                    <div id="score" class="score float-right h4">PONTUAÇÃO</div>
+            <div class="janelaPrincipal">
+                <div id="score" class="score h4">PONTUAÇÃO</div>
+                <div id="pergunta" class="comando">Pergunta</div>
+                <div id="imagemPlaceholder" class=""></div>
+                <div id="botoesReposta" class="grupoBotoesResposta">
+                    <button id="botaoAlternativa1" class="botaoResposta btn btn-dark">Alternativa #1</button>
+                    <button id="botaoAlternativa2" class="botaoResposta btn btn-dark">Alternativa #2</button>
+                    <button id="botaoAlternativa3" class="botaoResposta btn btn-dark">Alternativa #3</button>
+                    <button id="botaoAlternativa4" class="botaoResposta btn btn-dark">Alternativa #4</button>
                 </div>
-                <div id="containerDaPergunta" class="">
-                    <div id="pergunta" class="comando">Pergunta</div>
-                    <div id="botoesReposta" class="botao-grid">
-                        <button id="botaoAlternativa1" class="botaoResposta">Alternativa #1</button>
-                        <button id="botaoAlternativa2" class="botaoResposta">Alternativa #2</button>
-                        <button id="botaoAlternativa3" class="botaoResposta">Alternativa #3</button>
-                        <button id="botaoAlternativa4" class="botaoResposta">Alternativa #4</button>
-                    </div>
+                <div id="grupoBotoesAjuda" class="grupoBotoesAjuda">
+                    <button id="botaoCartas" class="btn btn-primary botaoAjuda">Utilizar cartas</button>
+                    <button id="botaoConvidados" class="btn btn-primary botaoAjuda">Perguntar aos colegas</button>
+                    <button id="botaoPlacas" class="btn btn-primary botaoAjuda">Utilizar as placas</button>
+                    <button id="botaoPula" class="btn btn-primary botaoAjuda">Pular pergunta</button>
                 </div>
-                <div id="containerDosControles" class="containerDosControles">
-                    <button id="botaoProximo" class="btn btn-primary">Próximo</button>
-                    <button id="botaoImagem" class="btn btn-danger btn-lg btn-block hidden">Imagem</button>
-                    <button id="botaoAjuda" class="btn btn-primary btn-lg btn-block">Ajuda</button>
-                    <button id="botaoReiniciar" class="btn btn-primary btn-lg btn-block hidden">Reiniciar</button>
+                <div id="grupoBotoesControle" class="grupoBotoesControle">
+                    <button id="botaoProximo" class="botaoControle">Próximo</button>
+                    <button id="botaoReiniciar" class="botaoControle">Reiniciar</button>
                 </div>
-            </div>
-            <div id="containerDaAjuda" class="hidden">
-                <div class="modal-dialog modal-dialog-centered text-dark" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Ajudas</h5>
-                            <button type="button" class="close" id="botaoCancelar" class="btn btn-danger">X</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Selecione sua ajuda. <br>
-                            Você poderá usar, uma vez cada:<br>
-                            - As cartas, que excluirão de 1 a 3 alternativas erradas; <br>
-                            - Os convidados, que darão a resposta para você; e <br>
-                            - A plateia, que dirá o que acha, com uma pequena chance de errar. <br>
-                            Você também tem direito a pular até 3 questões. A questão pulada não será contada como acerto.</p>
-                            <p id="pulosRestantes"></p>        
-                        </div>
-                        <div class="modal-footer text-center">
-                            <button id="botaoCartas" class="btn btn-dark">Utilizar cartas</button>
-                            <button id="botaoConvidados" class="btn btn-dark">Perguntar aos convidados</button>
-                            <button id="botaoPlacas" class="btn btn-dark">Utilizar as placas</button>
-                            <button id="botaoPula" class="btn btn-dark">Pular pergunta</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="containerDaImagem" class="hidden">
-                <div class="modal-dialog modal-dialog-centered text-dark" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Imagem</h5>
-                            <button type="button" class="close" id="botaoFecharImagem" class="btn btn-danger">X</button>
-                        </div>
-                        <div class="modal-body">
-                            <?php 
-                                $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
-                                if ($stmt->execute()) {
-                                while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                                        echo "<img id='img".($rs->id)."' class='hidden' src='data:image/jpeg;base64,".base64_encode($rs->imagem)."' style='width: 100px; height: 100px'/>";
-                                    }
-                                }
-                            ?>
-                        </div>
-                        <div class="modal-footer text-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>      
         </div>
+        
 
         
             
+        
+        </div>
+        </div>
+        <?php 
+            $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
+            if ($stmt->execute()) {
+            while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+                    echo "<img id='img".($rs->id)."' class='hidden imagem' src='data:image/jpeg;base64,".base64_encode($rs->imagem)."'/>";
+                }
+            }
+        ?>
         <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

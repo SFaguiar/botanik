@@ -1,6 +1,6 @@
 <?php
 try {
-	$dsn = 'mysql:host=localhost;dbname=botanik';
+	$dsn = 'mysql:host=localhost;dbname=st_botanik';
 	$user = 'root';
 	$password = '';
 	$conexao = new PDO($dsn, $user, $password);
