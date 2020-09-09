@@ -36,77 +36,100 @@
         <title>BOTANIK</title>
     </head>
     <body>
-        <div class="bg">
-        <div class="margem">
-        <!--- MENU PRINCIPAL --->
-        <div id="menuPrincipal">
-            <div id="cabecalho" class="cabecalho">
-                <div id="titulo" class="titulo">BOTANIK</div>
-                <div id="subtitulo" class="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</div>
+        <div id="bg-animado" class="bg">
+            <div class="margem">
+            <!--- MENU PRINCIPAL --->
+            <div id="menuPrincipal">
+                <div id="cabecalho" class="cabecalho">
+                    <div id="titulo" class="titulo">BOTANIK</div>
+                    <div id="subtitulo" class="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</div>
+                </div>
+                <div id="grupoBotoesMenuPrincipal" class="grupoBotoesMenuPrincipal btn-group-vertical">
+                    <button id="botaoStart" class="botaoDoMenuPrincipal">Começar</button>
+                    <button id="botaoRegras" class="botaoDoMenuPrincipal">Regras</button>
+                    <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal">Configurações</button>
+                </div>
             </div>
-            <div id="grupoBotoesMenuPrincipal" class="grupoBotoesMenuPrincipal btn-group-vertical">
-                <button id="botaoStart" class="botaoDoMenuPrincipal">Começar</button>
-                <button id="botaoRegras" class="botaoDoMenuPrincipal">Regras</button>
-                <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal">Configurações</button>
-            </div>
-        </div>
-        <!--- MENU DE CONFIGURAÇÕES --->
-        <div id="menuConfiguracoes" class="menuConfiguracoes hidden">
-            <div id="tituloConfiguracoes" class="display-4 tituloConfiguracoes">CONFIGURAÇÕES</div>
-            <div id="grupoBotoesConfiguracoes" class="grupoBotoesConfiguracoes" >
-                <div id="ambienteDeAplicacao">
-                    <h4>Ambiente de aplicação:</h4> 
-                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group mr-1">
-                            <button id="botaoSalaDeAula" class="btn btn-info">Sala de aula</button>
-                            <button id="botaoSozinho" class="btn btn-info">Sozinho</button>
+            <!--- MENU DE CONFIGURAÇÕES --->
+            <div id="menuConfiguracoes" class="menuConfiguracoes hidden">
+                <div id="tituloConfiguracoes" class="display-4 tituloConfiguracoes">CONFIGURAÇÕES</div>
+                <div id="grupoBotoesConfiguracoes" class="grupoBotoesConfiguracoes" >
+                    <div id="ambienteDeAplicacao">
+                        <h4>Ambiente de aplicação:</h4> 
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group mr-1">
+                                <button id="botaoSalaDeAula" class="btn btn-info">Sala de aula</button>
+                                <button id="botaoSozinho" class="btn btn-info">Sozinho</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <button id="voltarAoMenuPrincipal">Voltar ao menu principal</button>
+                    <div>
+                        <button id="voltarAoMenuPrincipal">Voltar ao menu principal</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--- O JOGO --->
-        <div id="jogo" class="jogo hidden">
-            <div class="janelaPrincipal">
-                <div id="score" class="score h4">PONTUAÇÃO</div>
-                <div id="pergunta" class="comando">Pergunta</div>
-                <div id="imagemPlaceholder" class=""></div>
-                <div id="botoesReposta" class="grupoBotoesResposta">
-                    <button id="botaoAlternativa1" class="botaoResposta btn btn-dark">Alternativa #1</button>
-                    <button id="botaoAlternativa2" class="botaoResposta btn btn-dark">Alternativa #2</button>
-                    <button id="botaoAlternativa3" class="botaoResposta btn btn-dark">Alternativa #3</button>
-                    <button id="botaoAlternativa4" class="botaoResposta btn btn-dark">Alternativa #4</button>
-                </div>
-                <div id="grupoBotoesAjuda" class="grupoBotoesAjuda">
-                    <button id="botaoCartas" class="btn btn-primary botaoAjuda">Utilizar cartas</button>
-                    <button id="botaoConvidados" class="btn btn-primary botaoAjuda">Perguntar aos colegas</button>
-                    <button id="botaoPlacas" class="btn btn-primary botaoAjuda">Utilizar as placas</button>
-                    <button id="botaoPula" class="btn btn-primary botaoAjuda">Pular pergunta</button>
-                </div>
-                <div id="grupoBotoesControle" class="grupoBotoesControle">
-                    <button id="botaoProximo" class="botaoControle">Próximo</button>
-                    <button id="botaoReiniciar" class="botaoControle">Reiniciar</button>
-                </div>
-            </div>      
-        </div>
-        
+            <!--- O JOGO --->
+            <div id="jogo" class="jogo hidden">
+                <div class="janelaPrincipal">
+                    <div id="score" class="score h4">PONTUAÇÃO</div>
+                    <div id="pergunta" class="comando">Pergunta</div>
+                    <div id="imagemPlaceholder" class=""></div>
+                    <div id="botoesReposta" class="grupoBotoesResposta">
+                        <button id="botaoAlternativa1" class="botaoResposta btn btn-dark">Alternativa #1</button>
+                        <button id="botaoAlternativa2" class="botaoResposta btn btn-dark">Alternativa #2</button>
+                        <button id="botaoAlternativa3" class="botaoResposta btn btn-dark">Alternativa #3</button>
+                        <button id="botaoAlternativa4" class="botaoResposta btn btn-dark">Alternativa #4</button>
+                    </div>
+                    <div id="grupoBotoesAjuda" class="grupoBotoesAjuda">
+                        <button id="botaoCartas" class="btn btn-primary botaoAjuda">Utilizar cartas</button>
+                        <button id="botaoConvidados" class="btn btn-primary botaoAjuda">Perguntar ao professor</button>
+                        <button id="botaoPlacas" class="btn btn-primary botaoAjuda">Perguntar aos colegas</button>
+                        <button id="botaoPula" class="btn btn-primary botaoAjuda">Pular pergunta</button>
+                    </div>
+                    <div id="grupoBotoesControle" class="grupoBotoesControle">
+                        <button id="botaoProximo" class="botaoControle">Próximo</button>
+                        <button id="botaoReiniciar" class="botaoControle">Reiniciar</button>
+                    </div>
+                </div>      
+            </div>
 
-        
-            
-        
-        </div>
-        </div>
-        <?php 
-            $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
-            if ($stmt->execute()) {
-            while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                    echo "<img id='img".($rs->id)."' class='hidden imagem' src='data:image/jpeg;base64,".base64_encode($rs->imagem)."'/>";
+            </div>
+            </div>
+            <?php 
+                $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
+                if ($stmt->execute()) {
+                while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+                        echo "<a href='#' class='pop'>";
+                        echo "<img id='img".($rs->id)."' class='hidden imagem' src='data:image/jpeg;base64,".base64_encode($rs->imagem)."'/>";
+                        echo "</a>";
+                    }
                 }
-            }
-        ?>
+            ?>
+
+            <div id="c-alternativa" class="confirmacao-alternativa-popup hidden">
+	            <div class="confirmacao-alternativa-popup-container">
+		            <p>Você confirma que selecionou a alternativa?</p>
+		            <ul class="cd-buttons">
+                        <li><a id="c-alternativa-confirmar" href="#">Sim</a></li>
+                        <li><a id="c-alternativa-negar" href="#">Não</a></li>
+		            </ul>
+                </div> <!-- cd-popup-container -->
+            </div>
+
+            <div class="modal modal-imagem fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">              
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <img src="" class="imagepreview" style="width: 100%;" >
+                    </div>
+                </div>
+            </div>
+            
+
+            
+
+        </div>
         <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

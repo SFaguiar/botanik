@@ -1,3 +1,4 @@
+const bgAnimado = document.getElementById('bg-animado')
 const menuPrincipal = document.getElementById('menuPrincipal')
 const menuConfiguracoes = document.getElementById('menuConfiguracoes')
 const jogo = document.getElementById('jogo')
@@ -10,7 +11,6 @@ const botaoSalaDeAula = document.getElementById('botaoSalaDeAula')
 const botaoSozinho = document.getElementById('botaoSozinho')
 const sairMenuConfiguracoes = document.getElementById('voltarAoMenuPrincipal')
 
-const containerDaPergunta = document.getElementById('containerDaPergunta')
 const displayScore = document.getElementById('score')
 const textoDaPergunta = document.getElementById('pergunta')
 const elementoDosBotoesDeResposta = document.getElementById('botoesReposta')
@@ -19,11 +19,8 @@ const botao2 = document.getElementById('botaoAlternativa2')
 const botao3 = document.getElementById('botaoAlternativa3')
 const botao4 = document.getElementById('botaoAlternativa4')
 const botaoProximo = document.getElementById('botaoProximo')
-const botaoImagem = document.getElementById('botaoImagem')
-const botaoAjuda = document.getElementById('botaoAjuda')
 const botaoReiniciar = document.getElementById('botaoReiniciar')
 
-const containerDaAjuda = document.getElementById('containerDaAjuda')
 const containerDaImagem = document.getElementById('containerDaImagem')
 const botaoCartas = document.getElementById('botaoCartas')
 const botaoConvidados = document.getElementById('botaoConvidados')
@@ -32,7 +29,14 @@ const botaoPula = document.getElementById('botaoPula')
 const botaoCancelar = document.getElementById('botaoCancelar')
 const botaoFecharImagem = document.getElementById('botaoFecharImagem')
 
-let perguntasEmbaralhadas, indiceDaPerguntaAtual, score, resposta, ajudas, nivelAtual
+const containerConfirmacaoAlternativa = document.getElementById('c-alternativa')
+const botaoConfirmarAlternativa = document.getElementById('c-alternativa-confirmar')
+const botaoNegarAlternativa = document.getElementById('c-alternativa-negar')
+const BotaoFecharContainerConfirmacaoAlternativa = document.getElementById('c-alternativa-fechar')
+
+let perguntasEmbaralhadas, indiceDaPerguntaAtual, score, resposta, ajudas, nivelAtual, perguntaAtual, perguntaAtualTemImagem, botaoSelecionado
+
+let confirmado = false
 
 var windowHeight = 0
 var windowWidth = 0
@@ -45,26 +49,23 @@ botaoConfiguracoes.addEventListener('click', abrirConfiguracoes)
 sairMenuConfiguracoes.addEventListener('click', fecharConfiguracoes)
 
 botaoProximo.addEventListener('click', passarParaProximaPergunta)
-botaoAjuda.addEventListener('click', abrirContainerAjuda)
-botaoImagem.addEventListener('click', abrirContainerImagem)
 botaoReiniciar.addEventListener('click', iniciarJogo)
  
 botaoCartas.addEventListener('click', abrirCartas) 
 botaoConvidados.addEventListener('click', pedirAjudaConvidados)
 botaoPlacas.addEventListener('click', olharPlacas)
 botaoPula.addEventListener('click', pularPergunta) 
-botaoCancelar.addEventListener('click', fecharContainerAjuda)
-botaoFecharImagem.addEventListener('click', fecharContainerImagem)
 
+botaoConfirmarAlternativa.addEventListener('click', confirmarAlternativa)
+botaoNegarAlternativa.addEventListener('click', FecharContainerConfirmacaoAlternativa)
 
 function iniciarJogo(){
-    // esconde os botões
     menuPrincipal.classList.add('hidden')
-    // mostra os textos
+    bgAnimado.style.animationPlayState='paused'
     jogo.classList.remove('hidden')
-    destravarTodasAjudas()
-    mostrarBotoesAlternativas()
     botaoReiniciar.classList.add('hidden')
+    destravarTodasAjudas()
+    manipularBotoes('todosMenosControles', 'mostrar')
     // embaralha as perguntas
     perguntasEmbaralhadas = []
     perguntasEmbaralhadas[1] = perguntas[1].sort(() => Math.random() - .5)
@@ -73,7 +74,7 @@ function iniciarJogo(){
     perguntasEmbaralhadas[4] = perguntas[4].sort(() => Math.random() - .5)
     // seta o índice da pergunta e o score para 0
     //  cartas, convidados, placas, pula
-    ajudas = [true, true, true, 3]
+    ajudas = [2, 2, 1, 5]
     indiceDaPerguntaAtual = 0
     score = 0
     nivelAtual = 0
@@ -81,14 +82,14 @@ function iniciarJogo(){
     setProximaPergunta()
 }
 
-function calcularNivel(indiceDaPerguntaAtual){
-    if (indiceDaPerguntaAtual >= 0 && indiceDaPerguntaAtual <= 9){
+function calcularNivel(score){
+    if (score >= 0 && score <= 9){
         return 1
-    } else if (indiceDaPerguntaAtual >= 10 && indiceDaPerguntaAtual <= 19){
+    } else if (score >= 10 && score <= 19){
         return 2
-    } else if (indiceDaPerguntaAtual >= 20 && indiceDaPerguntaAtual <= 29){
+    } else if (score >= 20 && score <= 29){
         return 3
-    } else if (indiceDaPerguntaAtual >= 30){
+    } else if (score >= 30){
         return 4
     } else {
         return 0
@@ -97,10 +98,11 @@ function calcularNivel(indiceDaPerguntaAtual){
 
 function setProximaPergunta(){
     resetStatus()
-    nivelAtual = calcularNivel(indiceDaPerguntaAtual)
+    nivelAtual = calcularNivel(score)
     // seleciona a pergunta
     mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
     displayScore.innerText ='PONTUAÇÃO: ' + score
+
     perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
     resposta = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa1
 
@@ -114,11 +116,11 @@ function setProximaPergunta(){
     else if (numeroAleatorio === 4) {
         respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa4
     }
-    mostrarBotoesAlternativas()
+    manipularBotoes('todosMenosControles', 'mostrar')
     if (perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].imagem != "") {
-        botaoImagem.classList.remove('hidden')
         if (perguntaAtual.id == (document.getElementById('img' + perguntaAtual.id).id).slice(3)) {
             document.getElementById('img' + perguntaAtual.id).classList.remove('hidden')
+            perguntaAtualTemImagem = true
         }
     } 
 }
@@ -128,7 +130,6 @@ function resetStatus(){
     while (elementoDosBotoesDeResposta.firstChild){
         elementoDosBotoesDeResposta.removeChild(elementoDosBotoesDeResposta.firstChild)
     }
-    botaoAjuda.classList.remove('hidden')
     displayScore.classList.remove('hidden')
 }
 
@@ -166,54 +167,99 @@ function mostrarPergunta(pergunta){
     
 }
 
-function selecionarResposta(e){
-    const botaoSelecionado = e.target
+function confirmarAlternativa(){
     let acertou
-
     // verifica se acertou
     if(botaoSelecionado.innerText === resposta){
         //fluxo para acerto
         acertou = true
-        textoDaPergunta.innerHTML = 'ACERTOU! <br>'
-        displayScore.classList.add('hidden')
-        botaoAjuda.classList.add('hidden')
-        if (botaoImagem.classList.contains('hidden') != false) {
-            botaoImagem.classList.add('hidden')
+        if (perguntaAtualTemImagem){
+            document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
+            perguntaAtualTemImagem = false
         }
-        botaoImagem.classList.add('hidden')
-        ocultarBotoesAlternativas()
+        textoDaPergunta.innerHTML = 'ACERTOU!'
+        displayScore.classList.add('hidden')
+        manipularBotoes('todosMenosControles', 'ocultar')
         score += 1
 
     } else {
         //fluxo para erro
         acertou = false
+        if (perguntaAtualTemImagem){
+            document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
+            perguntaAtualTemImagem = false
+        }
         textoDaPergunta.innerHTML = 'GAME OVER! PONTUAÇÃO FINAL: ' + score
         displayScore.classList.add('hidden')
         botaoReiniciar.classList.remove('hidden')
         botaoProximo.classList.add('hidden')
-        if (botaoImagem.classList.contains('hidden') != false) {
-            botaoImagem.classList.add('hidden')
-        }
-        botaoAjuda.classList.add('hidden')
-        ocultarBotoesAlternativas()
+        /* AVERMELHAR BOTÕES ERRADOS */
+        manipularBotoes('todosMenosControles', 'ocultar')
     }
 
     // verifica se terminou
     if (numeroDePerguntas > indiceDaPerguntaAtual + 1 && acertou == true) {
         //fluxo se não terminou
+        /* MOSTRAR OS PLACARES */
         botaoProximo.classList.remove('hidden')
     } else {
         //fluxo se terminou
+        /* FINALIZAÇÃO DO JOGO */
         botaoProximo.classList.add('hidden')
         botaoReiniciar.classList.remove('hidden')
     }
+    document.getElementById('c-alternativa').classList.add('hidden')
 }
 
-function ocultarBotoesAlternativas(){
-    botao1.classList.add('hidden')
-    botao2.classList.add('hidden')
-    botao3.classList.add('hidden')
-    botao4.classList.add('hidden')
+function selecionarResposta(e){
+    botaoSelecionado = e.target
+    document.getElementById('c-alternativa').classList.remove('hidden')
+}
+
+function manipularBotoes(classe, acao){
+    if (acao === 'mostrar'){
+        if (classe === 'alternativas'){
+            botao1.classList.remove('hidden')
+            botao2.classList.remove('hidden')
+            botao3.classList.remove('hidden')
+            botao4.classList.remove('hidden')
+        } else if (classe === 'ajudas') {
+            botaoCartas.classList.remove('hidden')
+            botaoConvidados.classList.remove('hidden')
+            botaoPlacas.classList.remove('hidden')
+            botaoPula.classList.remove('hidden')
+        } else if (classe === 'todosMenosControles'){
+            botao1.classList.remove('hidden')
+            botao2.classList.remove('hidden')
+            botao3.classList.remove('hidden')
+            botao4.classList.remove('hidden')
+            botaoCartas.classList.remove('hidden')
+            botaoConvidados.classList.remove('hidden')
+            botaoPlacas.classList.remove('hidden')
+            botaoPula.classList.remove('hidden')
+        }
+    } else if (acao === 'ocultar') {
+        if (classe === 'alternativas'){
+            botao1.classList.add('hidden')
+            botao2.classList.add('hidden')
+            botao3.classList.add('hidden')
+            botao4.classList.add('hidden')
+        } else if (classe === 'ajudas') {
+            botaoCartas.classList.add('hidden')
+            botaoConvidados.classList.add('hidden')
+            botaoPlacas.classList.add('hidden')
+            botaoPula.classList.add('hidden')
+        } else if (classe === 'todosMenosControles'){
+            botao1.classList.add('hidden')
+            botao2.classList.add('hidden')
+            botao3.classList.add('hidden')
+            botao4.classList.add('hidden')
+            botaoCartas.classList.add('hidden')
+            botaoConvidados.classList.add('hidden')
+            botaoPlacas.classList.add('hidden')
+            botaoPula.classList.add('hidden')
+        }
+    }
 }
 
 function mostrarBotoesAlternativas(){
@@ -221,14 +267,6 @@ function mostrarBotoesAlternativas(){
     botao2.classList.remove('hidden')
     botao3.classList.remove('hidden')
     botao4.classList.remove('hidden')
-}
-
-function mostrarPulosRestantes(){
-    if (ajudas[3] > 0) {
-        document.getElementById("pulosRestantes").innerHTML = `<b>Você ainda tem ${ajudas[3]} pulos.</b>`
-    } else {
-        document.getElementById("pulosRestantes").innerHTML = `<b>Não há mais pulos restantes.</b>`
-    }
 }
 
 function setBotao1(pergunta){
@@ -255,9 +293,6 @@ function setBotao4(pergunta){
     elementoDosBotoesDeResposta.appendChild(botao4)
 }
 
-
-
-
 function redirecionarParaSiteDeRegras(){
     /* TO DO
         ADICIONAR SITE DAS REGRAS
@@ -276,32 +311,18 @@ function fecharConfiguracoes(){
 }
 
 function passarParaProximaPergunta(){
+    if (perguntaAtualTemImagem){
+        document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
+        perguntaAtualTemImagem = false
+    }
     indiceDaPerguntaAtual++
     setProximaPergunta()
 }
 
-function fecharContainerAjuda(){
-    containerDaAjuda.classList.add('hidden')
-}
-
-function abrirContainerAjuda(){
-    containerDaAjuda.classList.remove('hidden')
-    mostrarPulosRestantes()
-}
-
-function abrirContainerImagem(){
-    containerDaImagem.classList.remove('hidden')    
-}
-
-function fecharContainerImagem(){
-    containerDaImagem.classList.add('hidden')
-}
-
 function pularPergunta(){
     if (ajudas[3] > 0) {
-        if (numeroDePerguntas > indiceDaPerguntaAtual + 1) {
+        if (31 > score) {
             passarParaProximaPergunta()
-            containerDaAjuda.classList.add('hidden')
             ajudas[3] -= 1
             if (ajudas[3] === 0){
                 travarBotao(botaoPula)
@@ -311,7 +332,7 @@ function pularPergunta(){
 }
 
 function abrirCartas() {
-    if (ajudas[0] === true) {
+    if (ajudas[0] > 0) {
         cartaAberta = Math.floor((Math.random() * 3) + 1)
         console.log('Carta aberta! Mate ' + cartaAberta + ' alternativas erradas!')
         /* TO DO
@@ -327,54 +348,51 @@ function abrirCartas() {
             botao3.classList.add('hidden')
             botao4.classList.add('hidden')
         }
-        ajudas[0] = false
+        ajudas[0] -= 1
         travarBotao(botaoCartas)
     }
 }
 
 function pedirAjudaConvidados(){
-    if (ajudas[1] === true) {
+    if (ajudas[1] > 0) {
         let chance = Math.floor((Math.random() * 100))
         if (chance > 10){
             /* TO DO
                 ADICIONAR IMAGEM DOS CONVIDADOS
             */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${resposta}.`)
-            ajudas[1] = false
+            ajudas[1] -= 1
             travarBotao(botaoConvidados)
         } else {
             /* TO DO
                 ADICIONAR IMAGEM DOS CONVIDADOS
             */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${respostaErradaAleatoria}.`)
-            ajudas[1] = false
+            ajudas[1] -= 1
             travarBotao(botaoConvidados)
         }
     }
 }
 
 function olharPlacas(){
-    if (ajudas[2] === true){
+    if (ajudas[2] > 0){
         let porcentagemExibida = Math.floor((Math.random() * 50) + 50)
         /* TO DO
             ADICIONAR IMAGEM DAS PLACAS
         */
         console.log(`${porcentagemExibida}% da plateia disse que a alternativa correta é ${resposta}.`)
-        ajudas[2] = false
+        ajudas[2] -= 1
         travarBotao(botaoPlacas)
     }
 }
 
-
 function travarBotao(botao){
     botao.disabled = true
-    botao.classList.remove('btn-dark')
     botao.classList.add('btn-danger')
 }
 
 function destravarBotao(botao){
     botao.disabled = false
-    botao.classList.add('btn-dark')
     botao.classList.remove('btn-danger')
 }
 
@@ -385,8 +403,44 @@ function destravarTodasAjudas(){
     destravarBotao(botaoPlacas)
 }
 
-function ABRACADABRA123(){
+$(function() {
+    $('.pop').on('click', function() {
+        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        $('#imagemodal').modal('show');   
+    });		
+});
+
+function FecharContainerConfirmacaoAlternativa(){
+    containerConfirmacaoAlternativa.classList.add('hidden')
+}
+
+/* DEBUG */
+
+function DEBUG_SETARQUESTAO(perguntasEmbaralhadas, nivelPergunta, indiceDaPergunta){
+    displayScore.innerText ='DEBUG MODE'
+    mostrarPergunta(perguntasEmbaralhadas[nivelPergunta][indiceDaPergunta])
+    perguntaAtual = perguntasEmbaralhadas[nivelPergunta][indiceDaPergunta]
+    resposta = perguntasEmbaralhadas[nivelPergunta][indiceDaPergunta].alternativa1
+
+    respostaErradaAleatoria = 'DEBUG - SÃO ERRADAS:' + perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa2 + perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa3 + perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa4
+    
+    manipularBotoes('todosMenosControles', 'mostrar')
+    if (perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].imagem != "") {
+        if (perguntaAtual.id == (document.getElementById('img' + perguntaAtual.id).id).slice(3)) {
+            document.getElementById('img' + perguntaAtual.id).classList.remove('hidden')
+        }
+    } 
+}
+
+function DEBUG_MATARALTERNATIVAS(){
     botao2.classList.add('hidden')
     botao3.classList.add('hidden')
     botao4.classList.add('hidden')
+}
+
+function DEBUG_AJUDASINFINTIAS(){
+    ajudas[0] = 1000
+    ajudas[1] = 1000
+    ajudas[2] = 1000
+    ajudas[3] = 1000
 }
