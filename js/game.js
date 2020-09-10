@@ -1,3 +1,5 @@
+// Criação de referências para objetos dos DOM:
+/* --- MENU PRINCIPAL --- */
 const bgAnimado = document.getElementById('bg-animado')
 const menuPrincipal = document.getElementById('menuPrincipal')
 const menuConfiguracoes = document.getElementById('menuConfiguracoes')
@@ -7,10 +9,12 @@ const botaoStart = document.getElementById('botaoStart')
 const botaoRegras = document.getElementById('botaoRegras')
 const botaoConfiguracoes = document.getElementById('botaoConfiguracoes')
 
+/* --- MENU CONFIGURAÇÕES --- */
 const botaoSalaDeAula = document.getElementById('botaoSalaDeAula')
 const botaoSozinho = document.getElementById('botaoSozinho')
 const sairMenuConfiguracoes = document.getElementById('voltarAoMenuPrincipal')
 
+/* --- O JOGO --- */
 const displayScore = document.getElementById('score')
 const textoDaPergunta = document.getElementById('pergunta')
 const elementoDosBotoesDeResposta = document.getElementById('botoesReposta')
@@ -20,7 +24,12 @@ const botao3 = document.getElementById('botaoAlternativa3')
 const botao4 = document.getElementById('botaoAlternativa4')
 const botaoProximo = document.getElementById('botaoProximo')
 const botaoReiniciar = document.getElementById('botaoReiniciar')
+const containerConfirmacaoAlternativa = document.getElementById('c-alternativa')
+const botaoConfirmarAlternativa = document.getElementById('c-alternativa-confirmar')
+const botaoNegarAlternativa = document.getElementById('c-alternativa-negar')
+const BotaoFecharContainerConfirmacaoAlternativa = document.getElementById('c-alternativa-fechar')
 
+/* --- AJUDAS --- */
 const containerDaImagem = document.getElementById('containerDaImagem')
 const botaoCartas = document.getElementById('botaoCartas')
 const botaoConvidados = document.getElementById('botaoConvidados')
@@ -29,52 +38,50 @@ const botaoPula = document.getElementById('botaoPula')
 const botaoCancelar = document.getElementById('botaoCancelar')
 const botaoFecharImagem = document.getElementById('botaoFecharImagem')
 
-const containerConfirmacaoAlternativa = document.getElementById('c-alternativa')
-const botaoConfirmarAlternativa = document.getElementById('c-alternativa-confirmar')
-const botaoNegarAlternativa = document.getElementById('c-alternativa-negar')
-const BotaoFecharContainerConfirmacaoAlternativa = document.getElementById('c-alternativa-fechar')
-
-let perguntasEmbaralhadas, indiceDaPerguntaAtual, score, resposta, ajudas, nivelAtual, perguntaAtual, perguntaAtualTemImagem, botaoSelecionado
-
+// Criação e definição de variáveis globais:
+let ajudas, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score
 let confirmado = false
 
-var windowHeight = 0
-var windowWidth = 0
-
-
+// Atribuição de eventos para botões presentes no jogo:
+/* --- MENU PRINCIPAL --- */
 botaoStart.addEventListener('click', iniciarJogo)
 botaoRegras.addEventListener('click', redirecionarParaSiteDeRegras)
 botaoConfiguracoes.addEventListener('click', abrirConfiguracoes)
 
+/* --- MENU CONFIGURAÇÕES --- */
 sairMenuConfiguracoes.addEventListener('click', fecharConfiguracoes)
 
+/* --- CONTROLES --- */
 botaoProximo.addEventListener('click', passarParaProximaPergunta)
 botaoReiniciar.addEventListener('click', iniciarJogo)
+botaoConfirmarAlternativa.addEventListener('click', confirmarAlternativa)
+botaoNegarAlternativa.addEventListener('click', FecharContainerConfirmacaoAlternativa)
  
+/* --- AJUDAS --- */
 botaoCartas.addEventListener('click', abrirCartas) 
 botaoConvidados.addEventListener('click', pedirAjudaConvidados)
 botaoPlacas.addEventListener('click', olharPlacas)
 botaoPula.addEventListener('click', pularPergunta) 
 
-botaoConfirmarAlternativa.addEventListener('click', confirmarAlternativa)
-botaoNegarAlternativa.addEventListener('click', FecharContainerConfirmacaoAlternativa)
-
+// Funções do jogo:
 function iniciarJogo(){
     menuPrincipal.classList.add('hidden')
     bgAnimado.style.animationPlayState='paused'
     jogo.classList.remove('hidden')
     botaoReiniciar.classList.add('hidden')
     destravarTodasAjudas()
+    resetarCoresAlternativas()
     manipularBotoes('todosMenosControles', 'mostrar')
-    // embaralha as perguntas
+
+    // Embaralhamento de perguntas:
     perguntasEmbaralhadas = []
     perguntasEmbaralhadas[1] = perguntas[1].sort(() => Math.random() - .5)
     perguntasEmbaralhadas[2] = perguntas[2].sort(() => Math.random() - .5)
     perguntasEmbaralhadas[3] = perguntas[3].sort(() => Math.random() - .5)
     perguntasEmbaralhadas[4] = perguntas[4].sort(() => Math.random() - .5)
-    // seta o índice da pergunta e o score para 0
-    //  cartas, convidados, placas, pula
-    ajudas = [2, 2, 1, 5]
+
+    // Reinicialização das variáveis globais:
+    ajudas = [2, 2, 2, 5] //cartas, convidados, placas, pula, respectivamente.
     indiceDaPerguntaAtual = 0
     score = 0
     nivelAtual = 0
@@ -82,6 +89,7 @@ function iniciarJogo(){
     setProximaPergunta()
 }
 
+// Função que calcula o nível atual do jogador baseado em sua pontuação no momento:
 function calcularNivel(score){
     if (score >= 0 && score <= 9){
         return 1
@@ -96,8 +104,10 @@ function calcularNivel(score){
     }
 }
 
+// Função que prepara e exibe uma nova pergunta:
 function setProximaPergunta(){
     resetStatus()
+    destravarAjudas()
     nivelAtual = calcularNivel(score)
     // seleciona a pergunta
     mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
@@ -133,8 +143,11 @@ function resetStatus(){
     displayScore.classList.remove('hidden')
 }
 
+// Função que mostra, graficamente, uma nova pergunta:
 function mostrarPergunta(pergunta){
+    resetarCoresAlternativas()
     textoDaPergunta.innerText = pergunta.comando
+    /* MOSTRAR IMAGEM */
     posicionamento = Math.floor(Math.random() * 4)
 
     if (posicionamento == 0){
@@ -167,48 +180,81 @@ function mostrarPergunta(pergunta){
     
 }
 
+// Função que é acionada após a confirmação de alternativa:
 function confirmarAlternativa(){
     let acertou
-    // verifica se acertou
-    if(botaoSelecionado.innerText === resposta){
-        //fluxo para acerto
-        acertou = true
-        if (perguntaAtualTemImagem){
-            document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
-            perguntaAtualTemImagem = false
-        }
-        textoDaPergunta.innerHTML = 'ACERTOU!'
-        displayScore.classList.add('hidden')
-        manipularBotoes('todosMenosControles', 'ocultar')
+
+    // Modificações na exibição:
+    mudarCoresAlternativas()
+    travarAjudas()
+
+    // Verifica se acertou:
+    if (botaoSelecionado.innerText === resposta){
+        /* --- FLUXO PARA ACERTO --- */
+        // Modificações nas variáveis globais:
         score += 1
+        acertou = true
 
     } else {
-        //fluxo para erro
+        /* --- FLUXO PARA ERRO --- */
+        // Modificações nas variáveis globais:
         acertou = false
-        if (perguntaAtualTemImagem){
-            document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
-            perguntaAtualTemImagem = false
-        }
-        textoDaPergunta.innerHTML = 'GAME OVER! PONTUAÇÃO FINAL: ' + score
-        displayScore.classList.add('hidden')
-        botaoReiniciar.classList.remove('hidden')
-        botaoProximo.classList.add('hidden')
-        /* AVERMELHAR BOTÕES ERRADOS */
-        manipularBotoes('todosMenosControles', 'ocultar')
+
     }
 
-    // verifica se terminou
+    /* --- VERIFICAÇÃO DE FIM DE JOGO --- */
     if (numeroDePerguntas > indiceDaPerguntaAtual + 1 && acertou == true) {
-        //fluxo se não terminou
-        /* MOSTRAR OS PLACARES */
+        // Se o jogo ainda não terminou:
         botaoProximo.classList.remove('hidden')
     } else {
-        //fluxo se terminou
+        // Se o jogo terminou:
         /* FINALIZAÇÃO DO JOGO */
         botaoProximo.classList.add('hidden')
         botaoReiniciar.classList.remove('hidden')
     }
+
+    // Mostra a caixa de confirmação de alternativa:
     document.getElementById('c-alternativa').classList.add('hidden')
+}
+
+// Função que colore as alternativas após a confirmação da seleção:
+function mudarCoresAlternativas(){
+    botao1.style.backgroundColor = '#00FF00'
+    botao2.style.backgroundColor = '#FF0000'
+    botao3.style.backgroundColor = '#FF0000'
+    botao4.style.backgroundColor = '#FF0000'
+
+    botao1.disabled = true
+    botao2.disabled = true
+    botao3.disabled = true
+    botao4.disabled = true
+}
+
+// Função que descolore as alternativas após uma nova questão ser exibida:
+function resetarCoresAlternativas(){
+    botao1.style.backgroundColor = '#778899'
+    botao2.style.backgroundColor = '#778899'
+    botao3.style.backgroundColor = '#778899'
+    botao4.style.backgroundColor = '#778899'
+
+    botao1.disabled = false
+    botao2.disabled = false
+    botao3.disabled = false
+    botao4.disabled = false
+}
+
+function travarAjudas(){
+    botaoCartas.disabled = true
+    botaoConvidados.disabled = true
+    botaoPlacas.disabled = true
+    botaoPula.disabled = true
+}
+
+function destravarAjudas(){
+    if (ajudas[0] > 0) {botaoCartas.disabled = false}
+    if (ajudas[1] > 0) {botaoConvidados.disabled = false}
+    if (ajudas[2] > 0) {botaoPlacas.disabled = false}
+    if (ajudas[3] > 0) {botaoPula.disabled = false}
 }
 
 function selecionarResposta(e){
@@ -262,13 +308,6 @@ function manipularBotoes(classe, acao){
     }
 }
 
-function mostrarBotoesAlternativas(){
-    botao1.classList.remove('hidden')
-    botao2.classList.remove('hidden')
-    botao3.classList.remove('hidden')
-    botao4.classList.remove('hidden')
-}
-
 function setBotao1(pergunta){
     botao1.innerText = pergunta.alternativa1
     botao1.addEventListener('click', selecionarResposta)
@@ -310,11 +349,16 @@ function fecharConfiguracoes(){
    menuConfiguracoes.classList.add('hidden')
 }
 
-function passarParaProximaPergunta(){
+function mostrarPlacar(){
+    // Se a pergunta respondida anteriormente tem uma imagem:
     if (perguntaAtualTemImagem){
         document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
         perguntaAtualTemImagem = false
     }
+
+}
+
+function passarParaProximaPergunta(){
     indiceDaPerguntaAtual++
     setProximaPergunta()
 }
@@ -348,8 +392,11 @@ function abrirCartas() {
             botao3.classList.add('hidden')
             botao4.classList.add('hidden')
         }
-        ajudas[0] -= 1
-        travarBotao(botaoCartas)
+        ajudas[0]--
+        if (ajudas[0] === 0){
+            travarBotao(botaoCartas)
+        }
+        
     }
 }
 
@@ -361,15 +408,19 @@ function pedirAjudaConvidados(){
                 ADICIONAR IMAGEM DOS CONVIDADOS
             */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${resposta}.`)
-            ajudas[1] -= 1
-            travarBotao(botaoConvidados)
+            ajudas[1]--
+            if (ajudas[1] === 0){
+                travarBotao(botaoConvidados)
+            }
         } else {
             /* TO DO
                 ADICIONAR IMAGEM DOS CONVIDADOS
             */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${respostaErradaAleatoria}.`)
-            ajudas[1] -= 1
-            travarBotao(botaoConvidados)
+            ajudas[1]--
+            if (ajudas[1] === 0){
+                travarBotao(botaoConvidados)
+            }
         }
     }
 }
@@ -381,8 +432,10 @@ function olharPlacas(){
             ADICIONAR IMAGEM DAS PLACAS
         */
         console.log(`${porcentagemExibida}% da plateia disse que a alternativa correta é ${resposta}.`)
-        ajudas[2] -= 1
-        travarBotao(botaoPlacas)
+        ajudas[2]--
+        if (ajudas[2] === 0){
+            travarBotao(botaoPlacas)
+        }
     }
 }
 
@@ -438,7 +491,7 @@ function DEBUG_MATARALTERNATIVAS(){
     botao4.classList.add('hidden')
 }
 
-function DEBUG_AJUDASINFINTIAS(){
+function DEBUG_AJUDASINFINITAS(){
     ajudas[0] = 1000
     ajudas[1] = 1000
     ajudas[2] = 1000

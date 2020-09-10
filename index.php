@@ -46,8 +46,8 @@
                 </div>
                 <div id="grupoBotoesMenuPrincipal" class="grupoBotoesMenuPrincipal btn-group-vertical">
                     <button id="botaoStart" class="botaoDoMenuPrincipal">Começar</button>
-                    <button id="botaoRegras" class="botaoDoMenuPrincipal">Regras</button>
-                    <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal">Configurações</button>
+                    <button id="botaoRegras" class="botaoDoMenuPrincipal hidden">Regras</button>
+                    <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal hidden">Configurações</button>
                 </div>
             </div>
             <!--- MENU DE CONFIGURAÇÕES --->

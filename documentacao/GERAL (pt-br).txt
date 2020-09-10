@@ -4,12 +4,6 @@ Botanik é um jogo digital de perguntas e respostas sobre botânica para ser jog
 
 O jogo foi concebido pela professora Sílvia Mardegan, do Instituto de Ciências Biológicas (ICB) da Universidade Federal do Pará para auxiliar alunos do ensino fundamental e médio brasileiro no aprendizado da matéria de botânica.
 
-Look how easy it is to use:
-
-    import project
-    # Get your stuff done
-    project.do_stuff()
-
 Features
 --------
 
@@ -62,20 +56,17 @@ CREATE TABLE `perguntas_jogo` (
   `alternativa4` varchar(200) COLLATE utf8_unicode_ci NOT NULL
 )
 
-Basta executar esse comando no banco de dados para a criação da tabela.
+Basta executar esse comando no banco de dados para a criação da tabela. O SQL para a criação da tabela completa da primeira versão está disponível na pasta "SQL".
 
-
-Install $project by running:
-
-    install project
+Após todo o setup, basta ligar o servidor e o banco de dados que o jogo deve funcionar normalmente.
 
 Contribua
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+- Issue Tracker: github.com/RFLMNaguiar/botanik/issues
+- Source Code: github.com/RFLMNaguiar/botanik
 
-Support
+Suporte
 -------
 
 Se você encontrar algum bug, por favor mande-nos alguma mensagem!
@@ -83,7 +74,7 @@ E-mail: RFLMNaguiar@gmail.com
 
 (Samuel Aguiar, desenvolvedor do jogo e aluno de Ciência da Computação da UFPA)
 
-Licensa
+Licença
 -------
 
-Esse projeto atualmente (09/09/2020) não apresenta nenhuma licensa, portanto é de uso livre para edição e reprodução.
+Esse projeto atualmente (09/09/2020) não apresenta nenhuma licença, portanto é de uso livre para edição e reprodução.
