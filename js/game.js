@@ -111,7 +111,7 @@ function setProximaPergunta(){
     nivelAtual = calcularNivel(score)
     // seleciona a pergunta
     mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
-    displayScore.innerText ='PONTUAÇÃO: ' + score
+    displayScore.innerText =' NIVEL: ' + nivelAtual + ' PONTUAÇÃO: ' + score + ' (N' + nivelAtual + 'Q' + (score + 1) + ')'
 
     perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
     resposta = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa1
@@ -333,10 +333,7 @@ function setBotao4(pergunta){
 }
 
 function redirecionarParaSiteDeRegras(){
-    /* TO DO
-        ADICIONAR SITE DAS REGRAS
-    */
-    window.location.href = "regras.php";
+    window.location.href = "informacoes.php";
 }
 
 function abrirConfiguracoes(){
@@ -382,9 +379,9 @@ function abrirCartas() {
         /* TO DO
             ADICIONAR ESPAÇO PARA ESCOLHER A CARTA
         */
-        if (cartaAberta === 1 ) {
+        if (cartaAberta === 1) {
             botao2.classList.add('hidden')
-        } else if (cartaAberta === 2 ) {
+        } else if (cartaAberta === 2) {
             botao2.classList.add('hidden')
             botao3.classList.add('hidden')
         } else if (cartaAberta === 3) {
@@ -396,7 +393,6 @@ function abrirCartas() {
         if (ajudas[0] === 0){
             travarBotao(botaoCartas)
         }
-        
     }
 }
 
