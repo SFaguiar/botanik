@@ -190,13 +190,13 @@ body{
 .score {
     /* --- POSICIONAMENTO --- */
     position: fixed;
-    top: 92%;
+    top: 90%;
     left: 78%;
 
     /* --- TAMANHO --- */
     width: 20%;
     height: 10%;
-    font-size: 150%;
+    font-size: 140%;
 
     text-align: center;
 }

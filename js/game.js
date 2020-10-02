@@ -24,10 +24,16 @@ const botao3 = document.getElementById('botaoAlternativa3')
 const botao4 = document.getElementById('botaoAlternativa4')
 const botaoProximo = document.getElementById('botaoProximo')
 const botaoReiniciar = document.getElementById('botaoReiniciar')
+
 const containerConfirmacaoAlternativa = document.getElementById('c-alternativa')
 const botaoConfirmarAlternativa = document.getElementById('c-alternativa-confirmar')
 const botaoNegarAlternativa = document.getElementById('c-alternativa-negar')
-const BotaoFecharContainerConfirmacaoAlternativa = document.getElementById('c-alternativa-fechar')
+const botaoFecharContainerConfirmacaoAlternativa = document.getElementById('c-alternativa-fechar')
+
+const containerConfirmacaoAjuda = document.getElementById('c-ajuda')
+const botaoConfirmarAjuda = document.getElementById('c-ajuda-confirmar')
+const botaoNegarAjuda = document.getElementById('c-ajuda-negar')
+const botaoFecharContainerConfirmacaoAjuda = document.getElementById('c-ajuda-fechar')
 
 /* --- AJUDAS --- */
 const containerDaImagem = document.getElementById('containerDaImagem')
@@ -42,7 +48,7 @@ const caixaCartaVirada = document.getElementById('caixaCartaVirada')
 const carta = document.getElementById('card')
 
 // Criação e definição de variáveis globais:
-let ajudas, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score
+let ajudas, ajudaSelecionada, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score
 let confirmado = false
 
 // Atribuição de eventos para botões presentes no jogo:
@@ -57,14 +63,19 @@ sairMenuConfiguracoes.addEventListener('click', fecharConfiguracoes)
 /* --- CONTROLES --- */
 botaoProximo.addEventListener('click', passarParaProximaPergunta)
 botaoReiniciar.addEventListener('click', iniciarJogo)
+
 botaoConfirmarAlternativa.addEventListener('click', confirmarAlternativa)
-botaoNegarAlternativa.addEventListener('click', FecharContainerConfirmacaoAlternativa)
+botaoNegarAlternativa.addEventListener('click', fecharContainerConfirmacaoAlternativa)
+
+botaoConfirmarAjuda.addEventListener('click', confirmarAjuda)
+botaoNegarAjuda.addEventListener('click', fecharContainerConfirmacaoAjuda)
  
 /* --- AJUDAS --- */
-botaoCartas.addEventListener('click', mostrarCartaParaAbrir) 
-botaoConvidados.addEventListener('click', pedirAjudaConvidados)
-botaoPlacas.addEventListener('click', olharPlacas)
-botaoPula.addEventListener('click', pularPergunta) 
+botaoCartas.addEventListener('click', acionarAjuda) 
+botaoConvidados.addEventListener('click', acionarAjuda)
+botaoPlacas.addEventListener('click', acionarAjuda)
+botaoPula.addEventListener('click', acionarAjuda)
+
 botaoMatarAlternativas.addEventListener('click', abrirCartas)
 
 // Funções do jogo:
@@ -221,6 +232,25 @@ function confirmarAlternativa(){
     document.getElementById('c-alternativa').classList.add('hidden')
 }
 
+function confirmarAjuda(){
+    if(ajudaSelecionada === 'botaoCartas'){
+        carta.classList.remove('hidden')
+        containerConfirmacaoAjuda.classList.add('hidden')
+    }
+    else if(ajudaSelecionada === 'botaoConvidados'){
+        pedirAjudaConvidados()
+        containerConfirmacaoAjuda.classList.add('hidden')
+    }
+    else if(ajudaSelecionada === 'botaoPlacas'){
+        olharPlacas()
+        containerConfirmacaoAjuda.classList.add('hidden')
+    }
+    else if(ajudaSelecionada === 'botaoPula'){
+        pularPergunta()
+        containerConfirmacaoAjuda.classList.add('hidden')
+    }
+}
+
 // Função que colore as alternativas após a confirmação da seleção:
 function mudarCoresAlternativas(){
     botao1.style.backgroundColor = '#00CC00'
@@ -375,13 +405,15 @@ function pularPergunta(){
     }
 }
 
+function acionarAjuda(e){
+    ajudaSelecionada = e.target.id
+    document.getElementById('c-ajuda').classList.remove('hidden')
+}
+
 function abrirCartas() {
     if (ajudas[0] > 0) {
         cartaAberta = Math.floor((Math.random() * 3) + 1)
-        console.log('Carta aberta! Mate ' + cartaAberta + ' alternativas erradas!')
-        /* TO DO
-            ADICIONAR ESPAÇO PARA ESCOLHER A CARTA
-        */
+        console.log('Carta aberta! Eliminada(s) ' + cartaAberta + ' alternativa(s) errada(s)!')
         if (cartaAberta === 1) {
             botao2.classList.add('hidden')
         } else if (cartaAberta === 2) {
@@ -399,18 +431,16 @@ function abrirCartas() {
         carta.classList.add('hidden')
         caixaCartaVirada.checked = false;
     }
+    /* TO DO: Adicionar texto mostrando quantas alternativas foram eliminadas */
 }
 
-function mostrarCartaParaAbrir(){
-    carta.classList.remove('hidden')
-}
-
+// Convidados === Professor.
 function pedirAjudaConvidados(){
     if (ajudas[1] > 0) {
         let chance = Math.floor((Math.random() * 100))
         if (chance > 10){
             /* TO DO
-                ADICIONAR IMAGEM DOS CONVIDADOS
+                ADICIONAR IMAGEM DO PROFESSOR
             */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${resposta}.`)
             ajudas[1]--
@@ -419,7 +449,7 @@ function pedirAjudaConvidados(){
             }
         } else {
             /* TO DO
-                ADICIONAR IMAGEM DOS CONVIDADOS
+                ADICIONAR IMAGEM DO PROFESSOR
             */
             console.log(`2 dos 3 convidados disseram que a alternativa correta é ${respostaErradaAleatoria}.`)
             ajudas[1]--
@@ -430,11 +460,12 @@ function pedirAjudaConvidados(){
     }
 }
 
+// Placas === Colegas.
 function olharPlacas(){
     if (ajudas[2] > 0){
         let porcentagemExibida = Math.floor((Math.random() * 50) + 50)
         /* TO DO
-            ADICIONAR IMAGEM DAS PLACAS
+            ADICIONAR IMAGEM DOS COLEGAS
         */
         console.log(`${porcentagemExibida}% da plateia disse que a alternativa correta é ${resposta}.`)
         ajudas[2]--
@@ -477,8 +508,12 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 
-function FecharContainerConfirmacaoAlternativa(){
+function fecharContainerConfirmacaoAlternativa(){
     containerConfirmacaoAlternativa.classList.add('hidden')
+}
+
+function fecharContainerConfirmacaoAjuda(){
+    containerConfirmacaoAjuda.classList.add('hidden')
 }
 
 /* DEBUG */
