@@ -84,6 +84,7 @@ function iniciarJogo(){
     bgAnimado.style.animationPlayState='paused'
     jogo.classList.remove('hidden')
     botaoReiniciar.classList.add('hidden')
+    removerImagem()
     destravarTodasAjudas()
     resetarCoresAlternativas()
     manipularBotoes('todosMenosControles', 'mostrar')
@@ -209,12 +210,10 @@ function confirmarAlternativa(){
         // Modificações nas variáveis globais:
         score += 1
         acertou = true
-
     } else {
         /* --- FLUXO PARA ERRO --- */
         // Modificações nas variáveis globais:
         acertou = false
-
     }
 
     /* --- VERIFICAÇÃO DE FIM DE JOGO --- */
@@ -380,7 +379,7 @@ function fecharConfiguracoes(){
    menuConfiguracoes.classList.add('hidden')
 }
 
-function mostrarPlacar(){
+function removerImagem(){
     // Se a pergunta respondida anteriormente tem uma imagem:
     if (perguntaAtualTemImagem){
         document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
@@ -389,10 +388,7 @@ function mostrarPlacar(){
 }
 
 function passarParaProximaPergunta(){
-    if (perguntaAtualTemImagem){
-        document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
-        perguntaAtualTemImagem = false
-    }
+    removerImagem()
     indiceDaPerguntaAtual++
     setProximaPergunta()
 }
