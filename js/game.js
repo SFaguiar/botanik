@@ -389,6 +389,10 @@ function mostrarPlacar(){
 }
 
 function passarParaProximaPergunta(){
+    if (perguntaAtualTemImagem){
+        document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
+        perguntaAtualTemImagem = false
+    }
     indiceDaPerguntaAtual++
     setProximaPergunta()
 }
