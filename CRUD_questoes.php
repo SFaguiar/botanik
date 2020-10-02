@@ -1,6 +1,6 @@
 <?php
   include("conexao.php");
-  if ($_REQUEST["salvo"] == true) {
+  if (isset($_REQUEST["salvo"]) && ($_REQUEST["salvo"] == true)) {
     echo "QUESTÃO NOVA SALVA COM SUCESSO!";
   }
 ?>
@@ -123,7 +123,7 @@
                 echo "<td>";
                   echo "<center>";
                     echo "<form action='tratar.php' method='POST' name='form".$rs->id."U' enctype='multipart/form-data'>";
-                      echo "<input type='hidden' name='acao' value='redirecionarEditar'>";
+                      echo "<input type='hidden' name='acao' value='redirecionarParaEditar'>";
                       echo "<button type='submit' name='id' class='btn btn-secondary' value=".$rs->id.">[ALTERAR]</button>";
                     echo "</form>";
                     echo "<form action='tratar.php' method='POST' name='form".$rs->id."D' enctype='multipart/form-data'>";

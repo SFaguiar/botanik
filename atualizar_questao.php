@@ -1,13 +1,8 @@
 <?php
     include("conexao.php");
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-
     $q = "SELECT * FROM perguntas_jogo WHERE id = ".$_POST['id'];
     $stmt = $conexao->query($q);
     $questao = $stmt->fetch(PDO::FETCH_ASSOC);
-    print_r($questao);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,12 +10,12 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="css/bootstrap.min.css">
-      <title>Criar, ler, atualizar e deletar: banco de questões</title>
+      <title>Editando questão de ID <?php print_r($_POST['id']) ?></title>
     </head>
 
     <body style="margin: 10px 10px 10px 10px">
     <header>
-      <h1>Criar, Ler, Atualizar e Deletar: Banco de Questões</h1>
+      <h1>Editando questão de ID <?php print_r($_POST['id']) ?>.</h1>
       <hr>
     </header>
     <!--- FORMULÁRIO --->
@@ -32,18 +27,32 @@
           <div class="col">
           <h5>Nível:</h5>
             <select class="form-control" id="nivel" name="nivel">
-              <option value="1">1 - FÁCIL</option>
-              <option value="2">2 - MÉDIO</option>
-              <option value="3">3 - DIFÍCIL</option>
-              <option value="4">4 - PERGUNTA FINAL (PARA ÚLTIMA PERGUNTA)</option>
+              <option value="1" <?php if($questao['nivel'] == 1){
+                echo "selected";
+              } ?>>1 - FÁCIL</option>
+              <option value="2" <?php if($questao['nivel'] == 2){
+                echo "selected";
+              } ?>>2 - MÉDIO</option>
+              <option value="3" <?php if($questao['nivel'] == 3){
+                echo "selected";
+              } ?>>3 - DIFÍCIL</option>
+              <option value="4" <?php if($questao['nivel'] == 4){
+                echo "selected";
+              } ?>>4 - PERGUNTA FINAL (PARA ÚLTIMA PERGUNTA)</option>
             </select>
           </div>
           <div class="col">
             <h5>Tipo:</h5>
             <select class="form-control" id="tipo" name="tipo">
-              <option value="ecologia e fisiologia vegetal">Ecologia e Fisiologia Vegetal</option>
-              <option value="morfologia e anatomia vegetal">Morfologia e Anatomia Vegetal</option>
-              <option value="diversidade">Diversidade</option>
+              <option value="ecologia e fisiologia vegetal" <?php if($questao['tipo'] == 'ecologia e fisiologia vegetal'){
+                echo "selected";
+              } ?>>Ecologia e Fisiologia Vegetal</option>
+              <option value="morfologia e anatomia vegetal" <?php if($questao['tipo'] == 'morfologia e anatomia vegetal'){
+                echo "selected";
+              } ?>>Morfologia e Anatomia Vegetal</option>
+              <option value="diversidade" <?php if($questao['tipo'] == 'diversidade'){
+                echo "selected";
+              } ?>>Diversidade</option>
             </select>
           </div>
         </div>

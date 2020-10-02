@@ -37,6 +37,9 @@ const botaoPlacas = document.getElementById('botaoPlacas')
 const botaoPula = document.getElementById('botaoPula')
 const botaoCancelar = document.getElementById('botaoCancelar')
 const botaoFecharImagem = document.getElementById('botaoFecharImagem')
+const botaoMatarAlternativas = document.getElementById('botaoMatarAlternativas')
+const caixaCartaVirada = document.getElementById('caixaCartaVirada')
+const carta = document.getElementById('card')
 
 // Criação e definição de variáveis globais:
 let ajudas, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score
@@ -58,10 +61,11 @@ botaoConfirmarAlternativa.addEventListener('click', confirmarAlternativa)
 botaoNegarAlternativa.addEventListener('click', FecharContainerConfirmacaoAlternativa)
  
 /* --- AJUDAS --- */
-botaoCartas.addEventListener('click', abrirCartas) 
+botaoCartas.addEventListener('click', mostrarCartaParaAbrir) 
 botaoConvidados.addEventListener('click', pedirAjudaConvidados)
 botaoPlacas.addEventListener('click', olharPlacas)
 botaoPula.addEventListener('click', pularPergunta) 
+botaoMatarAlternativas.addEventListener('click', abrirCartas)
 
 // Funções do jogo:
 function iniciarJogo(){
@@ -111,7 +115,7 @@ function setProximaPergunta(){
     nivelAtual = calcularNivel(score)
     // seleciona a pergunta
     mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
-    displayScore.innerText =' NIVEL: ' + nivelAtual + ' PONTUAÇÃO: ' + score + ' (N' + nivelAtual + 'Q' + (score + 1) + ')'
+    displayScore.innerText =' NIVEL: ' + nivelAtual + ' PONTUAÇÃO: ' + score
 
     perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
     resposta = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa1
@@ -219,10 +223,10 @@ function confirmarAlternativa(){
 
 // Função que colore as alternativas após a confirmação da seleção:
 function mudarCoresAlternativas(){
-    botao1.style.backgroundColor = '#00FF00'
-    botao2.style.backgroundColor = '#FF0000'
-    botao3.style.backgroundColor = '#FF0000'
-    botao4.style.backgroundColor = '#FF0000'
+    botao1.style.backgroundColor = '#00CC00'
+    botao2.style.backgroundColor = '#CC0000'
+    botao3.style.backgroundColor = '#CC0000'
+    botao4.style.backgroundColor = '#CC0000'
 
     botao1.disabled = true
     botao2.disabled = true
@@ -352,7 +356,6 @@ function mostrarPlacar(){
         document.getElementById('img' + perguntaAtual.id).classList.add('hidden')
         perguntaAtualTemImagem = false
     }
-
 }
 
 function passarParaProximaPergunta(){
@@ -393,7 +396,13 @@ function abrirCartas() {
         if (ajudas[0] === 0){
             travarBotao(botaoCartas)
         }
+        carta.classList.add('hidden')
+        caixaCartaVirada.checked = false;
     }
+}
+
+function mostrarCartaParaAbrir(){
+    carta.classList.remove('hidden')
 }
 
 function pedirAjudaConvidados(){
@@ -452,12 +461,21 @@ function destravarTodasAjudas(){
     destravarBotao(botaoPlacas)
 }
 
+// function virarCarta(e){
+//     c = e.target
+//     c.classList.add('carta-on-click')
+// }
+
 $(function() {
     $('.pop').on('click', function() {
         $('.imagepreview').attr('src', $(this).find('img').attr('src'));
         $('#imagemodal').modal('show');   
     });		
 });
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
 
 function FecharContainerConfirmacaoAlternativa(){
     containerConfirmacaoAlternativa.classList.add('hidden')

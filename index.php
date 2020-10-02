@@ -38,63 +38,65 @@
     <body>
         <div id="bg-animado" class="bg">
             <div class="margem">
-            <!--- MENU PRINCIPAL --->
-            <div id="menuPrincipal">
-                <div id="cabecalho" class="cabecalho">
-                    <div id="titulo" class="titulo">BOTANIK</div>
-                    <div id="subtitulo" class="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</div>
+                <!--- MENU PRINCIPAL --->
+                <div id="menuPrincipal">
+                    <div id="cabecalho" class="cabecalho">
+                        <div id="titulo" class="titulo">BOTANIK</div>
+                        <div id="subtitulo" class="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</div>
+                    </div>
+                    <div id="grupoBotoesMenuPrincipal" class="grupoBotoesMenuPrincipal btn-group-vertical">
+                        <button id="botaoStart" class="botaoDoMenuPrincipal">Começar</button>
+                        <button id="botaoRegras" class="botaoDoMenuPrincipal">Contribuição e contato</button>
+                        <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal hidden">Configurações</button>
+                    </div>
                 </div>
-                <div id="grupoBotoesMenuPrincipal" class="grupoBotoesMenuPrincipal btn-group-vertical">
-                    <button id="botaoStart" class="botaoDoMenuPrincipal">Começar</button>
-                    <button id="botaoRegras" class="botaoDoMenuPrincipal">Contribuição e contato</button>
-                    <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal hidden">Configurações</button>
-                </div>
-            </div>
-            <!--- MENU DE CONFIGURAÇÕES --->
-            <div id="menuConfiguracoes" class="menuConfiguracoes hidden">
-                <div id="tituloConfiguracoes" class="display-4 tituloConfiguracoes">CONFIGURAÇÕES</div>
-                <div id="grupoBotoesConfiguracoes" class="grupoBotoesConfiguracoes" >
-                    <div id="ambienteDeAplicacao">
-                        <h4>Ambiente de aplicação:</h4> 
-                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="btn-group mr-1">
-                                <button id="botaoSalaDeAula" class="btn btn-info">Sala de aula</button>
-                                <button id="botaoSozinho" class="btn btn-info">Sozinho</button>
+                <!--- MENU DE CONFIGURAÇÕES --->
+                <div id="menuConfiguracoes" class="menuConfiguracoes hidden">
+                    <div id="tituloConfiguracoes" class="display-4 tituloConfiguracoes">CONFIGURAÇÕES</div>
+                    <div id="grupoBotoesConfiguracoes" class="grupoBotoesConfiguracoes" >
+                        <div id="ambienteDeAplicacao">
+                            <h4>Ambiente de aplicação:</h4> 
+                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                <div class="btn-group mr-1">
+                                    <button id="botaoSalaDeAula" class="btn btn-info">Sala de aula</button>
+                                    <button id="botaoSozinho" class="btn btn-info">Sozinho</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <button id="voltarAoMenuPrincipal">Voltar ao menu principal</button>
+                        <div>
+                            <button id="voltarAoMenuPrincipal">Voltar ao menu principal</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--- O JOGO --->
-            <div id="jogo" class="jogo hidden">
-                <div class="janelaPrincipal">
-                    <div id="score" class="score h4">PONTUAÇÃO</div>
-                    <div id="pergunta" class="comando">Pergunta</div>
-                    <div id="imagemPlaceholder" class=""></div>
-                    <div id="botoesReposta" class="grupoBotoesResposta">
-                        <button id="botaoAlternativa1" class="botaoResposta btn btn-dark">Alternativa #1</button>
-                        <button id="botaoAlternativa2" class="botaoResposta btn btn-dark">Alternativa #2</button>
-                        <button id="botaoAlternativa3" class="botaoResposta btn btn-dark">Alternativa #3</button>
-                        <button id="botaoAlternativa4" class="botaoResposta btn btn-dark">Alternativa #4</button>
-                    </div>
-                    <div id="grupoBotoesAjuda" class="grupoBotoesAjuda">
-                        <button id="botaoCartas" class="btn btn-primary botaoAjuda">Utilizar cartas</button>
-                        <button id="botaoConvidados" class="btn btn-primary botaoAjuda">Perguntar ao professor</button>
-                        <button id="botaoPlacas" class="btn btn-primary botaoAjuda">Perguntar aos colegas</button>
-                        <button id="botaoPula" class="btn btn-primary botaoAjuda">Pular pergunta</button>
-                    </div>
-                    <div id="grupoBotoesControle" class="grupoBotoesControle">
-                        <button id="botaoProximo" class="botaoControle">Próximo</button>
-                        <button id="botaoReiniciar" class="botaoControle">Reiniciar</button>
-                    </div>
-                </div>      
-            </div>
+                <!--- O JOGO --->
+                <div id="jogo" class="jogo hidden">
+                    <div class="janelaPrincipal">
+                        <div id="score" class="score h4">PONTUAÇÃO</div>
+                        <div id="pergunta" class="comando">Pergunta</div>
+                        <div id="imagemPlaceholder" class=""></div>
+                        <div id="botoesReposta" class="grupoBotoesResposta">
+                            <button id="botaoAlternativa1" class="botaoResposta btn btn-dark">Alternativa #1</button>
+                            <button id="botaoAlternativa2" class="botaoResposta btn btn-dark">Alternativa #2</button>
+                            <button id="botaoAlternativa3" class="botaoResposta btn btn-dark">Alternativa #3</button>
+                            <button id="botaoAlternativa4" class="botaoResposta btn btn-dark">Alternativa #4</button>
+                        </div>
+                        <div id="grupoBotoesAjuda" class="grupoBotoesAjuda">
+                            <button id="botaoCartas" class="btn btn-primary botaoAjuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s).">Utilizar cartas</button>
+                            
+                            <button id="botaoConvidados" class="btn btn-primary botaoAjuda" data-toggle="tooltip" data-placement="top" title="Dá o direito de ajuda ao professor.">Perguntar ao professor</button>
+                            <button id="botaoPlacas" class="btn btn-primary botaoAjuda" data-toggle="tooltip" data-placement="top" title="Dá direito de pedir assistência aos colegas.">Perguntar aos colegas</button>
+                            <button id="botaoPula" class="btn btn-primary botaoAjuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto.">Pular pergunta</button>
+                        </div>
+                        <div id="grupoBotoesControle" class="grupoBotoesControle">
+                            <button id="botaoProximo" class="botaoControle">Próximo</button>
+                            <button id="botaoReiniciar" class="botaoControle">Reiniciar</button>
+                        </div>
+                    </div>      
+                </div>
 
             </div>
-            </div>
+        </div>
+
             <?php 
                 $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
                 if ($stmt->execute()) {
@@ -113,8 +115,40 @@
                         <li><a id="c-alternativa-confirmar" href="#">Sim</a></li>
                         <li><a id="c-alternativa-negar" href="#">Não</a></li>
 		            </ul>
-                </div> <!-- cd-popup-container -->
+                </div>
             </div>
+
+            <div id="c-ajuda" class="confirmacao-ajuda-popup hidden">
+	            <div class="confirmacao-ajuda-popup-container">
+		            <p>Você confirma que selecionou a ajuda?</p>
+		            <ul class="cd-buttons">
+                        <li><a id="c-ajuda-confirmar" href="#">Sim</a></li>
+                        <li><a id="c-ajuda-negar" href="#">Não</a></li>
+		            </ul>
+                </div>
+            </div>
+            
+            <label>
+                <div class="container-principal-carta hidden" id="card">
+                <input id="caixaCartaVirada" style="display: hidden" type="checkbox" />
+                    <div class="carta">
+                        <div class="carta-frente">
+                            <div class="titulo-carta-frente">REMOVER ALTERNATIVAS</div>
+                            <img src="imagens/background_quadrado.png" class="imagem-carta">
+                            <button id="botaoMatarAlternativas" class="botaoMatarAlternativas">Clique aqui</button>
+                        </div>
+                        <div class="carta-costa">
+                            <div class="contorno-carta">
+                                <div class="conteudo-carta-costa">
+                                    <h4>Botanik</h4>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </label>
+
+            
 
             <div class="modal modal-imagem fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
