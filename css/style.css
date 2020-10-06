@@ -76,7 +76,7 @@ body{
     border-top: 0.25vh solid #ffffff;
 }
 
-.grupoBotoesMenuPrincipal{
+.grupo-botoes-menu-principal{
     /* --- POSICIONAMENTO --- */
     position: fixed;
     top: 60vh;
@@ -85,7 +85,7 @@ body{
     width: 100%;
 }
 
-.botaoDoMenuPrincipal{
+.botao-do-menu-principal{
     background: none;
     background-image: none;
     border: none;
@@ -100,19 +100,19 @@ body{
     transition-duration: 0.4s;
 }
 
-.botaoDoMenuPrincipal:hover{
+.botao-do-menu-principal:hover{
     border-left: 6px solid rgba(0, 128, 0, 1);
     background-color: rgba(0, 128, 0, 0.25);
 }
 
 /* --- MENU CONFIGURAÇÕES --- */
-.tituloConfiguracoes {
+.titulo-configuracoes {
     position: fixed;
     top: 0vh;
     font-size: 10vw;
 }
 
-.grupoBotoesConfiguracoes{
+.grupo-botoes-configuracoes{
 
     /* --- POSICIONAMENTO --- */
     position: fixed;
@@ -126,7 +126,7 @@ body{
 
 } */
 
-#voltarAoMenuPrincipal {
+#voltar-ao-menu-principal {
     position: fixed;
 
     top: 80vh;
@@ -146,7 +146,7 @@ body{
     transition-duration: 0.4s;
 }
 
-#voltarAoMenuPrincipal:hover {
+#voltar-ao-menu-principal:hover {
     border-right: 6px solid rgba(0, 128, 0, 1);
     background-color: rgba(0, 128, 0, 0.25);
     width: 100%;
@@ -201,7 +201,7 @@ body{
     text-align: center;
 }
 
-.grupoBotoesResposta {
+.grupo-botoes-resposta {
     display: grid;
     grid-template-columns:repeat(2, 50%);
     gap: 5%;
@@ -220,7 +220,7 @@ body{
     text-align: center;
 }
 
-.botaoResposta{
+.botao-resposta{
     background-color: #778899;
     
     display: inline-block;
@@ -241,7 +241,7 @@ body{
     max-height: 90%;
 }
 
-.grupoBotoesAjuda {
+.grupo-botoes-ajuda {
     display: grid;
     grid-template-columns:repeat(1, 100%);
     gap: 10%;
@@ -257,7 +257,7 @@ body{
     max-height: 47.5%;
 }
 
-.botaoAjuda {
+.botao-ajuda {
     background-image: none;
 
     border: 1px solid transparent;
@@ -271,7 +271,7 @@ body{
     max-height: 100%;
 }
 
-.grupoBotoesControle{
+.grupo-botoes-controle{
     display: grid;
     grid-template-columns:repeat(2, 50%);
     gap: 5%;
@@ -285,7 +285,7 @@ body{
     width: 71%;
 }
 
-.botaoControle{
+.botao-controle{
     background-color: #343a40;
     border: 1px solid transparent;
     border-color: #343a40;
@@ -475,7 +475,7 @@ body{
     padding: 3%;
 }
 
-.botaoMatarAlternativas{
+.botao-matar-alternativas{
     display: block;
     position: static;
     margin: 0% 3% 3% 3%;
@@ -580,7 +580,7 @@ body{
         text-align: center;
     }
 
-    .grupoBotoesResposta {
+    .grupo-botoes-resposta {
         display: grid;
         grid-template-columns:repeat(1, 100%);
         gap: 5%;
@@ -597,7 +597,7 @@ body{
         text-align: center;
     }
     
-    .botaoResposta{
+    .botao-resposta{
         background-color: #778899;
 
         display: inline-block;
@@ -613,7 +613,7 @@ body{
         height: 90%;
     }
     
-    .grupoBotoesAjuda {
+    .grupo-botoes-ajuda {
         display: grid;
         grid-template-columns:repeat(1, 100%);
         gap: 10%;
@@ -628,7 +628,7 @@ body{
         height: 27.5%;
     }
 
-    .botaoAjuda {
+    .botao-ajuda {
         background-image: none;
 
         border: 1px solid transparent;
@@ -641,7 +641,7 @@ body{
         height: 100%;
     }
 
-    .grupoBotoesControle{
+    .grupo-botoes-controle{
         display: grid;
         grid-template-columns:repeat(2, 50%);
         gap: 5%;
@@ -655,7 +655,7 @@ body{
         width: 66.5%;
     }
     
-    .botaoControle{
+    .botao-controle{
         background-color: #343a40;
         border: 1px solid transparent;
         border-color: #343a40;

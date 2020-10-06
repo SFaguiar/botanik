@@ -103,6 +103,7 @@ function iniciarJogo(){
     nivelAtual = 0
     numeroDePerguntas = 30
     setProximaPergunta()
+    contarAjudasRestantes()
 }
 
 // Função que calcula o nível atual do jogador baseado em sua pontuação no momento:
@@ -163,37 +164,28 @@ function resetStatus(){
 function mostrarPergunta(pergunta){
     resetarCoresAlternativas()
     textoDaPergunta.innerText = pergunta.comando
-    /* MOSTRAR IMAGEM */
     posicionamento = Math.floor(Math.random() * 4)
-
-    if (posicionamento == 0){
-        setBotao1(pergunta)
-        setBotao2(pergunta)
-        setBotao3(pergunta)
-        setBotao4(pergunta)
+    if (posicionamento === 0){
+        setBotao(botao1, pergunta, 1)
+        setBotao(botao2, pergunta, 2)
+        setBotao(botao3, pergunta, 3)
+        setBotao(botao4, pergunta, 4)
+    } else if (posicionamento === 1){
+        setBotao(botao4, pergunta, 4)
+        setBotao(botao3, pergunta, 3)
+        setBotao(botao2, pergunta, 2)
+        setBotao(botao1, pergunta, 1)
+    } else if (posicionamento === 2){
+        setBotao(botao3, pergunta, 3)
+        setBotao(botao4, pergunta, 4)
+        setBotao(botao1, pergunta, 1)
+        setBotao(botao2, pergunta, 2)
+    } else if (posicionamento === 3) {
+        setBotao(botao2, pergunta, 2)
+        setBotao(botao4, pergunta, 4)
+        setBotao(botao3, pergunta, 3)
+        setBotao(botao1, pergunta, 1)
     }
-
-    if (posicionamento == 1){
-        setBotao4(pergunta)
-        setBotao3(pergunta)
-        setBotao2(pergunta)
-        setBotao1(pergunta)
-    }
-
-    if (posicionamento == 2){
-        setBotao3(pergunta)
-        setBotao4(pergunta)
-        setBotao1(pergunta)
-        setBotao2(pergunta)
-    }
-
-    if (posicionamento == 3){
-        setBotao2(pergunta)
-        setBotao1(pergunta)
-        setBotao4(pergunta)
-        setBotao3(pergunta)
-    }
-    
 }
 
 // Função que é acionada após a confirmação de alternativa:
@@ -341,28 +333,20 @@ function manipularBotoes(classe, acao){
     }
 }
 
-function setBotao1(pergunta){
-    botao1.innerText = pergunta.alternativa1
-    botao1.addEventListener('click', selecionarResposta)
-    elementoDosBotoesDeResposta.appendChild(botao1)
-}
-
-function setBotao2(pergunta){
-    botao2.innerText = pergunta.alternativa2
-    botao2.addEventListener('click', selecionarResposta)
-    elementoDosBotoesDeResposta.appendChild(botao2)
-}
-
-function setBotao3(pergunta){
-    botao3.innerText = pergunta.alternativa3
-    botao3.addEventListener('click', selecionarResposta)
-    elementoDosBotoesDeResposta.appendChild(botao3)
-}
-
-function setBotao4(pergunta){
-    botao4.innerText = pergunta.alternativa4
-    botao4.addEventListener('click', selecionarResposta)
-    elementoDosBotoesDeResposta.appendChild(botao4)
+function setBotao(botao, pergunta, alternativa){
+    if (alternativa === 1){
+        botao.innerText = pergunta.alternativa1
+    } else if (alternativa === 2){
+        botao.innerText = pergunta.alternativa2
+    } else if (alternativa === 3){
+        botao.innerText = pergunta.alternativa3
+    } else if (alternativa === 4){
+        botao.innerText = pergunta.alternativa4
+    } else {
+        botao.innerText = 'Erro. '
+    }
+    botao.addEventListener('click', selecionarResposta)
+    elementoDosBotoesDeResposta.appendChild(botao)
 }
 
 function redirecionarParaSiteDeRegras(){
@@ -402,12 +386,20 @@ function pularPergunta(){
                 travarBotao(botaoPula)
             }
         }
+        contarAjudasRestantes()
     }
 }
 
 function acionarAjuda(e){
     ajudaSelecionada = e.target.id
     document.getElementById('c-ajuda').classList.remove('hidden')
+}
+
+function contarAjudasRestantes(){
+    document.getElementById('botaoCartas').innerText ='(' + ajudas[0] + 'x) Utilizar cartas'
+    document.getElementById('botaoConvidados').innerText = '(' + ajudas[1] + 'x) Perguntar ao professor'
+    document.getElementById('botaoPlacas').innerText = '(' + ajudas[2] + 'x) Perguntar aos colegas'
+    document.getElementById('botaoPula').innerText = '(' + ajudas[3] + 'x) Pular pergunta'
 }
 
 function abrirCartas() {
@@ -430,6 +422,7 @@ function abrirCartas() {
         }
         carta.classList.add('hidden')
         caixaCartaVirada.checked = false;
+        contarAjudasRestantes()
     }
     /* TO DO: Adicionar texto mostrando quantas alternativas foram eliminadas */
 }
@@ -457,6 +450,7 @@ function pedirAjudaConvidados(){
                 travarBotao(botaoConvidados)
             }
         }
+        contarAjudasRestantes()
     }
 }
 
@@ -472,6 +466,7 @@ function olharPlacas(){
         if (ajudas[2] === 0){
             travarBotao(botaoPlacas)
         }
+        contarAjudasRestantes()
     }
 }
 
@@ -491,11 +486,6 @@ function destravarTodasAjudas(){
     destravarBotao(botaoConvidados)
     destravarBotao(botaoPlacas)
 }
-
-// function virarCarta(e){
-//     c = e.target
-//     c.classList.add('carta-on-click')
-// }
 
 $(function() {
     $('.pop').on('click', function() {

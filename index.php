@@ -44,16 +44,16 @@
                         <div id="titulo" class="titulo">BOTANIK</div>
                         <div id="subtitulo" class="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</div>
                     </div>
-                    <div id="grupoBotoesMenuPrincipal" class="grupoBotoesMenuPrincipal btn-group-vertical">
-                        <button id="botaoStart" class="botaoDoMenuPrincipal">Começar</button>
-                        <button id="botaoRegras" class="botaoDoMenuPrincipal">Contribuição e contato</button>
-                        <button id="botaoConfiguracoes" class="botaoDoMenuPrincipal hidden">Configurações</button>
+                    <div id="grupoBotoesMenuPrincipal" class="grupo-botoes-menu-principal btn-group-vertical">
+                        <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
+                        <button id="botaoRegras" class="botao-do-menu-principal">Contribuição e contato</button>
+                        <button id="botaoConfiguracoes" class="botao-do-menu-principal hidden">Configurações</button>
                     </div>
                 </div>
                 <!--- MENU DE CONFIGURAÇÕES --->
-                <div id="menuConfiguracoes" class="menuConfiguracoes hidden">
-                    <div id="tituloConfiguracoes" class="display-4 tituloConfiguracoes">CONFIGURAÇÕES</div>
-                    <div id="grupoBotoesConfiguracoes" class="grupoBotoesConfiguracoes" >
+                <div id="menuConfiguracoes" class="menu-configuracoes hidden">
+                    <div id="tituloConfiguracoes" class="display-4 titulo-configuracoes">CONFIGURAÇÕES</div>
+                    <div id="grupoBotoesConfiguracoes" class="grupo-botoes-configuracoes" >
                         <div id="ambienteDeAplicacao">
                             <h4>Ambiente de aplicação:</h4> 
                             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -74,21 +74,21 @@
                         <div id="score" class="score h4">PONTUAÇÃO</div>
                         <div id="pergunta" class="comando">Pergunta</div>
                         <div id="imagemPlaceholder" class=""></div>
-                        <div id="botoesReposta" class="grupoBotoesResposta">
-                            <button id="botaoAlternativa1" class="botaoResposta btn btn-dark">Alternativa #1</button>
-                            <button id="botaoAlternativa2" class="botaoResposta btn btn-dark">Alternativa #2</button>
-                            <button id="botaoAlternativa3" class="botaoResposta btn btn-dark">Alternativa #3</button>
-                            <button id="botaoAlternativa4" class="botaoResposta btn btn-dark">Alternativa #4</button>
+                        <div id="botoesReposta" class="grupo-botoes-resposta">
+                            <button id="botaoAlternativa1" class="botao-resposta btn btn-dark">Alternativa #1</button>
+                            <button id="botaoAlternativa2" class="botao-resposta btn btn-dark">Alternativa #2</button>
+                            <button id="botaoAlternativa3" class="botao-resposta btn btn-dark">Alternativa #3</button>
+                            <button id="botaoAlternativa4" class="botao-resposta btn btn-dark">Alternativa #4</button>
                         </div>
-                        <div id="grupoBotoesAjuda" class="grupoBotoesAjuda">
-                            <button id="botaoCartas" class="btn btn-primary botaoAjuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s).">Utilizar cartas</button>
-                            <button id="botaoConvidados" class="btn btn-primary botaoAjuda" data-toggle="tooltip" data-placement="top" title="Dá o direito de ajuda ao professor.">Perguntar ao professor</button>
-                            <button id="botaoPlacas" class="btn btn-primary botaoAjuda" data-toggle="tooltip" data-placement="top" title="Dá direito de pedir assistência aos colegas.">Perguntar aos colegas</button>
-                            <button id="botaoPula" class="btn btn-primary botaoAjuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto.">Pular pergunta</button>
+                        <div id="grupoBotoesAjuda" class="grupo-botoes-ajuda">
+                            <button id="botaoCartas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s).">Utilizar cartas</button>
+                            <button id="botaoConvidados" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o direito de ajuda ao professor.">Perguntar ao professor</button>
+                            <button id="botaoPlacas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá direito de pedir assistência aos colegas.">Perguntar aos colegas</button>
+                            <button id="botaoPula" class="btn btn-primary botao-ajuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto.">Pular pergunta</button>
                         </div>
-                        <div id="grupoBotoesControle" class="grupoBotoesControle">
-                            <button id="botaoProximo" class="botaoControle">Próximo</button>
-                            <button id="botaoReiniciar" class="botaoControle">Reiniciar</button>
+                        <div id="grupoBotoesControle" class="grupo-botoes-controle">
+                            <button id="botaoProximo" class="botao-controle">Próximo</button>
+                            <button id="botaoReiniciar" class="botao-controle">Reiniciar</button>
                         </div>
                     </div>      
                 </div>
@@ -134,7 +134,7 @@
                         <div class="carta-frente">
                             <div class="titulo-carta-frente">REMOVER ALTERNATIVAS</div>
                             <img src="imagens/background_quadrado.png" class="imagem-carta">
-                            <button id="botaoMatarAlternativas" class="botaoMatarAlternativas">Clique aqui</button>
+                            <button id="botaoMatarAlternativas" class="botao-matar-alternativas">Clique aqui</button>
                         </div>
                         <div class="carta-costa">
                             <div class="contorno-carta">
