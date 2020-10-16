@@ -147,6 +147,24 @@
                 </div>
             </label>
 
+            <div id="container-principal-ajuda-professor" class="container-principal-ajuda hidden">
+                <div style="width: 100%; height:100%; overflow: auto;">
+                    <h2 class="container-ajuda-titulo">Ajuda do professor ativada!</h2>
+                    <button class="xis" onclick="document.getElementById('container-principal-ajuda-professor').classList.add('hidden');">X</button>
+                    <img src="imagens/professor_ico.png">
+                    <p>Peça ajuda ao seu professor.</p>
+                </div>
+            </div>
+
+            <div id="container-principal-ajuda-dica" class="container-principal-ajuda hidden">
+                <div style="width: 100%; height:100%; overflow: auto;">
+                    <h2 class="container-ajuda-titulo">Ajuda externa ativada!</h2>
+                    <button class="xis" onclick="document.getElementById('container-principal-ajuda-dica').classList.add('hidden');">X</button>
+                    <img src="imagens/professor_ico.png">
+                    <button id="botaoDica" onclick="window.open(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].dica)">Clique aqui para abrir uma página com a dica.</button>
+                </div>
+            </div>
+
             
 
             <div class="modal modal-imagem fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

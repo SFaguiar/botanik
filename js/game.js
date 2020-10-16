@@ -430,29 +430,15 @@ function abrirCartas() {
 // Convidados === Professor.
 function pedirAjudaConvidados(){
     if (ajudas[1] > 0) {
-        let chance = Math.floor((Math.random() * 100))
-        if (chance > 10){
-            /* TO DO
-                ADICIONAR IMAGEM DO PROFESSOR
-            */
-            console.log(`2 dos 3 convidados disseram que a alternativa correta é ${resposta}.`)
-            ajudas[1]--
-            if (ajudas[1] === 0){
-                travarBotao(botaoConvidados)
-            }
-        } else {
-            /* TO DO
-                ADICIONAR IMAGEM DO PROFESSOR
-            */
-            console.log(`2 dos 3 convidados disseram que a alternativa correta é ${respostaErradaAleatoria}.`)
-            ajudas[1]--
-            if (ajudas[1] === 0){
-                travarBotao(botaoConvidados)
-            }
+        document.getElementById('container-principal-ajuda-professor').classList.remove('hidden')
+        ajudas[1]--
+        if (ajudas[1] === 0){
+            travarBotao(botaoConvidados)
         }
-        contarAjudasRestantes()
-    }
+    } 
+    contarAjudasRestantes()
 }
+
 
 // Placas === Colegas.
 function olharPlacas(){
@@ -461,7 +447,7 @@ function olharPlacas(){
         /* TO DO
             ADICIONAR IMAGEM DOS COLEGAS
         */
-        console.log(`${porcentagemExibida}% da plateia disse que a alternativa correta é ${resposta}.`)
+        document.getElementById('container-principal-ajuda-dica').classList.remove('hidden')
         ajudas[2]--
         if (ajudas[2] === 0){
             travarBotao(botaoPlacas)
