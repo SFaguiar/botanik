@@ -1,5 +1,5 @@
 <?php
-  include("conexao.php");
+  require_once "conexao.php";
   if (isset($_REQUEST["salvo"]) && ($_REQUEST["salvo"] == true)) {
     echo "QUESTÃO NOVA SALVA COM SUCESSO!";
   }
@@ -72,6 +72,12 @@
           </div>
         </div>
         <div>
+          <h5>Link para página com dica:</h5>
+          <div>
+            <textarea class="form-control" name="dica"></textarea>
+          </div>
+        </div>
+        <div>
           <h5>Imagem (caso exista):</h5>
           <div>
             <input type="file" name="imagem" value=""/>
@@ -98,6 +104,7 @@
             <th>Alternativa incorreta #1</th>
             <th>Alternativa incorreta #2</th>
             <th>Alternativa incorreta #3</th>
+            <th>Dica</th>
             <th>Opções</th>
           </tr>
         </thead>
@@ -120,6 +127,7 @@
                 echo "<td>".$rs->alternativa2."</td>";
                 echo "<td>".$rs->alternativa3."</td>";
                 echo "<td>".$rs->alternativa4."</td>";
+                echo "<td>".$rs->dica."</td>";
                 echo "<td>";
                   echo "<center>";
                     echo "<form action='tratar.php' method='POST' name='form".$rs->id."U' enctype='multipart/form-data'>";

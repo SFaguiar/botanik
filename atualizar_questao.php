@@ -1,5 +1,5 @@
 <?php
-    include("conexao.php");
+    require_once "conexao.php";
     $q = "SELECT * FROM perguntas_jogo WHERE id = ".$_POST['id'];
     $stmt = $conexao->query($q);
     $questao = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -84,6 +84,12 @@
           <h5>Terceira alternativa incorreta:</h5>
           <div>
             <textarea class="form-control" name="alternativa4"><?php print($questao['alternativa4']); ?></textarea>
+          </div>
+        </div>
+        <div>
+          <h5>Link para página com dica:</h5>
+          <div>
+            <textarea class="form-control" name="dica"><?php print($questao['dica']); ?></textarea>
           </div>
         </div>
         <div>

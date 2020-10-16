@@ -1,5 +1,5 @@
 <?php
-  include("conexao.php");
+  require_once "conexao.php";
   /* echo "<pre>";
   print_r($_POST);
   echo "</pre>"; */
@@ -18,16 +18,17 @@
       $alternativa2 = $_POST["alternativa2"];
       $alternativa3 = $_POST["alternativa3"];
       $alternativa4 = $_POST["alternativa4"];
+      $dica = $_POST["dica"];
       if ($_FILES["imagem"]["size"] != 0){
         $imagem = addslashes(file_get_contents($_FILES["imagem"]["tmp_name"]));
         $imagemTipo = $_FILES["imagem"]["type"];
         if (substr($imagemTipo, 0, 5) == "image"){
-          $stmt = $conexao->prepare("INSERT INTO perguntas_jogo (id, nivel, tipo, comando, imagem, alternativa1, alternativa2, alternativa3, alternativa4) VALUES ('$newID','$nivel', '$tipo', '$comando', '$imagem', '$alternativa1', '$alternativa2', '$alternativa3', '$alternativa4')");
+          $stmt = $conexao->prepare("INSERT INTO perguntas_jogo (id, nivel, tipo, comando, imagem, alternativa1, alternativa2, alternativa3, alternativa4, dica) VALUES ('$newID','$nivel', '$tipo', '$comando', '$imagem', '$alternativa1', '$alternativa2', '$alternativa3', '$alternativa4', '$dica')");
         } else {
           die("Erro, tipo de arquivo não é imagem!");
         }
       } else {
-        $stmt = $conexao->prepare("INSERT INTO perguntas_jogo (id, nivel, tipo, comando, imagem, alternativa1, alternativa2, alternativa3, alternativa4) VALUES ('$newID', '$nivel', '$tipo', '$comando', '', '$alternativa1', '$alternativa2', '$alternativa3', '$alternativa4')");
+        $stmt = $conexao->prepare("INSERT INTO perguntas_jogo (id, nivel, tipo, comando, imagem, alternativa1, alternativa2, alternativa3, alternativa4, dica) VALUES ('$newID', '$nivel', '$tipo', '$comando', '', '$alternativa1', '$alternativa2', '$alternativa3', '$alternativa4', '$dica')");
       }
       $conexao->exec($stmt->queryString);
     } else if ($_POST["acao"] === "deletar") {
@@ -47,18 +48,19 @@
       $alternativa2 = $_POST["alternativa2"];
       $alternativa3 = $_POST["alternativa3"];
       $alternativa4 = $_POST["alternativa4"];
+      $dica = $_POST["dica"];
       if ($_FILES["imagem"]["size"] != 0){
         $imagem = addslashes(file_get_contents($_FILES["imagem"]["tmp_name"]));
         $imagemTipo = $_FILES["imagem"]["type"];
         if (substr($imagemTipo, 0, 5) == "image"){
-          $stmt = $conexao->prepare("UPDATE perguntas_jogo SET nivel='$nivel', tipo='$tipo', comando='$comando', imagem='$imagem', alternativa1='$alternativa1', alternativa2='$alternativa2', alternativa3='$alternativa3', alternativa4='$alternativa4' WHERE id ='$id'");
+          $stmt = $conexao->prepare("UPDATE perguntas_jogo SET nivel='$nivel', tipo='$tipo', comando='$comando', imagem='$imagem', alternativa1='$alternativa1', alternativa2='$alternativa2', alternativa3='$alternativa3', alternativa4='$alternativa4', dica='$dica' WHERE id ='$id'");
         } else {
           die("Erro, tipo de arquivo não é imagem!");
         }
       } else if(($_POST["excluir"] == "sim") && isset($_POST["excluir"])){
-        $stmt = $conexao->prepare("UPDATE perguntas_jogo SET nivel='$nivel', tipo='$tipo', comando='$comando', imagem='', alternativa1='$alternativa1', alternativa2='$alternativa2', alternativa3='$alternativa3', alternativa4='$alternativa4' WHERE id ='$id'");
+        $stmt = $conexao->prepare("UPDATE perguntas_jogo SET nivel='$nivel', tipo='$tipo', comando='$comando', imagem='', alternativa1='$alternativa1', alternativa2='$alternativa2', alternativa3='$alternativa3', alternativa4='$alternativa4', dica='$dica' WHERE id ='$id'");
       } else {
-        $stmt = $conexao->prepare("UPDATE perguntas_jogo SET nivel='$nivel', tipo='$tipo', comando='$comando', alternativa1='$alternativa1', alternativa2='$alternativa2', alternativa3='$alternativa3', alternativa4='$alternativa4' WHERE id ='$id'");
+        $stmt = $conexao->prepare("UPDATE perguntas_jogo SET nivel='$nivel', tipo='$tipo', comando='$comando', alternativa1='$alternativa1', alternativa2='$alternativa2', alternativa3='$alternativa3', alternativa4='$alternativa4', dica='$dica' WHERE id ='$id'");
       }
       $conexao->exec($stmt->queryString);
     }

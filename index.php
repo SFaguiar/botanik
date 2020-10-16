@@ -1,5 +1,5 @@
 <?php 
-    include("conexao.php");
+    require_once "conexao.php";
 
     function prepararListaDePerguntas($nivel, $conexao){
         $query = "SELECT * FROM `perguntas_jogo` WHERE `nivel` = ".$nivel;
