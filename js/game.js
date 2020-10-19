@@ -97,7 +97,7 @@ function iniciarJogo(){
     perguntasEmbaralhadas[4] = perguntas[4].sort(() => Math.random() - .5)
 
     // Reinicialização das variáveis globais:
-    ajudas = [2, 2, 2, 5] //cartas, convidados, placas, pula, respectivamente.
+    ajudas = [2, 4, 4, 5] //cartas, convidados, placas, pula, respectivamente.
     indiceDaPerguntaAtual = 0
     score = 0
     nivelAtual = 0

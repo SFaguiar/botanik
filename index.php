@@ -82,8 +82,8 @@
                         </div>
                         <div id="grupoBotoesAjuda" class="grupo-botoes-ajuda">
                             <button id="botaoCartas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s).">Utilizar cartas</button>
-                            <button id="botaoConvidados" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o direito de ajuda ao professor.">Perguntar ao professor</button>
-                            <button id="botaoPlacas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá direito de pedir assistência aos colegas.">Perguntar aos colegas</button>
+                            <button id="botaoConvidados" class="btn btn-primary botao-ajuda hidden" data-toggle="tooltip" data-placement="top" title="Dá o direito de ajuda ao professor.">Perguntar ao professor</button>
+                            <button id="botaoPlacas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet.">Adquirir dica</button>
                             <button id="botaoPula" class="btn btn-primary botao-ajuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto.">Pular pergunta</button>
                         </div>
                         <div id="grupoBotoesControle" class="grupo-botoes-controle">
