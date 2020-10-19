@@ -27,6 +27,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <script>
@@ -148,10 +149,12 @@
 
             <div id="container-principal-ajuda-dica" class="container-principal-ajuda hidden">
                 <div style="width: 100%; height:100%; overflow: auto;">
-                    <h2 class="container-ajuda-titulo">Ajuda externa ativada!</h2>
-                    <button class="xis" onclick="document.getElementById('container-principal-ajuda-professor').classList.add('hidden');">X</button>
-                    <img src="imagens/professor_ico.png">
-                    <button id="botaoDica" onclick="window.open(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].dica)">Clique aqui para abrir uma página com a dica.</button>
+                    <div class="header">
+                        <h2 class="container-ajuda-titulo">Ajuda externa ativada!</h2>
+                        <button class="xis" onclick="document.getElementById('container-principal-ajuda-dica').classList.add('hidden');">X</button>
+                    </div>
+                    <img src="imagens/ajuda1.png">
+                    <button id="botaoDica" class="botaoDica" onclick="window.open(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].dica)">Clique aqui para abrir uma página com a dica.</button>
                 </div>
             </div>
 
