@@ -38,7 +38,6 @@ const botaoFecharContainerConfirmacaoAjuda = document.getElementById('c-ajuda-fe
 /* --- AJUDAS --- */
 const containerDaImagem = document.getElementById('containerDaImagem')
 const botaoCartas = document.getElementById('botaoCartas')
-const botaoConvidados = document.getElementById('botaoConvidados')
 const botaoPlacas = document.getElementById('botaoPlacas')
 const botaoPula = document.getElementById('botaoPula')
 const botaoCancelar = document.getElementById('botaoCancelar')
@@ -72,7 +71,6 @@ botaoNegarAjuda.addEventListener('click', fecharContainerConfirmacaoAjuda)
  
 /* --- AJUDAS --- */
 botaoCartas.addEventListener('click', acionarAjuda) 
-botaoConvidados.addEventListener('click', acionarAjuda)
 botaoPlacas.addEventListener('click', acionarAjuda)
 botaoPula.addEventListener('click', acionarAjuda)
 
@@ -227,16 +225,10 @@ function confirmarAjuda(){
     if(ajudaSelecionada === 'botaoCartas'){
         carta.classList.remove('hidden')
         containerConfirmacaoAjuda.classList.add('hidden')
-    }
-    else if(ajudaSelecionada === 'botaoConvidados'){
-        pedirAjudaConvidados()
-        containerConfirmacaoAjuda.classList.add('hidden')
-    }
-    else if(ajudaSelecionada === 'botaoPlacas'){
+    } else if(ajudaSelecionada === 'botaoPlacas'){
         olharPlacas()
         containerConfirmacaoAjuda.classList.add('hidden')
-    }
-    else if(ajudaSelecionada === 'botaoPula'){
+    } else if(ajudaSelecionada === 'botaoPula'){
         pularPergunta()
         containerConfirmacaoAjuda.classList.add('hidden')
     }
@@ -270,14 +262,12 @@ function resetarCoresAlternativas(){
 
 function travarAjudas(){
     botaoCartas.disabled = true
-    botaoConvidados.disabled = true
     botaoPlacas.disabled = true
     botaoPula.disabled = true
 }
 
 function destravarAjudas(){
     if (ajudas[0] > 0) {botaoCartas.disabled = false}
-    if (ajudas[1] > 0) {botaoConvidados.disabled = false}
     if (ajudas[2] > 0) {botaoPlacas.disabled = false}
     if (ajudas[3] > 0) {botaoPula.disabled = false}
 }
@@ -296,7 +286,6 @@ function manipularBotoes(classe, acao){
             botao4.classList.remove('hidden')
         } else if (classe === 'ajudas') {
             botaoCartas.classList.remove('hidden')
-            botaoConvidados.classList.remove('hidden')
             botaoPlacas.classList.remove('hidden')
             botaoPula.classList.remove('hidden')
         } else if (classe === 'todosMenosControles'){
@@ -305,7 +294,6 @@ function manipularBotoes(classe, acao){
             botao3.classList.remove('hidden')
             botao4.classList.remove('hidden')
             botaoCartas.classList.remove('hidden')
-            botaoConvidados.classList.remove('hidden')
             botaoPlacas.classList.remove('hidden')
             botaoPula.classList.remove('hidden')
         }
@@ -317,7 +305,6 @@ function manipularBotoes(classe, acao){
             botao4.classList.add('hidden')
         } else if (classe === 'ajudas') {
             botaoCartas.classList.add('hidden')
-            botaoConvidados.classList.add('hidden')
             botaoPlacas.classList.add('hidden')
             botaoPula.classList.add('hidden')
         } else if (classe === 'todosMenosControles'){
@@ -326,7 +313,6 @@ function manipularBotoes(classe, acao){
             botao3.classList.add('hidden')
             botao4.classList.add('hidden')
             botaoCartas.classList.add('hidden')
-            botaoConvidados.classList.add('hidden')
             botaoPlacas.classList.add('hidden')
             botaoPula.classList.add('hidden')
         }
@@ -397,8 +383,7 @@ function acionarAjuda(e){
 
 function contarAjudasRestantes(){
     document.getElementById('botaoCartas').innerText ='(' + ajudas[0] + 'x) Utilizar cartas'
-    document.getElementById('botaoConvidados').innerText = '(' + ajudas[1] + 'x) Perguntar ao professor'
-    document.getElementById('botaoPlacas').innerText = '(' + ajudas[2] + 'x) Perguntar aos colegas'
+    document.getElementById('botaoPlacas').innerText = '(' + ajudas[2] + 'x) Adquirir dica'
     document.getElementById('botaoPula').innerText = '(' + ajudas[3] + 'x) Pular pergunta'
 }
 
@@ -426,19 +411,6 @@ function abrirCartas() {
     }
     /* TO DO: Adicionar texto mostrando quantas alternativas foram eliminadas */
 }
-
-// Convidados === Professor.
-function pedirAjudaConvidados(){
-    if (ajudas[1] > 0) {
-        document.getElementById('container-principal-ajuda-professor').classList.remove('hidden')
-        ajudas[1]--
-        if (ajudas[1] === 0){
-            travarBotao(botaoConvidados)
-        }
-    } 
-    contarAjudasRestantes()
-}
-
 
 // Placas === Colegas.
 function olharPlacas(){
@@ -469,7 +441,6 @@ function destravarBotao(botao){
 function destravarTodasAjudas(){
     destravarBotao(botaoPula)
     destravarBotao(botaoCartas)
-    destravarBotao(botaoConvidados)
     destravarBotao(botaoPlacas)
 }
 
