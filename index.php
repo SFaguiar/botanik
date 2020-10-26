@@ -1,5 +1,5 @@
 <?php 
-    require_once "conexao.php";
+    require_once "contador_visitas.php";
 
     function prepararListaDePerguntas($nivel, $conexao){
         $query = "SELECT * FROM `perguntas_jogo` WHERE `nivel` = ".$nivel;
@@ -133,7 +133,7 @@
                     <div class="carta">
                         <div class="carta-frente">
                             <div class="titulo-carta-frente">REMOVER ALTERNATIVAS</div>
-                            <img src="imagens/background_quadrado.png" class="imagem-carta">
+                            <img src="imagens/background_quadrado-1.png" class="imagem-carta">
                             <button id="botaoMatarAlternativas" class="botao-matar-alternativas">Clique aqui</button>
                         </div>
                         <div class="carta-costa">
@@ -153,8 +153,18 @@
                         <h2 class="container-ajuda-titulo">Ajuda externa ativada!</h2>
                         <button class="xis" onclick="document.getElementById('container-principal-ajuda-dica').classList.add('hidden');">X</button>
                     </div>
-                    <img src="imagens/ajuda1.png">
+                    <img src="imagens/computador-1.png">
                     <button id="botaoDica" class="botaoDica" onclick="window.open(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].dica)">Clique aqui para abrir uma página com a dica.</button>
+                </div>
+            </div>
+
+            <div id="container-principal-ajuda-pulo" class="container-principal-ajuda hidden">
+                <div style="width: 100%; height:100%; overflow: auto;">
+                    <div class="header">
+                        <h2 class="container-ajuda-titulo">Pulo de questão ativado!</h2>
+                        <button class="xis" onclick="document.getElementById('container-principal-ajuda-pulo').classList.add('hidden');">X</button>
+                    </div>
+                    <img src="imagens/salto-1.png">
                 </div>
             </div>
 

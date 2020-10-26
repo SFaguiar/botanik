@@ -1,8 +1,7 @@
 <?php
+  session_start();
   require_once "conexao.php";
-  /* echo "<pre>";
-  print_r($_POST);
-  echo "</pre>"; */
+  require_once "verifica_login.php";
   $q = "select id from perguntas_jogo order by id DESC limit 1";
   $stmt = $conexao->query($q);
   $lastrow = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -80,7 +79,7 @@
 
     <?php if ($_POST["acao"] === "redirecionarParaEditar"){ ?>
       <form action="atualizar_questao.php" id="formularioRedirecionamento" method="POST">
-        <input type="hidden" name="id" value=<?php echo $id ?> >
+        <input type="hidden" name="id" value=<?php echo json_encode($id) ?> >
       </form>
       <script type="text/javascript">
         document.getElementById('formularioRedirecionamento').submit();

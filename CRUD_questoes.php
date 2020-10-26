@@ -1,5 +1,6 @@
 <?php
   require_once "conexao.php";
+  require_once "verifica_login.php";
   if (isset($_REQUEST["salvo"]) && ($_REQUEST["salvo"] == true)) {
     echo "QUESTÃO NOVA SALVA COM SUCESSO!";
   }
@@ -16,6 +17,7 @@
     <body style="margin: 10px 10px 10px 10px">
     <header>
       <h1>Criar, Ler, Atualizar e Deletar: Banco de Questões</h1>
+      <a href="logout.php">SAIR</a>
       <hr>
     </header>
     <!--- FORMULÁRIO --->

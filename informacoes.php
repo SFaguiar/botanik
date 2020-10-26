@@ -37,7 +37,7 @@
                     <p><strong>E-mail:</strong> RFLMNaguiar@gmail.com</p>
                     <p><strong>Número:</strong> (91) 9 8958-3499 </p>
                 <p>Se quiser ajudar com o desenvolvimento ativamente:</p>
-                    <pe><strong>Código fonte:</strong> <a href="https://github.com/RFLMNaguiar/botanik">https://github.com/RFLMNaguiar/botanik</a></pe>
+                    <p><strong>Código fonte:</strong> <a href="https://github.com/RFLMNaguiar/botanik">https://github.com/RFLMNaguiar/botanik</a></p>
                 <h2>Créditos</h2>
                 <ul>
                     <li>Coordenadora: Profa. Dra. Sílvia Mardegan</li>

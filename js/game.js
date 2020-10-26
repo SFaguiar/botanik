@@ -364,14 +364,13 @@ function passarParaProximaPergunta(){
 }
 
 function pularPergunta(){
-    if (ajudas[3] > 0) {
-        if (31 > score) {
+    if ((ajudas[3] > 0) && (31 > score)) {
+            document.getElementById('container-principal-ajuda-pulo').classList.remove('hidden')
             passarParaProximaPergunta()
             ajudas[3] -= 1
             if (ajudas[3] === 0){
                 travarBotao(botaoPula)
             }
-        }
         contarAjudasRestantes()
     }
 }
