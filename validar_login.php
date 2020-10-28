@@ -1,11 +1,12 @@
 <?php
-    require_once "verifica_login.php";
+    session_start();
     require_once "conexao.php";
 
+    // Se algum dos campos do login não for preenchido, redireciona para a página de login.
     if (empty($_POST['email']) || empty($_POST['senha'])){
         header("Location: login.php");
         exit();
-    }
+    } 
 
     $email =$_POST['email'];
     $senha = $_POST['senha'];

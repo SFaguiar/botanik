@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require_once "conexao.php";
 ?>
 
 <!doctype html>
@@ -56,15 +55,8 @@
                     <label for="senha" class="">Senha</label>
                     <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required>
                     <br>
-                    <button class="btn btn-lg btn-danger btn-block" type="submit">Acessar</button>
+                    <input class="btn btn-lg btn-danger btn-block" type="submit" value="Acessar"></input>
                 </form>
-                <?php
-                if(isset($_SESSION['nao_autenticado'])){
-                ?>
-                <p>ERRO: USUÁRIO OU SENHA INVÁLIDO(S)</p>
-                <?php 
-                }
-                unset($_SESSION['nao_autenticado']);?>
             </div>
         </main>
 </html>
