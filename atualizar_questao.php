@@ -61,37 +61,37 @@
         <div>
           <h5>Comando da questão:</h5>
           <div>
-            <textarea class="form-control" name="comando"><?php print(json_encode($questao['comando'])); ?></textarea>
+            <textarea class="form-control" name="comando"><?php print($questao['comando']); ?></textarea>
           </div>
         </div>
         <div>
           <h5>Alternativa Correta:</h5>
           <div>
-            <textarea class="form-control" name="alternativa1"><?php print(json_encode($questao['alternativa1'])); ?></textarea>
+            <textarea class="form-control" name="alternativa1"><?php print($questao['alternativa1']); ?></textarea>
           </div>
         </div>
         <div>
           <h5>Primeira alternativa incorreta:</h5>
           <div>
-            <textarea class="form-control" name="alternativa2"><?php print(json_encode($questao['alternativa2'])); ?></textarea>
+            <textarea class="form-control" name="alternativa2"><?php print($questao['alternativa2']); ?></textarea>
           </div>
         </div>
         <div>
           <h5>Segunda alternativa incorreta:</h5>
           <div>
-            <textarea class="form-control" name="alternativa3"><?php print(json_encode($questao['alternativa3'])); ?></textarea>
+            <textarea class="form-control" name="alternativa3"><?php print($questao['alternativa3']); ?></textarea>
           </div>
         </div>
         <div>
           <h5>Terceira alternativa incorreta:</h5>
           <div>
-            <textarea class="form-control" name="alternativa4"><?php print(json_encode($questao['alternativa4'])); ?></textarea>
+            <textarea class="form-control" name="alternativa4"><?php print($questao['alternativa4']); ?></textarea>
           </div>
         </div>
         <div>
           <h5>Link para página com dica:</h5>
           <div>
-            <textarea class="form-control" name="dica"><?php print(json_encode($questao['dica'])); ?></textarea>
+            <textarea class="form-control" name="dica"><?php print($questao['dica']); ?></textarea>
           </div>
         </div>
         <div>
