@@ -34,7 +34,7 @@
         <input type="hidden" name="acao" value="criar"/>
         <div class="row">
           <div class="col">
-          <p>Nível:</p>
+          <label for="nivel">Nível:</label>
             <select class="form-control" id="nivel" name="nivel">
               <option value="1">1 - FÁCIL</option>
               <option value="2">2 - MÉDIO</option>
@@ -43,7 +43,7 @@
             </select>
           </div>
           <div class="col">
-            <p>Tipo:</p>
+            <label for="tipo">Tipo:</label>
             <select class="form-control" id="tipo" name="tipo">
               <option value="ecologia e fisiologia vegetal">Ecologia e Fisiologia Vegetal</option>
               <option value="morfologia e anatomia vegetal">Morfologia e Anatomia Vegetal</option>

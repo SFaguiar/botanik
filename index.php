@@ -127,25 +127,92 @@
                 </div>
             </div>
             
-            <label>
-                <div class="container-principal-carta hidden" id="card">
-                <input id="caixaCartaVirada" style="display: hidden" type="checkbox" />
-                    <div class="carta">
-                        <div class="carta-frente">
-                            <div class="titulo-carta-frente">REMOVER ALTERNATIVAS</div>
-                            <img src="imagens/background_quadrado-1.png" class="imagem-carta">
-                            <button id="botaoMatarAlternativas" class="botao-matar-alternativas">Clique aqui</button>
-                        </div>
-                        <div class="carta-costa">
-                            <div class="contorno-carta">
-                                <div class="conteudo-carta-costa">
-                                    <h4>Botanik</h4>
+            <ul id="quatro-cartas" class="hidden">
+                <li>
+                    <label>
+                        <div class="container-principal-carta" id="card1">
+                        <input id="caixaCartaVirada1" class="hidden" type="checkbox">
+                            <div class="carta">
+                                <div class="carta-frente">
+                                    <div class="titulo-carta-frente" id="tituloCarta1">REMOVER ALTERNATIVAS</div>
+                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <button id="botaoMatarAlternativas1" class="botao-matar-alternativas">Clique aqui</button>
                                 </div>
-                            </div>    
+                                <div class="carta-costa">
+                                    <div class="contorno-carta">
+                                        <div class="conteudo-carta-costa">
+                                            <h4>Botanik</h4>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </label>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div class="container-principal-carta" id="card2">
+                            <input id="caixaCartaVirada2" class="hidden" type="checkbox">
+                            <div class="carta">
+                                <div class="carta-frente">
+                                    <div class="titulo-carta-frente" id="tituloCarta2">REMOVER ALTERNATIVAS</div>
+                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <button id="botaoMatarAlternativas2" class="botao-matar-alternativas">Clique aqui</button>
+                                </div>
+                                <div class="carta-costa">
+                                    <div class="contorno-carta">
+                                        <div class="conteudo-carta-costa">
+                                            <h4>Botanik</h4>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div class="container-principal-carta" id="card3">
+                        <input id="caixaCartaVirada3" class="hidden" type="checkbox">
+                            <div class="carta">
+                                <div class="carta-frente">
+                                    <div class="titulo-carta-frente" id="tituloCarta3">REMOVER ALTERNATIVAS</div>
+                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <button id="botaoMatarAlternativas3" class="botao-matar-alternativas">Clique aqui</button>
+                                </div>
+                                <div class="carta-costa">
+                                    <div class="contorno-carta">
+                                        <div class="conteudo-carta-costa">
+                                            <h4>Botanik</h4>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <div class="container-principal-carta" id="card4">
+                        <input id="caixaCartaVirada4" class="hidden" type="checkbox">
+                            <div class="carta">
+                                <div class="carta-frente">
+                                    <div class="titulo-carta-frente" id="tituloCarta4">REMOVER ALTERNATIVAS</div>
+                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <button id="botaoMatarAlternativas4" class="botao-matar-alternativas">Clique aqui</button>
+                                </div>
+                                <div class="carta-costa">
+                                    <div class="contorno-carta">
+                                        <div class="conteudo-carta-costa">
+                                            <h4>Botanik</h4>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </li>
+            </ul>
 
             <div id="container-principal-ajuda-dica" class="container-principal-ajuda hidden">
                 <div style="width: 100%; height:100%; overflow: auto;">

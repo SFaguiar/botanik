@@ -42,12 +42,24 @@ const botaoPlacas = document.getElementById('botaoPlacas')
 const botaoPula = document.getElementById('botaoPula')
 const botaoCancelar = document.getElementById('botaoCancelar')
 const botaoFecharImagem = document.getElementById('botaoFecharImagem')
-const botaoMatarAlternativas = document.getElementById('botaoMatarAlternativas')
-const caixaCartaVirada = document.getElementById('caixaCartaVirada')
-const carta = document.getElementById('card')
+const caixaCartaVirada1 = document.getElementById('caixaCartaVirada1')
+const caixaCartaVirada2 = document.getElementById('caixaCartaVirada2')
+const caixaCartaVirada3 = document.getElementById('caixaCartaVirada3')
+const caixaCartaVirada4 = document.getElementById('caixaCartaVirada4')
+
+const cartas = document.getElementById('quatro-cartas')
+const card1 = document.getElementById('card1')
+const card2 = document.getElementById('card2')
+const card3 = document.getElementById('card3')
+const card4 = document.getElementById('card4')
+
+
+
+
 
 // Criação e definição de variáveis globais:
-let ajudas, ajudaSelecionada, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score
+let ajudas, ajudaSelecionada, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score, intAle1a3
+let jaAbriuACarta = false
 let confirmado = false
 
 // Atribuição de eventos para botões presentes no jogo:
@@ -74,7 +86,14 @@ botaoCartas.addEventListener('click', acionarAjuda)
 botaoPlacas.addEventListener('click', acionarAjuda)
 botaoPula.addEventListener('click', acionarAjuda)
 
-botaoMatarAlternativas.addEventListener('click', abrirCartas)
+card1.addEventListener('click', esconderCartasRestantes)
+card2.addEventListener('click', esconderCartasRestantes)
+card3.addEventListener('click', esconderCartasRestantes)
+card4.addEventListener('click', esconderCartasRestantes)
+
+document.querySelectorAll('.botao-matar-alternativas').forEach(item => {
+    item.addEventListener('click', abrirCartas)
+})
 
 // Funções do jogo:
 function iniciarJogo(){
@@ -184,6 +203,16 @@ function mostrarPergunta(pergunta){
         setBotao(botao3, pergunta, 3)
         setBotao(botao1, pergunta, 1)
     }
+
+    if (nivelAtual === 1) {
+        document.body.style.backgroundImage = "url('imagens/background.png')"
+    } else if (nivelAtual === 2) {
+        document.body.style.backgroundImage = "url('imagens/background - verao.png')"
+    } else if (nivelAtual === 3) {
+        document.body.style.backgroundImage = "url('imagens/background - outono.png')"
+    } else if (nivelAtual === 4) {
+        document.body.style.backgroundImage = "url('imagens/background - inverno.png')"
+    }
 }
 
 // Função que é acionada após a confirmação de alternativa:
@@ -223,7 +252,7 @@ function confirmarAlternativa(){
 
 function confirmarAjuda(){
     if(ajudaSelecionada === 'botaoCartas'){
-        carta.classList.remove('hidden')
+        cartas.classList.remove('hidden')
         containerConfirmacaoAjuda.classList.add('hidden')
     } else if(ajudaSelecionada === 'botaoPlacas'){
         olharPlacas()
@@ -388,7 +417,7 @@ function contarAjudasRestantes(){
 
 function abrirCartas() {
     if (ajudas[0] > 0) {
-        cartaAberta = Math.floor((Math.random() * 3) + 1)
+        cartaAberta = intAle1a3
         console.log('Carta aberta! Eliminada(s) ' + cartaAberta + ' alternativa(s) errada(s)!')
         if (cartaAberta === 1) {
             botao2.classList.add('hidden')
@@ -404,20 +433,70 @@ function abrirCartas() {
         if (ajudas[0] === 0){
             travarBotao(botaoCartas)
         }
-        carta.classList.add('hidden')
-        caixaCartaVirada.checked = false;
+        cartas.classList.add('hidden')
+        caixaCartaVirada1.checked = false;
+        caixaCartaVirada2.checked = false;
+        caixaCartaVirada3.checked = false;
+        caixaCartaVirada4.checked = false;
+        card1.classList.remove('hidden')
+        card2.classList.remove('hidden')
+        card3.classList.remove('hidden')
+        card4.classList.remove('hidden')
         contarAjudasRestantes()
+
+        for(i=1;i<=4;i++){
+            document.getElementById('tituloCarta'+i).innerText = "REMOVER ALTERNATIVA(S)"
+        }
     }
-    /* TO DO: Adicionar texto mostrando quantas alternativas foram eliminadas */
+    jaAbriuACarta = false
 }
 
-// Placas === Colegas.
+function esconderCartasRestantes(e){
+    idCartaVirada = e.target.id
+    if (idCartaVirada === "caixaCartaVirada1"){
+        card2.classList.add('hidden')
+        card3.classList.add('hidden')
+        card4.classList.add('hidden')
+        semErro = true
+        cartaVirada = 1
+    } else if (idCartaVirada === "caixaCartaVirada2"){
+        card1.classList.add('hidden')
+        card3.classList.add('hidden')
+        card4.classList.add('hidden')
+        semErro = true
+        cartaVirada = 2
+    } else if (idCartaVirada === "caixaCartaVirada3"){
+        card1.classList.add('hidden')
+        card2.classList.add('hidden')
+        card4.classList.add('hidden')
+        semErro = true
+        cartaVirada = 3
+    } else if (idCartaVirada === "caixaCartaVirada4"){
+        card1.classList.add('hidden')
+        card2.classList.add('hidden')
+        card3.classList.add('hidden')
+        semErro = true
+        cartaVirada = 4
+    } else {
+        //console.log('ESSA MENSAGEM NÃO DEVERIA APARECER!')
+        semErro = false
+    } 
+
+    if(jaAbriuACarta === false){
+        intAle1a3 = Math.floor((Math.random() * 3) + 1)
+        jaAbriuACarta = true
+    }
+    
+    //console.log(intAle1a3)
+    
+    if (semErro){
+        document.getElementById('tituloCarta'+cartaVirada).innerText = "REMOVER " + intAle1a3 + " ALTERNATIVA(S)"
+    }
+}
+
+// Placas === Dica.
 function olharPlacas(){
     if (ajudas[2] > 0){
-        let porcentagemExibida = Math.floor((Math.random() * 50) + 50)
-        /* TO DO
-            ADICIONAR IMAGEM DOS COLEGAS
-        */
         document.getElementById('container-principal-ajuda-dica').classList.remove('hidden')
         ajudas[2]--
         if (ajudas[2] === 0){

@@ -43,6 +43,8 @@
                     <li>Coordenadora: Profa. Dra. Sílvia Mardegan</li>
                     <li>Coordenador: Prof. Dr. Dionne Cavalcante</li>
                     <li>Desenvolvedor: Samuel Aguiar</li>
+                    <li>Desehista: João Felipe S.</li>
+                    <li>Fundo: Eder Muniz (https://edermunizz.itch.io/free-pixel-art-forest)</li>
                 </ul>
             </div>
         </main>

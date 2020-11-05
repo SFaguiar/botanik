@@ -11,23 +11,25 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="css/reset.css">
       <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style-crud.css">
       <title>Editando questão de ID <?php print_r($_POST['id']) ?></title>
     </head>
 
-    <body style="margin: 10px 10px 10px 10px">
+    <body>
     <header>
       <h1>Editando questão de ID <?php print_r($_POST['id']) ?>.</h1>
-      <hr>
     </header>
     <!--- FORMULÁRIO --->
+    <div class="create">
     <div class="form-group">
       <form action="tratar.php" method="POST" name="formU" enctype="multipart/form-data" >
         <input type="hidden" name="id" value=<?php print_r($_POST['id']) ?>>
         <input type="hidden" name="acao" value="editar"/>
         <div class="row">
           <div class="col">
-          <h5>Nível:</h5>
+          <label for="nivel">Nível:</label>
             <select class="form-control" id="nivel" name="nivel">
               <option value="1" <?php if($questao['nivel'] == 1){
                 echo "selected";
@@ -44,7 +46,7 @@
             </select>
           </div>
           <div class="col">
-            <h5>Tipo:</h5>
+            <label for="tipo">Tipo:</label>
             <select class="form-control" id="tipo" name="tipo">
               <option value="ecologia e fisiologia vegetal" <?php if($questao['tipo'] == 'ecologia e fisiologia vegetal'){
                 echo "selected";
@@ -58,46 +60,46 @@
             </select>
           </div>
         </div>
-        <div>
-          <h5>Comando da questão:</h5>
-          <div>
-            <textarea class="form-control" name="comando"><?php print($questao['comando']); ?></textarea>
+          <div class="row">
+            <div class="col">
+              <label for="comando-form">Comando da questão:
+                <textarea class="form-control" name="comando" id="comando-form"><?php print($questao['comando']); ?></textarea>
+              </label>
+            </div>
+            <div class="col">
+              <label for="alternativa1-form">Alternativa Correta:
+                <textarea class="form-control" name="alternativa1" id="alternativa1-form"><?php print($questao['alternativa1']); ?></textarea>
+              </label>
+            </div>
           </div>
-        </div>
-        <div>
-          <h5>Alternativa Correta:</h5>
-          <div>
-            <textarea class="form-control" name="alternativa1"><?php print($questao['alternativa1']); ?></textarea>
+          <div class="row">
+            <div class="col">
+              <label for="alternativa2-form">Primeira alternativa incorreta:
+                <textarea class="form-control" name="alternativa2" id="alternativa2-form"><?php print($questao['alternativa2']); ?></textarea>
+              </label>
+            </div>
+            <div class="col">
+              <label for="alternativa3-form"> Segunda alternativa incorreta:
+                <textarea class="form-control" name="alternativa3" id="alternativa3-form"><?php print($questao['alternativa3']); ?></textarea>
+              </label>
+            </div>
           </div>
-        </div>
-        <div>
-          <h5>Primeira alternativa incorreta:</h5>
-          <div>
-            <textarea class="form-control" name="alternativa2"><?php print($questao['alternativa2']); ?></textarea>
+          <div class="row">
+            <div class="col">
+              <label for="alternativa4-form">Terceira alternativa incorreta:
+                <textarea class="form-control" name="alternativa4"  id="alternativa4-form"><?php print($questao['alternativa4']); ?></textarea>
+              </label>
+            </div>
+            <div class="col">
+              <label for="dica-form">Link para página com dica:
+                <textarea class="form-control" name="dica"  id="dica-form"><?php print($questao['dica']); ?></textarea>
+              </label>
+            </div>
           </div>
-        </div>
         <div>
-          <h5>Segunda alternativa incorreta:</h5>
-          <div>
-            <textarea class="form-control" name="alternativa3"><?php print($questao['alternativa3']); ?></textarea>
-          </div>
-        </div>
-        <div>
-          <h5>Terceira alternativa incorreta:</h5>
-          <div>
-            <textarea class="form-control" name="alternativa4"><?php print($questao['alternativa4']); ?></textarea>
-          </div>
-        </div>
-        <div>
-          <h5>Link para página com dica:</h5>
-          <div>
-            <textarea class="form-control" name="dica"><?php print($questao['dica']); ?></textarea>
-          </div>
-        </div>
-        <div>
-          <h5>Imagem (caso precise substituir):</h5>
-          <div>
-            <input id="entradaImagem" type="file" name="imagem" value=""> OU...
+          <label for="entradaImagem"> Imagem (se existir):
+            <input id="entradaImagem" type="file" name="imagem" value="">
+          </label> OU...
             Excluir imagem da questão: <input id="excluirImagem" type="checkbox" name="excluir" value="sim">
             
             <script>
@@ -113,14 +115,13 @@
             </script>
           </div>
         </div>
-        <div>
+        <div class="botoesC">
           <input class="btn btn-primary" type="submit" value="Enviar" />
           <input class="btn btn-info" type="reset" value="Apagar caixas" />
         </div>
       </form>
     </div>
-
-      </table>
+    </div>
     </div>
 
       <!--- BOOTSTRAP DEPENDENCIES --->
