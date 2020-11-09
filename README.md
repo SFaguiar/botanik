@@ -31,7 +31,7 @@ Instalação
 
 Para instalar, você precisara um servidor com compatibilidade com PHP e um banco de dados MySQL. O pacote utilizado para a criação do projeto (portanto o recomendado foi o XAMPP).
 
-No banco de dados, é necessário que o nome seja "st_botanik" com uma tabela chamada "perguntas_jogo", ambos sem áspas. 
+No banco de dados, é necessário que o nome seja "st_botanik" com tabelas chamadas "perguntas_jogo", "visitas" e "login", todos sem áspas. 
 
 Abra o arquivo "conexao.php" e atribua às variáveis $user e $password o nome do usuário e para a senha do seu PHPMyAdmin respectivamente. Por padrão, o usuário e a senha são os seguintes:
 
@@ -93,4 +93,20 @@ E-mail: RFLMNaguiar@gmail.com
 Licença
 -------
 
-Esse projeto atualmente (09/09/2020) não apresenta nenhuma licença, portanto é de uso livre para edição e reprodução.
+Esse projeto atualmente (09/11/2020) não apresenta nenhuma licença, portanto é de uso livre para edição e reprodução.
+
+Créditos
+-------
+
+Desenvolvedor:
+Samuel Figueira Aguiar
+
+Orientadores:
+Prof. Dr. Dionne Cavalcante
+Profa. Dra. Silvia Mardegan
+
+Imagem de fundo:
+Eder Muniz (https://edermunizz.itch.io/free-pixel-art-forest)
+
+Desehista:
+João Felipe S. (freelancer)
