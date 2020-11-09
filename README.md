@@ -58,6 +58,7 @@ CREATE TABLE `perguntas_jogo` (
 )
 
 Também será necessário a tabela de visitas, para rastrear as visitações ao site:
+
 CREATE TABLE `visitas` (
   `id` int(11) NOT NULL,
   `ip` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -66,6 +67,7 @@ CREATE TABLE `visitas` (
 )
 
 E também a tabela de logins, para os logins que terão acesso ao CRUD:
+
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
