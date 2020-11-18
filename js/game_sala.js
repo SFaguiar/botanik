@@ -6,13 +6,9 @@ const menuConfiguracoes = document.getElementById('menuConfiguracoes')
 const jogo = document.getElementById('jogo')
 const titulo = document.getElementById('titulo')
 const botaoStart = document.getElementById('botaoStart')
+const botaoSolo = document.getElementById('botaoSolo')
 const botaoRegras = document.getElementById('botaoRegras')
-const botaoConfiguracoes = document.getElementById('botaoConfiguracoes')
 
-/* --- MENU CONFIGURAÇÕES --- */
-const botaoSalaDeAula = document.getElementById('botaoSalaDeAula')
-const botaoSozinho = document.getElementById('botaoSozinho')
-const sairMenuConfiguracoes = document.getElementById('voltarAoMenuPrincipal')
 
 /* --- O JOGO --- */
 const displayScore = document.getElementById('score')
@@ -66,21 +62,18 @@ let confirmado = false
 // Atribuição de eventos para botões presentes no jogo:
 /* --- MENU PRINCIPAL --- */
 botaoStart.addEventListener('click', iniciarJogo)
-botaoRegras.addEventListener('click', redirecionarParaSiteDeRegras)
-botaoConfiguracoes.addEventListener('click', abrirConfiguracoes)
-
-/* --- MENU CONFIGURAÇÕES --- */
-sairMenuConfiguracoes.addEventListener('click', fecharConfiguracoes)
+botaoSolo.addEventListener('click', () => {window.location.href = "index.php"})
+botaoRegras.addEventListener('click', () => {window.location.href = "informacoes.php"})
 
 /* --- CONTROLES --- */
 botaoProximo.addEventListener('click', passarParaProximaPergunta)
 botaoReiniciar.addEventListener('click', iniciarJogo)
 
 botaoConfirmarAlternativa.addEventListener('click', confirmarAlternativa)
-botaoNegarAlternativa.addEventListener('click', fecharContainerConfirmacaoAlternativa)
+botaoNegarAlternativa.addEventListener('click', () => {containerConfirmacaoAlternativa.classList.add('hidden')})
 
 botaoConfirmarAjuda.addEventListener('click', confirmarAjuda)
-botaoNegarAjuda.addEventListener('click', fecharContainerConfirmacaoAjuda)
+botaoNegarAjuda.addEventListener('click', () => {containerConfirmacaoAjuda.classList.add('hidden')})
  
 /* --- AJUDAS --- */
 botaoCartas.addEventListener('click', acionarAjuda) 
@@ -374,20 +367,6 @@ function setBotao(botao, pergunta, alternativa){
     elementoDosBotoesDeResposta.appendChild(botao)
 }
 
-function redirecionarParaSiteDeRegras(){
-    window.location.href = "informacoes.php";
-}
-
-function abrirConfiguracoes(){
-   menuPrincipal.classList.add('hidden')
-   menuConfiguracoes.classList.remove('hidden')
-}
-
-function fecharConfiguracoes(){
-   menuPrincipal.classList.remove('hidden')
-   menuConfiguracoes.classList.add('hidden')
-}
-
 function removerImagem(){
     // Se a pergunta respondida anteriormente tem uma imagem:
     if (perguntaAtualTemImagem){
@@ -554,14 +533,6 @@ $(function() {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
-
-function fecharContainerConfirmacaoAlternativa(){
-    containerConfirmacaoAlternativa.classList.add('hidden')
-}
-
-function fecharContainerConfirmacaoAjuda(){
-    containerConfirmacaoAjuda.classList.add('hidden')
-}
 
 /* DEBUG */
 

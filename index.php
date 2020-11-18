@@ -47,26 +47,8 @@
                     </div>
                     <div id="grupoBotoesMenuPrincipal" class="grupo-botoes-menu-principal btn-group-vertical">
                         <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
+                        <button id="botaoSala" class="botao-do-menu-principal">Jogar em sala de aula</button>
                         <button id="botaoRegras" class="botao-do-menu-principal">Contribuição e contato</button>
-                        <button id="botaoConfiguracoes" class="botao-do-menu-principal hidden">Configurações</button>
-                    </div>
-                </div>
-                <!--- MENU DE CONFIGURAÇÕES --->
-                <div id="menuConfiguracoes" class="menu-configuracoes hidden">
-                    <div id="tituloConfiguracoes" class="display-4 titulo-configuracoes">CONFIGURAÇÕES</div>
-                    <div id="grupoBotoesConfiguracoes" class="grupo-botoes-configuracoes" >
-                        <div id="ambienteDeAplicacao">
-                            <h4>Ambiente de aplicação:</h4> 
-                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                <div class="btn-group mr-1">
-                                    <button id="botaoSalaDeAula" class="btn btn-info">Sala de aula</button>
-                                    <button id="botaoSozinho" class="btn btn-info">Sozinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button id="voltarAoMenuPrincipal">Voltar ao menu principal</button>
-                        </div>
                     </div>
                 </div>
                 <!--- O JOGO --->
@@ -82,9 +64,9 @@
                             <button id="botaoAlternativa4" class="botao-resposta btn btn-dark">Alternativa #4</button>
                         </div>
                         <div id="grupoBotoesAjuda" class="grupo-botoes-ajuda">
-                            <button id="botaoCartas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s).">Utilizar cartas</button>
-                            <button id="botaoPlacas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet.">Adquirir dica</button>
-                            <button id="botaoPula" class="btn btn-primary botao-ajuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto.">Pular pergunta</button>
+                            <button id="botaoCartas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.png"><span id="cartas-restantes">Utilizar Cartas</span></button>
+                            <button id="botaoPlacas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.png"><span id="dicas-restantes">Adquirir dica</span></button>
+                            <button id="botaoPula" class="btn btn-primary botao-ajuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.png"><span id="pulos-restantes">Pular pergunta</span></button>
                         </div>
                         <div id="grupoBotoesControle" class="grupo-botoes-controle">
                             <button id="botaoProximo" class="botao-controle">Próximo</button>

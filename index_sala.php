@@ -47,26 +47,8 @@
                     </div>
                     <div id="grupoBotoesMenuPrincipal" class="grupo-botoes-menu-principal btn-group-vertical">
                         <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
+                        <button id="botaoSolo" class="botao-do-menu-principal">Jogar sozinho</button>
                         <button id="botaoRegras" class="botao-do-menu-principal">Contribuição e contato</button>
-                        <button id="botaoConfiguracoes" class="botao-do-menu-principal hidden">Configurações</button>
-                    </div>
-                </div>
-                <!--- MENU DE CONFIGURAÇÕES --->
-                <div id="menuConfiguracoes" class="menu-configuracoes hidden">
-                    <div id="tituloConfiguracoes" class="display-4 titulo-configuracoes">CONFIGURAÇÕES</div>
-                    <div id="grupoBotoesConfiguracoes" class="grupo-botoes-configuracoes" >
-                        <div id="ambienteDeAplicacao">
-                            <h4>Ambiente de aplicação:</h4> 
-                            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                <div class="btn-group mr-1">
-                                    <button id="botaoSalaDeAula" class="btn btn-info">Sala de aula</button>
-                                    <button id="botaoSozinho" class="btn btn-info">Sozinho</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button id="voltarAoMenuPrincipal">Voltar ao menu principal</button>
-                        </div>
                     </div>
                 </div>
                 <!--- O JOGO --->

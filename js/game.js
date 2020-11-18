@@ -6,13 +6,9 @@ const menuConfiguracoes = document.getElementById('menuConfiguracoes')
 const jogo = document.getElementById('jogo')
 const titulo = document.getElementById('titulo')
 const botaoStart = document.getElementById('botaoStart')
+const botaoSala = document.getElementById('botaoSala')
 const botaoRegras = document.getElementById('botaoRegras')
-const botaoConfiguracoes = document.getElementById('botaoConfiguracoes')
 
-/* --- MENU CONFIGURAÇÕES --- */
-const botaoSalaDeAula = document.getElementById('botaoSalaDeAula')
-const botaoSozinho = document.getElementById('botaoSozinho')
-const sairMenuConfiguracoes = document.getElementById('voltarAoMenuPrincipal')
 
 /* --- O JOGO --- */
 const displayScore = document.getElementById('score')
@@ -28,7 +24,6 @@ const botaoReiniciar = document.getElementById('botaoReiniciar')
 const containerConfirmacaoAlternativa = document.getElementById('c-alternativa')
 const botaoConfirmarAlternativa = document.getElementById('c-alternativa-confirmar')
 const botaoNegarAlternativa = document.getElementById('c-alternativa-negar')
-const botaoFecharContainerConfirmacaoAlternativa = document.getElementById('c-alternativa-fechar')
 
 const containerConfirmacaoAjuda = document.getElementById('c-ajuda')
 const botaoConfirmarAjuda = document.getElementById('c-ajuda-confirmar')
@@ -54,9 +49,6 @@ const card3 = document.getElementById('card3')
 const card4 = document.getElementById('card4')
 
 
-
-
-
 // Criação e definição de variáveis globais:
 let ajudas, ajudaSelecionada, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score, intAle1a3
 let jaAbriuACarta = false
@@ -65,21 +57,18 @@ let confirmado = false
 // Atribuição de eventos para botões presentes no jogo:
 /* --- MENU PRINCIPAL --- */
 botaoStart.addEventListener('click', iniciarJogo)
-botaoRegras.addEventListener('click', redirecionarParaSiteDeRegras)
-botaoConfiguracoes.addEventListener('click', abrirConfiguracoes)
-
-/* --- MENU CONFIGURAÇÕES --- */
-sairMenuConfiguracoes.addEventListener('click', fecharConfiguracoes)
+botaoSala.addEventListener('click', () => {window.location.href = "index_sala.php"})
+botaoRegras.addEventListener('click', () => {window.location.href = "informacoes.php"})
 
 /* --- CONTROLES --- */
 botaoProximo.addEventListener('click', passarParaProximaPergunta)
 botaoReiniciar.addEventListener('click', iniciarJogo)
 
 botaoConfirmarAlternativa.addEventListener('click', confirmarAlternativa)
-botaoNegarAlternativa.addEventListener('click', fecharContainerConfirmacaoAlternativa)
+botaoNegarAlternativa.addEventListener('click', () => {containerConfirmacaoAlternativa.classList.add('hidden')})
 
 botaoConfirmarAjuda.addEventListener('click', confirmarAjuda)
-botaoNegarAjuda.addEventListener('click', fecharContainerConfirmacaoAjuda)
+botaoNegarAjuda.addEventListener('click', () => {containerConfirmacaoAjuda.classList.add('hidden')})
  
 /* --- AJUDAS --- */
 botaoCartas.addEventListener('click', acionarAjuda) 
@@ -364,10 +353,6 @@ function setBotao(botao, pergunta, alternativa){
     elementoDosBotoesDeResposta.appendChild(botao)
 }
 
-function redirecionarParaSiteDeRegras(){
-    window.location.href = "informacoes.php";
-}
-
 function abrirConfiguracoes(){
    menuPrincipal.classList.add('hidden')
    menuConfiguracoes.classList.remove('hidden')
@@ -410,9 +395,9 @@ function acionarAjuda(e){
 }
 
 function contarAjudasRestantes(){
-    document.getElementById('botaoCartas').innerText ='(' + ajudas[0] + 'x) Utilizar cartas'
-    document.getElementById('botaoPlacas').innerText = '(' + ajudas[2] + 'x) Adquirir dica'
-    document.getElementById('botaoPula').innerText = '(' + ajudas[3] + 'x) Pular pergunta'
+    document.getElementById('cartas-restantes').innerText ='(' + ajudas[0] + 'x) Utilizar cartas'
+    document.getElementById('dicas-restantes').innerText = '(' + ajudas[2] + 'x) Adquirir dica'
+    document.getElementById('pulos-restantes').innerText = '(' + ajudas[3] + 'x) Pular pergunta'
 }
 
 function abrirCartas() {
@@ -519,6 +504,7 @@ function destravarTodasAjudas(){
     destravarBotao(botaoPlacas)
 }
 
+//JQUERY
 // TO DO: TRANSFORMAR ESSE COMANDO DA INTERNET EM JAVASCRIPT NATIVO.
 $(function() {
     $('.pop').on('click', function() {
@@ -531,13 +517,6 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
 
-function fecharContainerConfirmacaoAlternativa(){
-    containerConfirmacaoAlternativa.classList.add('hidden')
-}
-
-function fecharContainerConfirmacaoAjuda(){
-    containerConfirmacaoAjuda.classList.add('hidden')
-}
 
 /* DEBUG */
 
