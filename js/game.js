@@ -1,3 +1,6 @@
+// Criação de XML HTTP Request para a extração de estatísticas de acertos e erros:
+var xhr = new XMLHttpRequest();
+
 // Criação de referências para objetos dos DOM:
 /* --- MENU PRINCIPAL --- */
 const bgAnimado = document.getElementById('bg-animado')
@@ -8,7 +11,6 @@ const titulo = document.getElementById('titulo')
 const botaoStart = document.getElementById('botaoStart')
 const botaoSala = document.getElementById('botaoSala')
 const botaoRegras = document.getElementById('botaoRegras')
-
 
 /* --- O JOGO --- */
 const displayScore = document.getElementById('score')
@@ -212,16 +214,41 @@ function confirmarAlternativa(){
     mudarCoresAlternativas()
     travarAjudas()
 
+    // Envio de dados:
+    let id = perguntaAtual.id;
+    let escolha;   
+    switch (botaoSelecionado.innerText) {
+        case perguntaAtual.alternativa1:
+            escolha = "a";
+            break;
+        case perguntaAtual.alternativa2:
+            escolha = "b";
+            break;
+        case perguntaAtual.alternativa3:
+            escolha = "c";
+            break;
+        case perguntaAtual.alternativa4:
+            escolha = "d";
+            break;
+    }
+
+    xhr.open("POST", "enviar_estatistica.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("id="+id+"&escolha="+escolha);
+
     // Verifica se acertou:
     if (botaoSelecionado.innerText === resposta){
         /* --- FLUXO PARA ACERTO --- */
         // Modificações nas variáveis globais:
         score += 1
         acertou = true
+
+        
     } else {
         /* --- FLUXO PARA ERRO --- */
         // Modificações nas variáveis globais:
         acertou = false
+
     }
 
     /* --- VERIFICAÇÃO DE FIM DE JOGO --- */
