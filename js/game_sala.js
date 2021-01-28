@@ -1,3 +1,6 @@
+// Criação de XML HTTP Request para a extração de estatísticas de acertos e erros:
+var xhr = new XMLHttpRequest();
+
 // Criação de referências para objetos dos DOM:
 /* --- MENU PRINCIPAL --- */
 const bgAnimado = document.getElementById('bg-animado')
@@ -213,6 +216,32 @@ function mostrarPergunta(pergunta){
 // Função que é acionada após a confirmação de alternativa:
 function confirmarAlternativa(){
     let acertou
+
+    // Modificações na exibição:
+    mudarCoresAlternativas()
+    travarAjudas()
+
+    // Envio de dados:
+    let id = perguntaAtual.id;
+    let escolha;   
+    switch (botaoSelecionado.innerText) {
+        case perguntaAtual.alternativa1:
+            escolha = "a";
+            break;
+        case perguntaAtual.alternativa2:
+            escolha = "b";
+            break;
+        case perguntaAtual.alternativa3:
+            escolha = "c";
+            break;
+        case perguntaAtual.alternativa4:
+            escolha = "d";
+            break;
+    }
+
+    xhr.open("POST", "enviar_estatistica.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("id="+id+"&escolha="+escolha);
 
     // Modificações na exibição:
     mudarCoresAlternativas()

@@ -136,7 +136,7 @@ function setProximaPergunta(){
     nivelAtual = calcularNivel(score)
     // seleciona a pergunta
     mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
-    displayScore.innerText =' NIVEL: ' + nivelAtual + ' PONTUAÇÃO: ' + score
+    displayScore.innerHTML =' N: ' + nivelAtual +' P: ' + score
 
     perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
     resposta = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa1
@@ -242,15 +242,12 @@ function confirmarAlternativa(){
         // Modificações nas variáveis globais:
         score += 1
         acertou = true
-
-        
     } else {
         /* --- FLUXO PARA ERRO --- */
         // Modificações nas variáveis globais:
         acertou = false
-
     }
-
+    
     /* --- VERIFICAÇÃO DE FIM DE JOGO --- */
     if (numeroDePerguntas > indiceDaPerguntaAtual + 1 && acertou == true) {
         // Se o jogo ainda não terminou:
@@ -267,15 +264,17 @@ function confirmarAlternativa(){
 }
 
 function confirmarAjuda(){
-    if(ajudaSelecionada === 'botaoCartas'){
+    if(ajudaSelecionada === 'botaoCartas' || ajudaSelecionada === 'icone-cartas' || ajudaSelecionada === 'cartas-restantes') {
         cartas.classList.remove('hidden')
         containerConfirmacaoAjuda.classList.add('hidden')
-    } else if(ajudaSelecionada === 'botaoPlacas'){
+    } else if(ajudaSelecionada === 'botaoPlacas' || ajudaSelecionada === 'icone-dicas' || ajudaSelecionada === 'dicas-restantes') {
         olharPlacas()
         containerConfirmacaoAjuda.classList.add('hidden')
-    } else if(ajudaSelecionada === 'botaoPula'){
+    } else if(ajudaSelecionada === 'botaoPula' || ajudaSelecionada === 'icone-pulo' || ajudaSelecionada === 'pulos-restantes'){
         pularPergunta()
         containerConfirmacaoAjuda.classList.add('hidden')
+    } else {
+        console.log(ajudaSelecionada)
     }
 }
 
@@ -418,6 +417,7 @@ function pularPergunta(){
 
 function acionarAjuda(e){
     ajudaSelecionada = e.target.id
+    console.log(ajudaSelecionada)
     document.getElementById('c-ajuda').classList.remove('hidden')
 }
 

@@ -31,12 +31,23 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
         <script>
-            var perguntas = <?php echo json_encode($perguntasProntas)?>
+            var perguntas = <?php echo json_encode($perguntasProntas)?>;
+            console.log("Perguntas carregadas!");
+        </script>
+        <script>
+            window.addEventListener("load", function(){
+                const loader = document.querySelector(".loader");
+                loader.classList.add('hidden');
+                console.log("Jogo 100% carregado!");
+            } )
         </script>
         <script defer src="js/game.js"></script>
         <title>BOTANIK</title>
     </head>
     <body>
+        <div class="loader">
+            <img src="imagens/loading.gif" alt="Carregando..." />
+        </div>
         <div id="bg-animado" class="bg">
             <div class="margem">
                 <!--- MENU PRINCIPAL --->
@@ -93,8 +104,8 @@
 	            <div class="confirmacao-alternativa-popup-container">
 		            <p>Você confirma que selecionou a alternativa?</p>
 		            <ul class="cd-buttons">
-                        <li><a id="c-alternativa-confirmar" href="#">Sim</a></li>
-                        <li><a id="c-alternativa-negar" href="#">Não</a></li>
+                        <li id="c-alternativa-confirmar"><a>Sim</a></li>
+                        <li id="c-alternativa-negar"><a>Não</a></li>
 		            </ul>
                 </div>
             </div>
@@ -103,8 +114,8 @@
 	            <div class="confirmacao-alternativa-popup-container">
 		            <p>Você confirma que selecionou a ajuda?</p>
 		            <ul class="cd-buttons">
-                        <li><a id="c-ajuda-confirmar" href="#">Sim</a></li>
-                        <li><a id="c-ajuda-negar" href="#">Não</a></li>
+                        <li id="c-ajuda-confirmar"><a>Sim</a></li>
+                        <li id="c-ajuda-negar"><a>Não</a></li>
 		            </ul>
                 </div>
             </div>
