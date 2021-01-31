@@ -196,13 +196,13 @@ function mostrarPergunta(pergunta){
     }
 
     if (nivelAtual === 1) {
-        document.body.style.backgroundImage = "url('imagens/background.png')"
+        document.body.style.backgroundImage = "url('imagens/background.webp')"
     } else if (nivelAtual === 2) {
-        document.body.style.backgroundImage = "url('imagens/background - verao.png')"
+        document.body.style.backgroundImage = "url('imagens/background - verao.webp')"
     } else if (nivelAtual === 3) {
-        document.body.style.backgroundImage = "url('imagens/background - outono.png')"
+        document.body.style.backgroundImage = "url('imagens/background - outono.webp')"
     } else if (nivelAtual === 4) {
-        document.body.style.backgroundImage = "url('imagens/background - inverno.png')"
+        document.body.style.backgroundImage = "url('imagens/background - inverno.webp')"
     }
 }
 

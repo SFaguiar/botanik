@@ -25,24 +25,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
+        <title>BOTANIK</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <script>
+        <script defer>
             var perguntas = <?php echo json_encode($perguntasProntas)?>;
-            console.log("Perguntas carregadas!");
-        </script>
-        <script>
             window.addEventListener("load", function(){
                 const loader = document.querySelector(".loader");
                 loader.classList.add('hidden');
-                console.log("Jogo 100% carregado!");
             } )
         </script>
-        <script defer src="js/game.js"></script>
-        <title>BOTANIK</title>
     </head>
     <body>
         <div class="loader">
@@ -75,9 +70,9 @@
                             <button id="botaoAlternativa4" class="botao-resposta btn btn-dark">Alternativa #4</button>
                         </div>
                         <div id="grupoBotoesAjuda" class="grupo-botoes-ajuda">
-                            <button id="botaoCartas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.png"><span id="cartas-restantes">Utilizar Cartas</span></button>
-                            <button id="botaoPlacas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.png"><span id="dicas-restantes">Adquirir dica</span></button>
-                            <button id="botaoPula" class="btn btn-primary botao-ajuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.png"><span id="pulos-restantes">Pular pergunta</span></button>
+                            <button id="botaoCartas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.webp"><span id="cartas-restantes">Utilizar Cartas</span></button>
+                            <button id="botaoPlacas" class="btn btn-primary botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.webp"><span id="dicas-restantes">Adquirir dica</span></button>
+                            <button id="botaoPula" class="btn btn-primary botao-ajuda"  data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.webp"><span id="pulos-restantes">Pular pergunta</span></button>
                         </div>
                         <div id="grupoBotoesControle" class="grupo-botoes-controle">
                             <button id="botaoProximo" class="botao-controle">Próximo</button>
@@ -128,7 +123,7 @@
                             <div class="carta">
                                 <div class="carta-frente">
                                     <div class="titulo-carta-frente" id="tituloCarta1">REMOVER ALTERNATIVAS</div>
-                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
                                     <button id="botaoMatarAlternativas1" class="botao-matar-alternativas">Clique aqui</button>
                                 </div>
                                 <div class="carta-costa">
@@ -149,7 +144,7 @@
                             <div class="carta">
                                 <div class="carta-frente">
                                     <div class="titulo-carta-frente" id="tituloCarta2">REMOVER ALTERNATIVAS</div>
-                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
                                     <button id="botaoMatarAlternativas2" class="botao-matar-alternativas">Clique aqui</button>
                                 </div>
                                 <div class="carta-costa">
@@ -170,7 +165,7 @@
                             <div class="carta">
                                 <div class="carta-frente">
                                     <div class="titulo-carta-frente" id="tituloCarta3">REMOVER ALTERNATIVAS</div>
-                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
                                     <button id="botaoMatarAlternativas3" class="botao-matar-alternativas">Clique aqui</button>
                                 </div>
                                 <div class="carta-costa">
@@ -191,7 +186,7 @@
                             <div class="carta">
                                 <div class="carta-frente">
                                     <div class="titulo-carta-frente" id="tituloCarta4">REMOVER ALTERNATIVAS</div>
-                                    <img src="imagens/background_quadrado-1.png" class="imagem-carta">
+                                    <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
                                     <button id="botaoMatarAlternativas4" class="botao-matar-alternativas">Clique aqui</button>
                                 </div>
                                 <div class="carta-costa">
@@ -210,10 +205,10 @@
             <div id="container-principal-ajuda-dica" class="container-principal-ajuda hidden">
                 <div style="width: 100%; height:100%; overflow: auto;">
                     <div class="header">
-                        <h2 class="container-ajuda-titulo">Ajuda externa ativada!</h2>
+                        <h2 class="container-ajuda-titulo">Ajuda disponível!</h2>
                         <button class="xis" onclick="document.getElementById('container-principal-ajuda-dica').classList.add('hidden');">X</button>
                     </div>
-                    <img src="imagens/computador-1.png">
+                    <img src="imagens/computador-1.webp">
                     <button id="botaoDica" class="botaoDica" onclick="window.open(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].dica)">Clique aqui para abrir uma página com a dica.</button>
                 </div>
             </div>
@@ -221,10 +216,10 @@
             <div id="container-principal-ajuda-pulo" class="container-principal-ajuda hidden">
                 <div style="width: 100%; height:100%; overflow: auto;">
                     <div class="header">
-                        <h2 class="container-ajuda-titulo">Pulo de questão ativado!</h2>
+                        <h2 class="container-ajuda-titulo">Questão pulada!</h2>
                         <button class="xis" onclick="document.getElementById('container-principal-ajuda-pulo').classList.add('hidden');">X</button>
                     </div>
-                    <img src="imagens/salto-1.png">
+                    <img src="imagens/salto-1.webp">
                 </div>
             </div>
 
@@ -239,8 +234,9 @@
             </div>
             
         </div>
-        <script src="js/jquery-3.5.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script defer src="js/jquery-3.5.1.min.js"></script>
+        <script defer src="js/popper.min.js"></script>
+        <script defer src="js/bootstrap.min.js"></script>
+        <script defer src="js/game.js"></script>
     </body>
 </html>
