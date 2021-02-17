@@ -53,7 +53,7 @@
                     </div>
                     <div id="grupoBotoesMenuPrincipal" class="grupo-botoes-menu-principal btn-group-vertical">
                         <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
-                        <button id="botaoSala" class="botao-do-menu-principal">Jogar em sala de aula</button>
+                        <button id="botaoSala" class="botao-do-menu-principal">Site para versão de professores</button>
                         <button id="botaoRegras" class="botao-do-menu-principal">Contribuição e contato</button>
                     </div>
                 </div>
@@ -78,8 +78,13 @@
                             <button id="botaoProximo" class="botao-controle">Próximo</button>
                             <button id="botaoReiniciar" class="botao-controle">Reiniciar</button>
                         </div>
-                    </div>      
+                    </div>     
                 </div>
+                <div class="game-over hidden" id="telaGameOver">
+                    <h5>Game Over!</h5>
+                    <p>Pontuação final: <span id="finalScore">PONTUACAO</span></p>
+                    <button id="gameOverReiniciar">Reiniciar Jogo</button>
+                </div> 
 
             </div>
         </div>
@@ -237,6 +242,8 @@
         <script defer src="js/jquery-3.5.1.min.js"></script>
         <script defer src="js/popper.min.js"></script>
         <script defer src="js/bootstrap.min.js"></script>
-        <script defer src="js/game.js"></script>
+        <script defer src="js/inicializacao.js"></script>
+        <script defer src="js/funcoes.js"></script>
+        <script defer src="js/atribuicoes.js"></script>
     </body>
 </html>
