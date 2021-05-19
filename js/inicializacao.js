@@ -57,7 +57,6 @@ const card4 = document.getElementById('card4')
 var somCorreto = new Audio("sons/certo.wav")
 var somErrado = new Audio("sons/errado.wav")
 var somAjuda = new Audio("sons/ajuda.wav")
-var somIniciar = new Audio("sons/start.wav")
 
 // Criação e definição de variáveis globais:
 let ajudas, ajudaSelecionada, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score, intAle1a3

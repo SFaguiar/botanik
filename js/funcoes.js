@@ -1,11 +1,11 @@
 
 // Funções do jogo:
 function iniciarJogo(){
-    somIniciar.play()
     telaGameOver.classList.add('hidden')
     menuPrincipal.classList.add('hidden')
     jogo.classList.remove('hidden')
-    botaoReiniciar.classList.add('hidden')
+    travarBotao(botaoReiniciar)
+    travarBotao(botaoProximo)
     removerImagem()
     destravarTodasAjudas()
     resetarCoresAlternativas()
@@ -53,17 +53,17 @@ function setProximaPergunta(){
     displayScore.innerHTML =' NÍVEL: ' + nivelAtual +' PONT.: ' + score
 
     perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
-    resposta = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa1
+    resposta = perguntaAtual.alternativa1
 
     let numeroAleatorio = Math.floor((Math.random() * 3) + 2)
     if (numeroAleatorio === 2) {
-        respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa2
+        respostaErradaAleatoria = perguntaAtual.alternativa2
     }
     else if (numeroAleatorio === 3) {
-        respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa3
+        respostaErradaAleatoria = perguntaAtual.alternativa3
     }
     else if (numeroAleatorio === 4) {
-        respostaErradaAleatoria = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].alternativa4
+        respostaErradaAleatoria = perguntaAtual.alternativa4
     }
     manipularBotoes('todosMenosControles', 'mostrar')
     if (perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].imagem != "") {
@@ -75,7 +75,7 @@ function setProximaPergunta(){
 }
 
 function resetStatus(){
-    botaoProximo.classList.add('hidden')
+    travarBotao(botaoProximo)
     while (elementoDosBotoesDeResposta.firstChild){
         elementoDosBotoesDeResposta.removeChild(elementoDosBotoesDeResposta.firstChild)
     }
@@ -171,12 +171,12 @@ function confirmarAlternativa(){
     /* --- VERIFICAÇÃO DE FIM DE JOGO --- */
     if (numeroDePerguntas > indiceDaPerguntaAtual + 1 && acertou == true) {
         // Se o jogo ainda não terminou:
-        botaoProximo.classList.remove('hidden')
+        destravarBotao(botaoProximo)
     } else {
         // Se o jogo terminou:
         /* FINALIZAÇÃO DO JOGO */
-        botaoProximo.classList.add('hidden')
-        botaoReiniciar.classList.remove('hidden')
+        travarBotao(botaoProximo)
+        destravarBotao(botaoReiniciar)
     }
 
     // Mostra a caixa de confirmação de alternativa:
@@ -201,10 +201,10 @@ function confirmarAjuda(){
 
 // Função que colore as alternativas após a confirmação da seleção:
 function mudarCoresAlternativas(){
-    botao1.style.backgroundColor = '#00CC00'
-    botao2.style.backgroundColor = '#CC0000'
-    botao3.style.backgroundColor = '#CC0000'
-    botao4.style.backgroundColor = '#CC0000'
+    botao1.style.backgroundColor = '#28a745'
+    botao2.style.backgroundColor = '#dc3546'
+    botao3.style.backgroundColor = '#dc3546'
+    botao4.style.backgroundColor = '#dc3546'
 
     botao1.disabled = true
     botao2.disabled = true
@@ -214,10 +214,10 @@ function mudarCoresAlternativas(){
 
 // Função que descolore as alternativas após uma nova questão ser exibida:
 function resetarCoresAlternativas(){
-    botao1.style.backgroundColor = '#778899'
-    botao2.style.backgroundColor = '#778899'
-    botao3.style.backgroundColor = '#778899'
-    botao4.style.backgroundColor = '#778899'
+    botao1.style.backgroundColor = ''
+    botao2.style.backgroundColor = ''
+    botao3.style.backgroundColor = ''
+    botao4.style.backgroundColor = ''
 
     botao1.disabled = false
     botao2.disabled = false
@@ -343,9 +343,9 @@ function acionarAjuda(e){
 }
 
 function contarAjudasRestantes(){
-    document.getElementById('cartas-restantes').innerText ='(' + ajudas[0] + 'x) Utilizar cartas'
-    document.getElementById('dicas-restantes').innerText = '(' + ajudas[2] + 'x) Adquirir dica'
-    document.getElementById('pulos-restantes').innerText = '(' + ajudas[3] + 'x) Pular pergunta'
+    document.getElementById('cartas-restantes').innerText =' (' + ajudas[0] + 'x)'
+    document.getElementById('dicas-restantes').innerText = ' (' + ajudas[2] + 'x)'
+    document.getElementById('pulos-restantes').innerText = ' (' + ajudas[3] + 'x)'
 }
 
 function abrirCartas() {
@@ -456,6 +456,8 @@ function mostrarTelaGameOver(){
     jogo.classList.add('hidden')
     telaGameOver.classList.remove('hidden')
     document.getElementById('finalScore').innerText = score
+    document.getElementById('comandoGameOver').innerText = perguntaAtual.comando
+    document.getElementById('respostaCorretaGameOver').innerText = resposta
 }
 
 $(function() {

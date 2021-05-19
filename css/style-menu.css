@@ -1,0 +1,102 @@
+.menu-principal {
+    position: fixed;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cabecalho {
+    margin: 7% 0;
+}
+
+.cabecalho h1 {
+    display: block;
+    font-size: 7em;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.cabecalho h2 {
+    display: block;
+    font-family: 'Rubik';
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.2;
+    border-top: 0.5vh solid #ffffff;
+    text-align: center;
+    padding-top: 1%;
+
+}
+
+.grupo-botoes-menu-principal {
+    display: grid;
+    grid-template-columns:repeat(1, 100%);
+    gap: 10%;
+}
+
+.botao-do-menu-principal {
+    background-color: #2f8f00;
+    width: 75%;
+    padding: 10px;
+    color: white;
+    border: 2px solid #2f8f00;
+    border-radius: 30px;
+    font-family: 'Rubik';
+    font-size: 150%;
+    text-align: center;
+    transition-duration: 0.4s;
+    margin: auto;
+}
+
+.botao-do-menu-principal:hover{
+    background-color: white;
+    color: #2f8f00;
+}
+
+/* --- MENU CONFIGURAÇÕES --- */
+.titulo-configuracoes {
+    position: fixed;
+    top: 0vh;
+    font-size: 10vw;
+}
+
+.grupo-botoes-configuracoes{
+
+    /* --- POSICIONAMENTO --- */
+    position: fixed;
+    top: 25vh;
+
+    /* --- TAMANHO --- */
+    width: 100%;
+}
+
+#voltar-ao-menu-principal {
+    position: fixed;
+
+    top: 80vh;
+    left: 80vw;
+
+    background: none;
+    background-image: none;
+    border: none;
+    border-radius: none;
+
+    padding: 10px;
+    margin: 0px;
+    color: white;
+    border-right: 6px solid white;
+    font-size: 150%;
+    text-align: right;
+    transition-duration: 0.4s;
+}
+
+#voltar-ao-menu-principal:hover {
+    border-right: 6px solid rgba(0, 128, 0, 1);
+    background-color: rgba(0, 128, 0, 0.25);
+    width: 100%;
+}
+
+@media (max-width: 481px) {
+
+}
