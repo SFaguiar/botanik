@@ -71,7 +71,7 @@
 
 .grupo-botoes-resposta button {
     background-color: #eeed;
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     color: #2f8f00;
     
     display: inline-block;

@@ -33,12 +33,39 @@
         <link rel="stylesheet" href="css/style-global.css">
         <link rel="stylesheet" href="css/style-menu.css">
         <link rel="stylesheet" href="css/style-game.css">
+        <script src="js/jquery-3.5.1.min.js"></script>
         <script defer>
             var perguntas = <?php echo json_encode($perguntasProntas)?>;
+            $.getJSON('aparencia.json', function(data){
+            for (i = 0; i <= data.length; i++) {
+                    if (data[i].selector == "document") {
+                        // Tratamento para o fundo e para a fonte:
+                        document.querySelector("*").style.backgroundImage = 'none';
+                        document.querySelector("*").style.backgroundColor = data[i].backgroundColor;
+                        document.querySelector("*").style.fontFamily = data[i].fontFamily;
+                    } else if(data[i].selector == "titulo") {
+                        // Tratamento para o título:
+                        document.getElementById("titulo").innerText = data[i].text;
+                    } else if (data[i].selector == "subtitulo") {
+                        // Tratamento para subtitulo:
+                        document.getElementById("subtitulo").innerText = data[i].text;
+                    } else {
+                        // Tratamento para botões
+                        // Cor do botão:
+                        document.querySelector(data[i].selector).style.backgroundColor = data[i].backgroundColor;
+                        // Cor da borda do botão:
+                        document.querySelector(data[i].selector).style.borderColor = data[i].borderColor;
+                        // Cor da letra do botão:
+                        document.querySelector(data[i].selector).style.color = data[i].color;
+                    }
+            } 
+        })
             window.addEventListener("load", function(){
                 const loader = document.querySelector(".loader");
                 loader.classList.add('hidden');
             } )
+
+            
         </script>
     </head>
     <body>
@@ -50,8 +77,8 @@
                 <!--- MENU PRINCIPAL --->
                 <div id="menuPrincipal" class="menu-principal">
                     <div id="cabecalho" class="cabecalho">
-                        <h1>BOTANIK</h1>
-                        <h2>Jogo de perguntas e respostas para ensino de Botânica</h2>
+                        <h1 id="titulo">BOTANIK</h1>
+                        <h2 id="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</h2>
                     </div>
                     <div class="grupo-botoes-menu-principal">
                         <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
@@ -241,7 +268,7 @@
             </div>
             
         </div>
-        <script defer src="js/jquery-3.5.1.min.js"></script>
+        
         <script defer src="js/popper.min.js"></script>
         <script defer src="js/bootstrap.min.js"></script>
         <script defer src="js/inicializacao.js"></script>

@@ -1,0 +1,35 @@
+[
+    {
+        "selector": "document",
+        "fontFamily": "Impact,Charcoal,sans-serif",
+        "backgroundColor":"lightgreen"
+    },
+    {
+        "selector": "titulo",
+        "text": "O JOGO"
+    },
+    {
+        "selector": "subtitulo",
+        "text": "perdi"
+    },
+    {
+        "selector": "quadrado1",
+        "backgroundColor": "red",
+        "borderColor": "blue"
+    },
+    {
+        "selector": "quadrado2",
+        "backgroundColor": "white",
+        "borderColor": "black"
+    },
+    {
+        "selector": "quadrado3",
+        "backgroundColor": "black",
+        "borderColor": "white"
+    }, 
+    {
+        "selector": "grupo-botoes-resposta button",
+        "backgroundColor":"black",
+        "borderColor":"white"
+    }
+]
