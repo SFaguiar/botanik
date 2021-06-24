@@ -54,7 +54,7 @@
     color: #2f8f00;
 }
 
-/* --- MENU CONFIGURAÇÕES --- */
+/* --- MENU CONFIGURAÇÕES (WIP) --- */
 .titulo-configuracoes {
     position: fixed;
     top: 0vh;
@@ -62,7 +62,6 @@
 }
 
 .grupo-botoes-configuracoes{
-
     /* --- POSICIONAMENTO --- */
     position: fixed;
     top: 25vh;

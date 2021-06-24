@@ -36,37 +36,18 @@
         <script src="js/jquery-3.5.1.min.js"></script>
         <script defer>
             var perguntas = <?php echo json_encode($perguntasProntas)?>;
-            $.getJSON('aparencia.json', function(data){
-            for (i = 0; i <= data.length; i++) {
-                    if (data[i].selector == "document") {
-                        // Tratamento para o fundo e para a fonte:
-                        document.querySelector("*").style.backgroundImage = 'none';
-                        document.querySelector("*").style.backgroundColor = data[i].backgroundColor;
-                        document.querySelector("*").style.fontFamily = data[i].fontFamily;
-                    } else if(data[i].selector == "titulo") {
-                        // Tratamento para o título:
-                        document.getElementById("titulo").innerText = data[i].text;
-                    } else if (data[i].selector == "subtitulo") {
-                        // Tratamento para subtitulo:
-                        document.getElementById("subtitulo").innerText = data[i].text;
-                    } else {
-                        // Tratamento para botões
-                        // Cor do botão:
-                        document.querySelector(data[i].selector).style.backgroundColor = data[i].backgroundColor;
-                        // Cor da borda do botão:
-                        document.querySelector(data[i].selector).style.borderColor = data[i].borderColor;
-                        // Cor da letra do botão:
-                        document.querySelector(data[i].selector).style.color = data[i].color;
-                    }
-            } 
-        })
+            var configuracoes;
+            
+            $.getJSON('aparencia.json', function(data) {
+                configuracoes = data;
+            })
+
             window.addEventListener("load", function(){
                 const loader = document.querySelector(".loader");
                 loader.classList.add('hidden');
             } )
-
-            
         </script>
+        <script defer src="js/configurador.js"></script>
     </head>
     <body>
         <div class="loader">
@@ -91,20 +72,20 @@
                         <p id="pergunta" class="comando">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non varius ante, sed pulvinar est. Suspendisse imperdiet erat vel viverra dignissim. Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique. Cras sapien dolor, eleifend et efficitur et, dictum ac urna. Sed lorem metus, lacinia nec augue nec, euismod vehicula sapien. Etiam pretium odio ultricies rhoncus gravida. Aliquam eget est sit amet nisi semper interdum ac id risus. Fusce eu dui suscipit, tincidunt purus et, commodo quam. Sed dui nisi, feugiat sed leo eget, vestibulum tempor nisl. Mauris condimentum sem ac mi euismod, quis condimentum odio gravida. Cras ornare libero nec convallis congue. Fusce suscipit lobortis felis nec elementum. Nam vitae nulla tristique, dignissim nunc a, pretium eros. Proin feugiat laoreet sodales. Ut eros arcu, ultricies sit amet porta vitae, mattis id ex. </p>
                         <div id="imagemPlaceholder"></div>
                         <div id="botoesReposta" class="grupo-botoes-resposta">
-                            <button id="botaoAlternativa1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button>
-                            <button id="botaoAlternativa2">Proin non varius ante, sed pulvinar est.</button>
-                            <button id="botaoAlternativa3">Suspendisse imperdiet erat vel viverra dignissim.</button>
-                            <button id="botaoAlternativa4">Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique.</button>
+                            <button id="botaoAlternativa1" class="botao-resposta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button>
+                            <button id="botaoAlternativa2" class="botao-resposta">Proin non varius ante, sed pulvinar est.</button>
+                            <button id="botaoAlternativa3" class="botao-resposta">Suspendisse imperdiet erat vel viverra dignissim.</button>
+                            <button id="botaoAlternativa4" class="botao-resposta">Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique.</button>
                         </div>
                         <div class="grupo-botoes-ajuda">
-                            <button id="botaoCartas" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.webp"><span id="cartas-restantes"></span></button>
-                            <button id="botaoPlacas" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.webp"><span id="dicas-restantes"></span></button>
-                            <button id="botaoPula" data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.webp"><span id="pulos-restantes"></span></button>
+                            <button id="botaoCartas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.webp"><span id="cartas-restantes"></span></button>
+                            <button id="botaoPlacas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.webp"><span id="dicas-restantes"></span></button>
+                            <button id="botaoPula" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.webp"><span id="pulos-restantes"></span></button>
                         </div>
                         <div class="grupo-botoes-controle">
-                            <button id="botaoReiniciar">Reiniciar</button>
+                            <button id="botaoReiniciar" class="botao-controle">Reiniciar</button>
                             <button id="score">Nível: X Pont.: X</button>
-                            <button id="botaoProximo">Próximo</button>
+                            <button id="botaoProximo" class="botao-controle">Próximo</button>
                         </div>
                 </div>
                 <div class="game-over hidden" id="telaGameOver">
