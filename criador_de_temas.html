@@ -184,11 +184,11 @@
                 <ul>
                     <li>
                         <label for="caixa-mudar-cor-titulo">Cor título: </label>
-                        <input type=text id="caixa-mudar-cor-titulo" oninput="mudarCorFonte('caixa-mudar-cor-titulo', 'subtitulo-customizado')"></input>
+                        <input type=text id="caixa-mudar-cor-titulo" oninput="mudarCorFonte('caixa-mudar-cor-titulo', 'titulo-customizado')"></input>
                     </li>
                     <li>
                         <label for="caixa-mudar-cor-subtitulo">Cor Subtítulo: </label>
-                        <input type=text id="caixa-mudar-cor-subtitulo" oninput="mudarCorFonte('caixa-mudar-cor-subtitulo', 'titulo-customizado')"></input>
+                        <input type=text id="caixa-mudar-cor-subtitulo" oninput="mudarCorFonte('caixa-mudar-cor-subtitulo', 'subtitulo-customizado')"></input>
                     </li>
                 </ul>
             </div>
@@ -307,6 +307,7 @@
             <br>
             <button onclick="gerarCodigo()">Gerar</button>
             <button>Copiar</button>
+            <button onclick="baixar()">Baixar</button>
         </div>
     </main>
 
@@ -347,21 +348,46 @@
         }
 
         function atualizarTemplate() {
+            // Fundo:
             template[0].backgroundColor = document.getElementById("caixa-mudar-cor-fundo").value;
+
+            // Título:
             template[1].color = document.getElementById("caixa-mudar-cor-titulo").value;
             template[1].text = document.getElementById("caixa-mudar-texto-titulo").value;
+            
+            // Subítulo:
             template[2].color = document.getElementById("caixa-mudar-cor-subtitulo").value;
-            template[2].color = document.getElementById("caixa-mudar-texto-subtitulo").value;
+            template[2].text = document.getElementById("caixa-mudar-texto-subtitulo").value;
+
+            // Botão menu:
             template[3].color = document.getElementById("caixa-mudar-cor-texto-botao-menu").value;
             template[3].backgroundColor = document.getElementById("caixa-mudar-cor-fundo-botao-menu").value;
             template[3].borderColor = document.getElementById("caixa-mudar-cor-borda-botao-menu").value;
+
+            // Comando:
             template[4].color = document.getElementById("caixa-mudar-cor-comando").value;
+
+            // Botão resposta:
             template[5].color = document.getElementById("caixa-mudar-cor-texto-botao-resposta").value;
             template[5].backgroundColor = document.getElementById("caixa-mudar-cor-fundo-botao-resposta").value;
             template[5].borderColor = document.getElementById("caixa-mudar-cor-borda-botao-resposta").value;
+
+            // Botão ajuda:
             template[6].color = document.getElementById("caixa-mudar-cor-texto-botao-ajuda").value;
             template[6].backgroundColor = document.getElementById("caixa-mudar-cor-fundo-botao-ajuda").value;
             template[6].borderColor = document.getElementById("caixa-mudar-cor-borda-botao-ajuda").value;
+        }
+
+        function baixar(){
+            gerarCodigo();
+            var text = document.getElementById('texto-resultados').value;
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', 'aparencia.json');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
         }
 
         let template = [
