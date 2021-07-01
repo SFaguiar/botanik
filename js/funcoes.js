@@ -47,10 +47,10 @@ function calcularNivel(score){
 function setProximaPergunta(){
     resetStatus()
     destravarAjudas()
+    atualizarBarraProgresso()
     nivelAtual = calcularNivel(score)
     // seleciona a pergunta
     mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
-    displayScore.innerHTML =' NÍVEL: ' + nivelAtual +' PONT.: ' + score
 
     perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
     resposta = perguntaAtual.alternativa1
@@ -85,7 +85,7 @@ function resetStatus(){
 // Função que mostra, graficamente, uma nova pergunta:
 function mostrarPergunta(pergunta){
     resetarCoresAlternativas()
-    textoDaPergunta.innerText = pergunta.comando
+    textoDaPergunta.innerText = "[" + pergunta.tipo + "] " + pergunta.comando
     posicionamento = Math.floor(Math.random() * 4)
     if (posicionamento === 0){
         setBotao(botao1, pergunta, 1)
@@ -108,16 +108,6 @@ function mostrarPergunta(pergunta){
         setBotao(botao3, pergunta, 3)
         setBotao(botao1, pergunta, 1)
     }
-
-    if (nivelAtual === 1) {
-        document.body.style.backgroundImage = "url('imagens/background.webp')"
-    } else if (nivelAtual === 2) {
-        document.body.style.backgroundImage = "url('imagens/background - verao.webp')"
-    } else if (nivelAtual === 3) {
-        document.body.style.backgroundImage = "url('imagens/background - outono.webp')"
-    } else if (nivelAtual === 4) {
-        document.body.style.backgroundImage = "url('imagens/background - inverno.webp')"
-    }
 }
 
 // Função que é acionada após a confirmação de alternativa:
@@ -129,26 +119,26 @@ function confirmarAlternativa(){
     travarAjudas()
 
     // Envio de dados:
-    let id = perguntaAtual.id;
-    let escolha;   
+    let id = perguntaAtual.id
+    let escolha
     switch (botaoSelecionado.innerText) {
         case perguntaAtual.alternativa1:
-            escolha = "a";
-            break;
+            escolha = "a"
+            break
         case perguntaAtual.alternativa2:
-            escolha = "b";
-            break;
+            escolha = "b"
+            break
         case perguntaAtual.alternativa3:
-            escolha = "c";
-            break;
+            escolha = "c"
+            break
         case perguntaAtual.alternativa4:
-            escolha = "d";
-            break;
+            escolha = "d"
+            break
     }
 
-    xhr.open("POST", "enviar_estatistica.php");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("id="+id+"&escolha="+escolha);
+    xhr.open("POST", "enviar_estatistica.php")
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    xhr.send("id="+id+"&escolha="+escolha)
 
     // Verifica se acertou:
     if (botaoSelecionado.innerText === resposta){
@@ -214,11 +204,18 @@ function mudarCoresAlternativas(){
 
 // Função que descolore as alternativas após uma nova questão ser exibida:
 function resetarCoresAlternativas(){
-    botao1.style.backgroundColor = ''
-    botao2.style.backgroundColor = ''
-    botao3.style.backgroundColor = ''
-    botao4.style.backgroundColor = ''
-
+    if (configuracoes != null) {
+    botao1.style.backgroundColor = configuracoes[5].backgroundColor
+    botao2.style.backgroundColor = configuracoes[5].backgroundColor
+    botao3.style.backgroundColor = configuracoes[5].backgroundColor
+    botao4.style.backgroundColor = configuracoes[5].backgroundColor
+    } else {
+        botao1.style.backgroundColor = ''
+        botao2.style.backgroundColor = ''
+        botao3.style.backgroundColor = ''
+        botao4.style.backgroundColor = ''
+    }
+    
     botao1.disabled = false
     botao2.disabled = false
     botao3.disabled = false
@@ -367,10 +364,10 @@ function abrirCartas() {
             travarBotao(botaoCartas)
         }
         cartas.classList.add('hidden')
-        caixaCartaVirada1.checked = false;
-        caixaCartaVirada2.checked = false;
-        caixaCartaVirada3.checked = false;
-        caixaCartaVirada4.checked = false;
+        caixaCartaVirada1.checked = false
+        caixaCartaVirada2.checked = false
+        caixaCartaVirada3.checked = false
+        caixaCartaVirada4.checked = false
         card1.classList.remove('hidden')
         card2.classList.remove('hidden')
         card3.classList.remove('hidden')
@@ -460,12 +457,17 @@ function mostrarTelaGameOver(){
     document.getElementById('respostaCorretaGameOver').innerText = resposta
 }
 
+function atualizarBarraProgresso(){
+    let progresso = (score/numeroDePerguntas) * 100
+    document.querySelector(".progress-bar div").style.width = progresso + "%"
+}
+
 $(function() {
     $('.pop').on('click', function() {
-        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-        $('#imagemodal').modal('show');   
-    });		
-});
+        $('.imagepreview').attr('src', $(this).find('img').attr('src'))
+        $('#imagemodal').modal('show')
+    })
+})
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()

@@ -84,7 +84,16 @@
                         </div>
                         <div class="grupo-botoes-controle">
                             <button id="botaoReiniciar" class="botao-controle">Reiniciar</button>
-                            <button id="score">Nível: X Pont.: X</button>
+                            <button id="score">
+                                <div class="container">
+                                    <div class="vertical-center">
+                                        <div class="progress-bar">
+                                            PROGRESSO
+                                            <div style="width: 50%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
                             <button id="botaoProximo" class="botao-controle">Próximo</button>
                         </div>
                 </div>
