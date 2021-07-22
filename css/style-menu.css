@@ -9,7 +9,7 @@
     margin: 7% 0;
 }
 
-.cabecalho h1 {
+#titulo {
     display: block;
     font-size: 7em;
     font-weight: 300;
@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-.cabecalho h2 {
+#subtitulo {
     display: block;
     font-family: 'Rubik';
     font-size: 1.1em;
@@ -97,5 +97,42 @@
 }
 
 @media (max-width: 481px) {
+    .margem {
+        margin: 0;
+    }
 
+    .cabecalho {
+        align-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #titulo {
+        font-size: 20vw;
+        font-weight: 300;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    #subtitulo {
+        font-size: 4vw;
+        font-weight: 300;
+        line-height: 1.2;
+        border-top: 0.25vh solid #ffffff;
+        text-align: center;
+    }
+
+    .grupo-botoes-menu-principal{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .botao-do-menu-principal{
+        margin: 2.5%;
+    }
 }

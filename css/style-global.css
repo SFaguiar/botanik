@@ -1,5 +1,5 @@
 body {
-    background-image:url(../imagens/background.webp);
+    background-image:url("../imagens/background.jpg");
     background-color: #d1ffd1;
     background-repeat: repeat-x;
     background-size: cover;
@@ -34,10 +34,7 @@ body {
 }
 
 .margem {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    margin-right: 2vw;
-    margin-left: 2vw;
+    margin:0;
 }
 
 .hidden {
@@ -66,8 +63,3 @@ body {
     }
 }
 
-
-
-@media (max-width: 481px) {
-
-}

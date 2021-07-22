@@ -53,60 +53,60 @@
         <div class="loader">
             <img src="imagens/loading.gif" alt="Carregando..." />
         </div>
-        <div id="bg-animado" class="bg">
-            <div class="margem">
-                <!--- MENU PRINCIPAL --->
-                <div id="menuPrincipal" class="menu-principal">
-                    <div id="cabecalho" class="cabecalho">
-                        <h1 id="titulo">BOTANIK</h1>
-                        <h2 id="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</h2>
-                    </div>
-                    <div class="grupo-botoes-menu-principal">
-                        <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
-                        <button id="botaoSala" class="botao-do-menu-principal">Jogar em Sala</button>
-                        <button id="botaoRegras" class="botao-do-menu-principal">Saiba Mais</button>
-                    </div>
+
+            <!--- MENU PRINCIPAL --->
+            <div id="menuPrincipal" class="menu-principal">
+                <div id="cabecalho" class="cabecalho">
+                    <h1 id="titulo">BOTANIK</h1>
+                    <h2 id="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</h2>
                 </div>
-                <!--- O JOGO --->
-                <div id="jogo" class="jogo hidden">
-                        <p id="pergunta" class="comando">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non varius ante, sed pulvinar est. Suspendisse imperdiet erat vel viverra dignissim. Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique. Cras sapien dolor, eleifend et efficitur et, dictum ac urna. Sed lorem metus, lacinia nec augue nec, euismod vehicula sapien. Etiam pretium odio ultricies rhoncus gravida. Aliquam eget est sit amet nisi semper interdum ac id risus. Fusce eu dui suscipit, tincidunt purus et, commodo quam. Sed dui nisi, feugiat sed leo eget, vestibulum tempor nisl. Mauris condimentum sem ac mi euismod, quis condimentum odio gravida. Cras ornare libero nec convallis congue. Fusce suscipit lobortis felis nec elementum. Nam vitae nulla tristique, dignissim nunc a, pretium eros. Proin feugiat laoreet sodales. Ut eros arcu, ultricies sit amet porta vitae, mattis id ex. </p>
-                        <div id="imagemPlaceholder"></div>
-                        <div id="botoesReposta" class="grupo-botoes-resposta">
-                            <button id="botaoAlternativa1" class="botao-resposta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button>
-                            <button id="botaoAlternativa2" class="botao-resposta">Proin non varius ante, sed pulvinar est.</button>
-                            <button id="botaoAlternativa3" class="botao-resposta">Suspendisse imperdiet erat vel viverra dignissim.</button>
-                            <button id="botaoAlternativa4" class="botao-resposta">Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique.</button>
-                        </div>
-                        <div class="grupo-botoes-ajuda">
-                            <button id="botaoCartas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.webp"><span id="cartas-restantes"></span></button>
-                            <button id="botaoPlacas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.webp"><span id="dicas-restantes"></span></button>
-                            <button id="botaoPula" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.webp"><span id="pulos-restantes"></span></button>
-                        </div>
-                        <div class="grupo-botoes-controle">
-                            <button id="botaoReiniciar" class="botao-controle">Reiniciar</button>
-                            <button id="score">
-                                <div class="container">
-                                    <div class="vertical-center">
-                                        <div class="progress-bar">
-                                            PROGRESSO
-                                            <div style="width: 50%;"></div>
-                                        </div>
+                <div class="grupo-botoes-menu-principal">
+                    <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
+                    <button id="botaoSala" class="botao-do-menu-principal hidden">Jogar em Sala</button>
+                    <button id="botaoRegras" class="botao-do-menu-principal">Saiba Mais</button>
+                </div>
+            </div>
+            <!--- O JOGO --->
+            <div id="jogo" class="jogo hidden">
+                    <p id="pergunta" class="comando">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non varius ante, sed pulvinar est. Suspendisse imperdiet erat vel viverra dignissim. Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique. Cras sapien dolor, eleifend et efficitur et, dictum ac urna. Sed lorem metus, lacinia nec augue nec, euismod vehicula sapien. Etiam pretium odio ultricies rhoncus gravida. Aliquam eget est sit amet nisi semper interdum ac id risus. Fusce eu dui suscipit, tincidunt purus et, commodo quam. Sed dui nisi, feugiat sed leo eget, vestibulum tempor nisl. Mauris condimentum sem ac mi euismod, quis condimentum odio gravida. Cras ornare libero nec convallis congue. Fusce suscipit lobortis felis nec elementum. Nam vitae nulla tristique, dignissim nunc a, pretium eros. Proin feugiat laoreet sodales. Ut eros arcu, ultricies sit amet porta vitae, mattis id ex. </p>
+                    <div id="imagemPlaceholder"></div>
+                    <div id="botoesReposta" class="grupo-botoes-resposta">
+                        <button id="botaoAlternativa1" class="botao-resposta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button>
+                        <button id="botaoAlternativa2" class="botao-resposta">Proin non varius ante, sed pulvinar est.</button>
+                        <button id="botaoAlternativa3" class="botao-resposta">Suspendisse imperdiet erat vel viverra dignissim.</button>
+                        <button id="botaoAlternativa4" class="botao-resposta">Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique.</button>
+                    </div>
+                    <div class="grupo-botoes-ajuda">
+                        <button id="botaoCartas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.webp"><span id="cartas-restantes"></span></button>
+                        <button id="botaoPlacas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.webp"><span id="dicas-restantes"></span></button>
+                        <button id="botaoPula" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.webp"><span id="pulos-restantes"></span></button>
+                    </div>
+                    <div class="grupo-botoes-controle">
+                        <button id="botaoReiniciar" class="botao-controle">Reiniciar</button>
+                        <button id="score">
+                            <div class="container">
+                                <div class="vertical-center">
+                                    <div class="progress-bar">
+                                        PROGRESSO
+                                        <div style="width: 50%;"></div>
                                     </div>
                                 </div>
-                            </button>
-                            <button id="botaoProximo" class="botao-controle">Próximo</button>
-                        </div>
-                </div>
-                <div class="game-over hidden" id="telaGameOver">
+                            </div>
+                        </button>
+                        <button id="botaoProximo" class="botao-controle">Próximo</button>
+                    </div>
+            </div>
+            <div class="game-over hidden" id="telaGameOver">
+                <header>
                     <h5>Game Over!</h5>
+                </header>
+                <main>
                     <p>Pontuação final: <span id="finalScore">PONTUACAO</span></p>
                     <p>Comando da questão: <span id="comandoGameOver">COMANDO</span></p>
                     <p>Resposta correta: <span id="respostaCorretaGameOver">RESPOSTA CORRETA</span></p>
                     <button id="gameOverReiniciar">Reiniciar Jogo</button>
-                </div> 
-
-            </div>
-        </div>
+                </main>
+            </div> 
 
             <?php 
                 $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
@@ -261,8 +261,6 @@
         
         <script defer src="js/popper.min.js"></script>
         <script defer src="js/bootstrap.min.js"></script>
-        <script defer src="js/inicializacao.js"></script>
-        <script defer src="js/funcoes.js"></script>
-        <script defer src="js/atribuicoes.js"></script>
+        <script defer src="js/game.js"></script>
     </body>
 </html>
