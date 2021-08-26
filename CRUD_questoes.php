@@ -4,6 +4,26 @@
   if (isset($_REQUEST["salvo"]) && ($_REQUEST["salvo"] == true)) {
     echo "QUESTÃO NOVA SALVA COM SUCESSO!";
   }
+
+  function prepararListaDePerguntas($nivel, $conexao){
+    $query = "SELECT * FROM `perguntas_jogo` WHERE `nivel` = ".$nivel;
+    $stmt = $conexao->query($query);
+    $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    for ($i = 0; $i < count($lista); $i++) {
+        if ($lista[$i]['imagem'] != ""){
+            $lista[$i]['imagem'] = "1M4G3M";
+        }
+    }
+    return $lista;
+}
+
+$perguntasProntas = array(
+    1 => prepararListaDePerguntas(1, $conexao),
+    2 => prepararListaDePerguntas(2, $conexao),
+    3 => prepararListaDePerguntas(3, $conexao),
+    4 => prepararListaDePerguntas(4, $conexao),
+);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,7 +34,24 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/style-crud.css">
       <title>Criar, ler, atualizar e deletar: banco de questões</title>
+      
+      <script defer>
+        var perguntas = <?php echo json_encode($perguntasProntas)?>;
+        var perguntasString = JSON.stringify(perguntas);
+
+
+        function baixar(){
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(perguntasString));
+            element.setAttribute('download', 'perguntas.json');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+      </script>
     </head>
+
     <body>
     <header>
       <div class="caixa">
@@ -105,6 +142,7 @@
     </div>
 
     <!--- TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA --->
+    <button id="baixarQuestoes" onclick="baixar()">BAIXAR QUESTÕES EM .JSON</button>
     <div class="table-responsive text-center">
       <table class="table table-hover" border="1" style="overflow:scroll;">
         <thead class="thead-dark">

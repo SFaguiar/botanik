@@ -16,6 +16,7 @@ const botaoRegras = document.getElementById('botaoRegras')
 const displayScore = document.getElementById('score')
 const textoDaPergunta = document.getElementById('pergunta')
 const elementoDosBotoesDeResposta = document.getElementById('botoesReposta')
+const botoesResposta = document.querySelectorAll('.botao-resposta')
 const botao1 = document.getElementById('botaoAlternativa1')
 const botao2 = document.getElementById('botaoAlternativa2')
 const botao3 = document.getElementById('botaoAlternativa3')
@@ -36,6 +37,7 @@ const telaGameOver = document.getElementById('telaGameOver')
 const gameOverReiniciar = document.getElementById('gameOverReiniciar')
 
 /* --- AJUDAS --- */
+const botoesAjuda = document.querySelectorAll('.botao-ajuda')
 const containerDaImagem = document.getElementById('containerDaImagem')
 const botaoCartas = document.getElementById('botaoCartas')
 const botaoPlacas = document.getElementById('botaoPlacas')
@@ -152,75 +154,75 @@ function mostrarPergunta(pergunta){
     resetarCoresAlternativas()
     textoDaPergunta.innerText = "[" + pergunta.tipo + "] " + pergunta.comando
     posicionamento = Math.floor(Math.random() * 4)
-    if (posicionamento === 0){
-        setBotao(botao1, pergunta, 1)
-        setBotao(botao2, pergunta, 2)
-        setBotao(botao3, pergunta, 3)
-        setBotao(botao4, pergunta, 4)
-    } else if (posicionamento === 1){
-        setBotao(botao4, pergunta, 4)
-        setBotao(botao3, pergunta, 3)
-        setBotao(botao2, pergunta, 2)
-        setBotao(botao1, pergunta, 1)
-    } else if (posicionamento === 2){
-        setBotao(botao3, pergunta, 3)
-        setBotao(botao4, pergunta, 4)
-        setBotao(botao1, pergunta, 1)
-        setBotao(botao2, pergunta, 2)
+    if (posicionamento === 0) {
+        setBotao(botao1, pergunta, 1);
+        setBotao(botao2, pergunta, 2);
+        setBotao(botao3, pergunta, 3);
+        setBotao(botao4, pergunta, 4);
+    } else if (posicionamento === 1) {
+        setBotao(botao4, pergunta, 4);
+        setBotao(botao3, pergunta, 3);
+        setBotao(botao2, pergunta, 2);
+        setBotao(botao1, pergunta, 1);
+    } else if (posicionamento === 2) {
+        setBotao(botao3, pergunta, 3);
+        setBotao(botao4, pergunta, 4);
+        setBotao(botao1, pergunta, 1);
+        setBotao(botao2, pergunta, 2);
     } else if (posicionamento === 3) {
-        setBotao(botao2, pergunta, 2)
-        setBotao(botao4, pergunta, 4)
-        setBotao(botao3, pergunta, 3)
-        setBotao(botao1, pergunta, 1)
+        setBotao(botao2, pergunta, 2);
+        setBotao(botao4, pergunta, 4);
+        setBotao(botao3, pergunta, 3);
+        setBotao(botao1, pergunta, 1);
     }
 }
 
 // Função que é acionada após a confirmação de alternativa:
 function confirmarAlternativa(){
-    let acertou
+    let acertou;
 
     // Modificações na exibição:
-    mudarCoresAlternativas()
-    travarAjudas()
+    mudarCoresAlternativas();
+    travarAjudas();
 
     // Envio de dados:
-    let id = perguntaAtual.id
-    let escolha
+    let id = perguntaAtual.id;
+    let escolha;
     switch (botaoSelecionado.innerText) {
         case perguntaAtual.alternativa1:
-            escolha = "a"
-            break
+            escolha = "a";
+            break;
         case perguntaAtual.alternativa2:
-            escolha = "b"
-            break
+            escolha = "b";
+            break;
         case perguntaAtual.alternativa3:
-            escolha = "c"
-            break
+            escolha = "c";
+            break;
         case perguntaAtual.alternativa4:
-            escolha = "d"
-            break
+            escolha = "d";
+            break;
     }
 
-    xhr.open("POST", "enviar_estatistica.php")
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-    xhr.send("id="+id+"&escolha="+escolha)
+    xhr.open("POST", "enviar_estatistica.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("id="+id+"&escolha="+escolha);
 
     // Verifica se acertou:
     if (botaoSelecionado.innerText === resposta){
         /* --- FLUXO PARA ACERTO --- */
         //Animação e sons:
-        somCorreto.play()
+        somCorreto.play();
 
         // Modificações nas variáveis globais:
-        score += 1
-        acertou = true
+        score += 1;
+        acertou = true;
     } else {
         /* --- FLUXO PARA ERRO --- */
         //Animação e sons:
-        somErrado.play()
+        somErrado.play();
 
         // Modificações nas variáveis globais:
-        acertou = false
+        acertou = false;
     }
     
     /* --- VERIFICAÇÃO DE FIM DE JOGO --- */
@@ -256,47 +258,57 @@ function confirmarAjuda(){
 
 // Função que colore as alternativas após a confirmação da seleção:
 function mudarCoresAlternativas(){
-    botao1.style.backgroundColor = '#28a745'
-    botao2.style.backgroundColor = '#dc3546'
-    botao3.style.backgroundColor = '#dc3546'
-    botao4.style.backgroundColor = '#dc3546'
 
-    botao1.disabled = true
-    botao2.disabled = true
-    botao3.disabled = true
-    botao4.disabled = true
+    // Muda a cor da alternativa correta para verde:
+    botoesResposta[0].style.backgroundColor = '#28a745';
+
+    // Muda a cor das alternativas erradas para vermelho:
+    for (i = 1; i < botoesResposta.length; i++) {
+        botoesResposta[i].style.backgroundColor = '#dc3546';
+    }
+
+    // Desabilita os botões para não serem clicados após a confirmação:
+    for (i = 0; i < botoesResposta.length; i++) {
+        botoesResposta[i].disabled = true;
+    }
 }
 
 // Função que descolore as alternativas após uma nova questão ser exibida:
 function resetarCoresAlternativas(){
     if (configuracoes != null) {
-    botao1.style.backgroundColor = configuracoes[5].backgroundColor
-    botao2.style.backgroundColor = configuracoes[5].backgroundColor
-    botao3.style.backgroundColor = configuracoes[5].backgroundColor
-    botao4.style.backgroundColor = configuracoes[5].backgroundColor
+        for (i = 0; i < botoesResposta.length; i++) {
+            botoesResposta[i].style.backgroundColor = configuracoes[5].backgroundColor;
+        }
     } else {
-        botao1.style.backgroundColor = ''
-        botao2.style.backgroundColor = ''
-        botao3.style.backgroundColor = ''
-        botao4.style.backgroundColor = ''
+        for (i = 0; i < botoesResposta.length; i++) {
+            botoesResposta[i].style.backgroundColor = '';
+        }
     }
     
-    botao1.disabled = false
-    botao2.disabled = false
-    botao3.disabled = false
-    botao4.disabled = false
+    for (i = 0; i < botoesResposta.length; i++) {
+        botoesResposta[i].disabled = false;
+    }
 }
 
+// Trava todos os botões de ajuda disponíveis:
 function travarAjudas(){
-    botaoCartas.disabled = true
-    botaoPlacas.disabled = true
-    botaoPula.disabled = true
+    for (i = 0; i < botoesAjuda.length; i++) {
+        botoesAjuda[i].disabled = true;
+    }
 }
 
 function destravarAjudas(){
-    if (ajudas[0] > 0) {botaoCartas.disabled = false}
-    if (ajudas[2] > 0) {botaoPlacas.disabled = false}
-    if (ajudas[3] > 0) {botaoPula.disabled = false}
+    if (ajudas[0] > 0) {
+        botaoCartas.disabled = false;
+    }
+
+    if (ajudas[2] > 0) {
+        botaoPlacas.disabled = false;
+    }
+
+    if (ajudas[3] > 0) {
+        botaoPula.disabled = false;
+    }
 }
 
 function selecionarResposta(e){
@@ -381,13 +393,13 @@ function removerImagem(){
 }
 
 function passarParaProximaPergunta(){
-    removerImagem()
-    indiceDaPerguntaAtual++
-    setProximaPergunta()
+    removerImagem();
+    indiceDaPerguntaAtual++;
+    setProximaPergunta();
 }
 
 function pularPergunta(){
-    if ((ajudas[3] > 0) && (31 > score)) {
+    if ((ajudas[3] > 0) && (score < 31)) {
             document.getElementById('container-principal-ajuda-pulo').classList.remove('hidden')
             passarParaProximaPergunta()
             ajudas[3] -= 1
@@ -499,19 +511,19 @@ function olharPlacas(){
 }
 
 function travarBotao(botao){
-    botao.disabled = true
-    botao.classList.add('btn-danger')
+    botao.disabled = true;
+    botao.classList.add('btn-danger');
 }
 
 function destravarBotao(botao){
-    botao.disabled = false
-    botao.classList.remove('btn-danger')
+    botao.disabled = false;
+    botao.classList.remove('btn-danger');
 }
 
 function destravarTodasAjudas(){
-    destravarBotao(botaoPula)
-    destravarBotao(botaoCartas)
-    destravarBotao(botaoPlacas)
+    for (i = 0; i < botoesAjuda.length; i++ ) {
+        destravarBotao(botoesAjuda[i]);
+    }
 }
 
 function mostrarTelaGameOver(){
