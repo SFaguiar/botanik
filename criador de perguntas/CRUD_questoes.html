@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="../css/reset.css">
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/style-crud.css">
+      <title>Banco de questões</title>
+      
+      <script defer>
+        //var perguntas = ;
+        //var perguntasString = JSON.stringify(perguntas);
+
+
+        function baixar(){
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(perguntasString));
+            element.setAttribute('download', 'perguntas.json');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+      </script>
+    </head>
+
+    <body>
+    <header>
+      <div class="caixa">
+        <h1>Criar, Ler, Atualizar e Deletar: Banco de Questões</h1>
+      </div>
+    </header>
+    <!--- FORMULÁRIO --->
+    <main>
+    <div class="create">
+    <div class="form-group">
+      <form action="#" method="" name="" enctype="multipart/form-data" >
+        <input type="hidden" name="acao" value="criar"/>
+        <div class="row">
+          <div class="col">
+          <label for="nivel">Nível:</label>
+            <select class="form-control" id="nivel" name="nivel">
+              <option value="1">1 - FÁCIL</option>
+              <option value="2">2 - MÉDIO</option>
+              <option value="3">3 - DIFÍCIL</option>
+              <option value="4">4 - PERGUNTA FINAL (PARA ÚLTIMA PERGUNTA)</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="tipo">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo">
+              <option value="ecologia e fisiologia vegetal">Ecologia e Fisiologia Vegetal</option>
+              <option value="morfologia e anatomia vegetal">Morfologia e Anatomia Vegetal</option>
+              <option value="diversidade">Diversidade</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="comando-form">Comando da questão:
+              <textarea class="form-control" name="comando" id="comando-form" required></textarea>
+            </label>
+          </div>
+          <div class="col">
+            <label for="alternativa1-form">Alternativa Correta:
+              <textarea class="form-control" name="alternativa1" id="alternativa1-form" required></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="alternativa2-form">Primeira alternativa incorreta:
+              <textarea class="form-control" name="alternativa2" id="alternativa2-form" required></textarea>
+            </label>
+          </div>
+          <div class="col">
+            <label for="alternativa3-form"> Segunda alternativa incorreta:
+              <textarea class="form-control" name="alternativa3" id="alternativa3-form" required></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="alternativa4-form">Terceira alternativa incorreta:
+              <textarea class="form-control" name="alternativa4" id="alternativa4-form" required></textarea>
+            </label>
+          </div>
+          <div class="col">
+            <label for="dica-form">Link para página com dica:
+              <textarea class="form-control" name="dica" id="dica-form" required></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <div class="botoesC">
+                <input id='adicionar-questao' class='btn btn-primary' type="submit" value="Enviar" />
+                <input class="btn btn-info" type="reset" value="Apagar caixas" />
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
+    </div>
+
+    <!--- TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA TABELA --->
+    <button id="baixarQuestoes" onclick="baixar()">BAIXAR QUESTÕES EM .JSON</button>
+    <div class="table-responsive text-center">
+      <table class="table table-hover" border="1" style="overflow:scroll;">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nível</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Comando</th>
+            <th scope="col">Imagem</th>
+            <th scope="col">Alternativa correta</th>
+            <th scope="col">Alternativa incorreta #1</th>
+            <th scope="col">Alternativa incorreta #2</th>
+            <th scope="col">Alternativa incorreta #3</th>
+            <th scope="col">Dica</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-pacientes">
+
+          
+        </tbody>
+      </table>
+    </div>
+    </main>
+    
+    <button id="obterDados">Obter dados</button>
+    <script type="text/javascript">
+    const button = document.querySelector('#obterDados');
+
+    button.addEventListener('click', function () {
+      fetch('perguntas.json').then(data => data.json()).then(data => console.log(data));
+    });
+
+    </script>
+      <script src="tabela.js"></script>
+
+      <!--- BOOTSTRAP DEPENDENCIES --->
+      <script src="../js/jquery-3.5.1.min.js"></script>
+      <script src="../js/popper.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+    </body>
+</html>

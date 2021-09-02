@@ -1,0 +1,122 @@
+* {
+    text-align: center;
+    margin: 0 10%;
+}
+
+header {
+    margin: 5%;
+}
+
+h1, h2, h3, h4 {
+    margin: 2.5%;
+}
+
+.divisao {
+    margin: 5%;
+}
+
+.instrucoes p {
+    text-align: justify;
+}
+
+.instrucoes ul li {
+    text-align: justify;
+    margin: 1% 0;
+}
+
+.container {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 90%;
+    height: 200px;
+    position: relative;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+li label {
+    display: inline-block;
+    width: 100px;
+}
+
+#titulo-customizado {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+}
+
+#subtitulo-customizado {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    padding-top: 1%;
+}
+
+#botao-menu-customizado {
+    background-color: #2f8f00;
+    width: 50%;
+    padding: 10px;
+    color: white;
+    border: 2px solid #2f8f00;
+    border-radius: 30px;
+    font-family: 'Rubik';
+    font-size: 150%;
+    text-align: center;
+    transition-duration: 0.4s;
+    margin: auto;
+}
+
+#comando-customizado {
+    text-align: center;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+#botao-resposta-customizado {
+    background-color: #eeed;
+    font-family: 'Rubik', sans-serif;
+    color: #2f8f00;
+    
+    display: inline-block;
+    text-align: center;
+    transition-duration: 0.4s;
+    letter-spacing: 0px;
+
+    /* --- FONTE --- */
+    font-size: 1.25rem;
+    
+    border: none;
+    border-radius: 50px;
+    box-shadow: 4px 7px #2229;
+    padding: 1% 5%;
+
+    width: 75%;
+    height: 100%;
+}
+
+#botao-ajuda-customizado {
+    text-align: center;
+    font-size: 100%;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: #2f8f00;
+    color: white;
+    border: none;
+}
+
+#texto-resultados {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 90%;
+    height: 200px;
+    position: relative;
+}

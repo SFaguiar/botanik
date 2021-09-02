@@ -1,0 +1,57 @@
+header {
+	background-color: hsl(0, 0%, 73%);
+	padding: 20px;
+}
+
+header h1 {
+    padding: 10px;
+    font-size: 150%;
+    display: inline-block;
+}
+
+.caixa {
+	position: relative;
+	margin: auto 0;
+}
+
+nav {
+    position: absolute;
+    display: inline-block;
+	right: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 0 0 15px;
+}
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 150%;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #c78c79;
+	text-decoration: underline;
+}
+
+.create {
+    margin: 2% 5%;
+}
+
+.create textarea {
+    border: 1px solid black;
+    display: inline-block;
+    width: 100%;
+}
+
+.botoesC {
+    float: right;
+}
+
+.col label {
+    width: 100%;
+}
