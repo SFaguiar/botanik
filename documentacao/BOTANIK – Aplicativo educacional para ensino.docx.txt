@@ -1,0 +1,63 @@
+﻿C:\Users\SANNA\Box\Documentos\Work_Formação de Professores_2020\Resumos_Modelo_WFP 2020\normas_resumos_WFP_2020\cabeçalho\WhatsApp Image 2020-09-17 at 10.01.04.jpeg 
+
+
+
+BOTANIK – Aplicativo educacional para ensino de botânica no ensino médio
+
+
+RESUMO: O ensino de botânica no ensino médio sempre foi um tema desafiador para alunos e professores da educação básica. Uma forma de estimular o processo de ensino-aprendizagem desse tema seria o uso de ferramentas metodológicas que aproximem o ensino da realidade desses alunos. Com a predileção dos jovens por jogos digitais e a popularização dos smartphones, o desenvolvimento de aplicativos para fins educativos pode trazer diversos benefícios, tanto para alunos, como para professores em sala de aula. A produção técnica que apresentamos é o aplicativo educacional BOTANIK, um jogo de perguntas e respostas (quiz) que aborda os principais temas de botânica ensinados no ensino médio. O aplicativo está em fase final de desenvolvimento e, para utilizá-lo em sala de aula, serão realizadas oficinas de capacitação para professores do ensino médio da rede pública. Ao término das atividades, a relevância do aplicativo educacional como metodologia para melhoria do ensino de botânica no ensino médio será avaliada, bem como as dificuldades em utilizá-lo. 
+
+
+Palavras-chave: cegueira botânica; smartphone; quiz.
+
+
+Introdução
+O ensino de botânica no ensino médio sempre foi um tema desafiador para alunos e professores da educação básica. Por se tratar de um tema muito teórico, com vocábulos difíceis e distante do cotidiano dos alunos, a botânica é considerada matéria escolar árida, entediante e fora do contexto moderno (SALATINO; BUCKERIDGE, 2016). Essa “cegueira botânica” (WANDERSEE; SCHUSSLER, 2001), causa grande consternação, em razão do papel fundamental que as plantas exercem no fluxo de energia e nutrientes, na regulação do clima, bem como no lazer e subsistência humana (CHACOURT, 1974; RIZZINNI; MORS, 1995). 
+Uma forma de estimular o processo de ensino-aprendizagem de botânica na educação básica seria a atualização de ferramentas metodológicas que aproximem o ensino da realidade dos alunos. Com o advento e vulgarização de novas tecnologias, a maioria dos alunos dessa geração tem uma predileção por jogos, principalmente os digitais, usando parte de seu tempo diário com essas atividades (GROS, 2003). Dispositivos móveis, como tablets e smartphones, podem ser grandes aliados no desenvolvimento de habilidades e perspectivas, provendo, também, o conhecimento (SHULER, 2009; SUN, 2008). A popularização dos smartphones permitiu o desenvolvimento de aplicativos, não apenas voltados para o entretenimento do utilizador, mas também para fins educativos. O desenvolvimento de estratégias educacionais que permitam atrelar a aprendizagem à dinâmica dos jogos permite o desenvolvimento de aulas mais atrativas e motivadoras, possibilitando uma aprendizagem mais ativa e inovadora. 
+O uso de jogos tem por objetivo aumentar a motivação e o interesse, o que contribui para o engajamento do aluno. Um dos maiores benefícios propostos pelos aplicativos de aprendizagem é a forma como conseguem integrar o lúdico e o educativo. Ao proporcionar mais motivação e engajamento aos alunos, os jogos em sala de aula levam os alunos a se tornarem altamente motivados e, consequentemente, determinados na realização de suas atividades (CSIKSZENTMIHALYI, 1999). 
+Ajudar os alunos a se tornarem sujeitos ativos no processo de aprendizagem é papel fundamental desse novo professor do século XXI e o uso dessas metodologias ativas, como instrumento para facilitar o aprendizado, usando de mecanismos que mudem e transformem o modo de aprender, pode ser pensado como uma forma de diminuir a dificuldade de compreensão do aluno na sala de aula. Ensinar de forma ativa depende do interesse e motivação do alunado, sugerindo o uso de recursos que façam parte do cotidiano do estudante e da colaboração de todos os integrantes do sistema educacional na sua implementação. Para Vygotsky (2007), “a criança tem um papel ativo no processo de aprendizagem, entretanto não atua sozinha. Ela aprende a pensar criando, sozinha ou com a ajuda de alguém, e interiorizando progressivamente versões mais adequadas das ferramentas “intelectuais” que lhe apresentam e lhe ensinam ativamente os adultos a sua volta”.
+Nosso produto é um aplicativo educacional, que consiste em um jogo de perguntas e respostas (quiz) que abordam os temas botânicos aprendidos no ensino médio. Esperamos que o ambiente de jogo, propiciado ao utilizar o aplicativo, estimule os alunos a aprender botânica, melhorando o ensino desse conteúdo no ensino médio.
+
+
+Descrição da produção
+O aplicativo educacional BOTANIK consiste em um jogo de perguntas e respostas (quiz), contendo perguntas que abordam os temas botânicos aprendidos no ensino médio (morfologia e anatomia; diversidade; ecologia e fisiologia). O BOTANIK foi desenvolvido utilizando a linguagem HTML5 com CSS e banco de dados MySQL. Ele segue os moldes do jogo “Show do Milhão” e possui quatro fases, cada uma com nível crescente de dificuldade. Para cada fase, foi criado um banco de dados com várias perguntas (50 perguntas, para as três primeiras fases, e 40 perguntas, para a fase final), para serem escolhidas aleatoriamente a cada jogo iniciado. As perguntas são agrupadas em quatro níveis, sendo o nível 1 considerado o mais fácil e o nível, 4 o mais difícil. Os níveis 1, 2 e 3 possuem 10 perguntas cada um. O nível 4 apresenta somente uma pergunta, considerada o desafio final.
+Ao iniciar o quiz, inicialmente é apresentada uma questão de nível 1, com quatro escolhas e, caso necessário, uma imagem. Na mesma tela, são também apresentadas as ajudas que o usuário pode utilizar: cartas, dica e pular pergunta. Ao selecionar as cartas, será realizado o sorteio da quantidade de alternativas que será eliminada (de uma a três). Ao pedir uma dica, uma página Web será aberta com um texto referente ao assunto tratado na pergunta. Na opção de pular pergunta, o usuário será direcionado para a próxima pergunta, sem nenhum prejuízo para a sua pontuação. Cada ajuda tem um número máximo que poderá ser solicitada: duas vezes, para as cartas; quatro vezes, para as dicas; e cinco vezes, para pular perguntas.
+
+
+Descrição da aplicação
+Professores de ensino médio da rede pública que tenham interesse em utilizar essa ferramenta metodológica ao longo do ensino dos conteúdos de botânica participarão de oficinas (virtuais), ofertadas pelos elaboradores do aplicativo, para aprender como funciona o quiz (como jogar; detalhamento das regras), além de receberem uma sugestão de roteiro sobre como aplicar essa ferramenta em sala de aula. 
+Em sala de aula, os professores aplicarão um questionário contendo perguntas básicas de botânica antes da explanação dos conteúdos desse tema, visando avaliar seu conhecimento prévio. Ao término das explanações, será utilizado o aplicativo educacional, como ferramenta de revisão dos principais conceitos abordados ao longo das explanações, sendo possível sanar dúvidas e responder questionamentos pertinentes dos alunos sobre o tema. Ao final das explanações e do uso do aplicativo, o mesmo questionário inicial será aplicado à turma, visando avaliar se o aplicativo contribuiu no aprendizado dos alunos. Além disso, os alunos e os professores responderão questionários para verificar suas experiências no uso dessa ferramenta metodológica, buscando validar se o aplicativo contribuiu na melhoria no ensino de botânica para o ensino médio, bem como identificar dificuldades na utilização do mesmo em sala de aula. 
+
+
+Considerações finais
+O aplicativo educacional BOTANIK encontra-se em fase final de desenvolvimento, prevendo-se a realização das oficinas ainda esse ano. De um modo geral, o aplicativo apresenta interface amigável e boa jogabilidade. Dessa forma, esperamos que o BOTANIK seja bem aceito pelos alunos do ensino médio, tornando essa ferramenta metodológica um agente facilitador no processo de ensino-aprendizagem de botânica, contribuindo para o aumento da motivação, engajamento e interesse dos alunos por esse tema.
+
+
+Referências
+
+
+CHACOURT, N. Sur quelques roles des arbres et forêts dans I’environnement urbain. In: PESSON, P. (Org.) Écologie forestière: La forêt, son climat, son sol, ses arbres, sa faune. Paris: Gauthier Villars, 1974.
+
+
+CSIKSZENTMIHALYI, M. A descoberta do fluxo: a psicologia do envolvimento com a vida cotidiana. Rio de Janeiro: Rocco, 1999.
+
+
+GROS, B. The impact of digital games in education. First Monday, v. 8, n. 7, jul. 2003.
+
+
+RIZZINI, C. T.; MORS, W. B. Botânica econômica brasileira. Rio de Janeiro: Âmbito Cultural Edições, 1995. 248p.
+
+
+SALATINO, A.; BUCKERIDGE, M. Mas de que te serve saber botânica? Estudos Avançados, 30 (87), 2016. 
+
+
+SHULER, C. Pockets of potential: using mobile technologies to promote children’s learning. New York: The Joan Ganz Cooney Center at Sesame Workshop, 2009.
+
+
+SUN, S. An examination of disposition, motivation, and involvement in the new technology context computers in human behavior. School of Journalism, Fudan University, Shanghai, China, 2008.
+
+
+VYGOTSKY, L. S. A formação social da mente; o desenvolvimento dos processos psicológicos superiores. São Paulo: Martins Fontes, 90 p. 2007.
+
+
+WANDERSEE, J. H.; SCHUSSLER, E. E. Toward a theory of plant blindness. Plant Science Bulletin, v. 47, 2001.

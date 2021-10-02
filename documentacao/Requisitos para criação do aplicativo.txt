@@ -1,0 +1,79 @@
+﻿Documento criado, para pensarmos nos requisitos de criação do aplicativo
+
+
+* Trabalhar com reforços positivos e negativos
+   * Positivos: vídeos reforçando a resposta correta (a cada final) (GIF)
+   * Negativos: vídeos mostrando o conteúdo da pergunta (Esclarecimento)
+      * O vídeo como reforço não é indicado. Ele serve mais para tirar as dúvidas do aluno, reforçar o conteúdo do que a pergunta está tratando.
+      * Não precisa ser um vídeo. Pode ser um link ou um arquivo para ser lido.
+* Relatório, da partida, para o jogador. 
+   * Colocar os níveis que o jogador passou
+   * Quantidade de respostas certas
+   * Tempo para a conclusão de cada nível
+
+
+Interface
+* Definir os elementos da interface que serão configurados
+   * Tela inicial
+      * Título
+      * Subtítulo
+      * Texto de apresentação
+      * Figura
+      * Estilo dos botões
+      * Cor de fundo
+   * Reforço positivo ou negativo
+      * Imagens
+      * GIF
+      * Vídeo
+   * Cor de fundo de cada fase
+   * Tipo de fonte
+   * Tela final
+      * Cor de fundo
+      * Imagem, GIF
+      * Som de fundo
+   * Tela de CRUD (create, read, update, delete)
+      * Quantidade de assuntos
+      * Nome de cada assunto
+
+
+* Colocar uma “barra de progresso”, para o jogador saber quanto falta para passar de fase.
+* Cronômetro digital.
+* Como são três assuntos (morfologia/anatomia; diversidade; ecologia/fisiologia), seria interessante colocar um ícone, ou uma borda colorida, para especificar cada assunto. Assim, o aluno sabe que assunto está sendo trabalhado.
+   * A tela de CRUD também tem que ser configurada
+      * Definir a quantidade e nome de cada assunto a ser abordado no jogo
+         * Vou redefinir isso em cima e depois de discutir retiramos essa parte.
+
+
+Ideias
+* Modo de treinamento
+   * O modo de treinamento seria um modo de jogo em que o aluno sempre teria disponível acesso a sites com informações que ajudassem nas questões. Dessa forma, o jogo poderia ser utilizado como ferramenta de aprendizado. O modo de treinamento também poderia escolher qual o assunto das questões, para o aluno escolher qual assunto treinar.
+      * Adicionar o botão “Treinamento” na tela inicial.
+
+
+* Tutorial
+   * O tutorial opcional antes de jogar pode ser interessante para apresentar a proposta do jogo e como ele funciona em geral. O tutorial seria interativo e rápido, já que tutoriais costumam ser monótonos.
+      * Tutorial interativo é difícil de ser elaborado
+      * Colocar um vídeo/GIF na tela inicial mostrando como devem ser os movimentos no jogo.
+         * Isso implica em ter mais um elemento de configuração na tela inicial.
+* Relatório
+   * Um relatório final apareceria no final do jogo, no game over ou quando o jogo terminasse de fato, mostrando as estatísticas da partida, como: número de questões, questões que foram erradas, assuntos que foram mais exibidos, tempo de jogo, ajudas utilizadas e pontuação final.
+
+
+  
+
+
+
+* Questões bônus estimulantes
+   * Questões bônus, que dão pontos extras, entre questões principais (conteudistas). As questões seriam simples, diretas, pequenas e que apresentassem motivos para aprender botânica. As questões não tirariam a “vida” se fossem erradas.
+      * Quais as configurações necessárias para ativar a questão bônus?
+         * Número de questões certas, por exemplo?
+         * Número de questões respondidas?
+   * SUGESTÃO: pergunta-bônus a cada 7 questões.
+      * Na definição da interface do jogo tem que perguntar se o professor quer gerar a pergunta bônus ou não. Se sim, definir qual o número de questões respondidas.
+
+
+* Tamanho de jogo configurável
+   * Possibilidade de configurar o tamanho do jogo (número de questões). Ex.: Modo maratona, com mais questões e ajudas. Modo rápido, com poucas questões e ajudas. Modo médio, com uma quantidade moderada de questões e ajudas.
+      * Definir a quantidade de perguntas para cada nível.
+* Mostrar qual a categoria das perguntas
+   * Mostrar a categoria das perguntas pode ser uma maneira interessante de mostrar ao aluno o que ele está aprendendo. A sensação de estar aprendendo várias coisas ao mesmo tempo é importante para o reforço do conhecimento.

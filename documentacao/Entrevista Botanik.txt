@@ -1,0 +1,54 @@
+﻿Quem são os usuários do programa?
+Alunos de ensino médio - a ideia é utilizar o aplicativo como ferramenta de revisão do conteúdo de botânica ministrado no ensino médio.
+
+
+Quais as características principais que são importantes para nós desse público alvo?
+Os alunos do ensino médio em geral são altamente tecnologicamente integrados. Também gostam de desafios, são impacientes e gostam de novidades. 
+
+
+O que pode ser aplicado em relação a essas características? Como tirar vantagem delas?
+Quanto à integração tecnológica: pode-se disponibilizar o jogo em formato portátil, para o uso em qualquer lugar.
+Quanto ao desafio: pode-se ter um temporizador no jogo.
+Quanto à impaciência: o jogo pode ter seu tempo editado.
+Quanto a novidades: o jogo pode apresentar, em algum momento, informações que podem ser úteis para seu cotidiano, principalmente informações atuais.
+
+
+Como será utilizado?
+O software poderá ser utilizado em sala de aula, pelo professor, como parte de uma atividade prática, mas também poderá ser jogado em casa, onde o aluno treinará sozinho.
+
+
+Qual o prazo de entrega do software?
+Seis meses 
+
+
+Qual é, de forma ampla, a finalidade do software?
+A finalidade do software é auxiliar no processo de construção do conhecimento de botânica, através de perguntas e respostas, como uma espécie de prova.
+
+
+Quais, para você, são as funcionalidades principais do programa?
+* Jogo com diversos modos de jogo.
+* Banco de dados interativo.
+* Análise de dados.
+
+
+Existe algum programa semelhante que você goste?
+Show do milhão, Perguntados, Trivia 360.
+
+
+O que você definitivamente não quer no software?
+Música durante o jogo.
+
+
+Onde o programa será utilizado?
+Computador de uso pessoal; smartphones.
+
+
+Quais são as prioridades?
+Definir quantidade de caracteres nas perguntas e respostas.
+Mostrar qual a categoria das perguntas
+
+
+
+
+Quais os maiores problemas encontrados?
+Visual pesado (em relação às cores), alguns bugs, tamanho da fonte e dos ícones, jogadores se sentem "perdidos" .
