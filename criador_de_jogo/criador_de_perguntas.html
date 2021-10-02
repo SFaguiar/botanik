@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>BANCO LOCAL DE QUESTÕES</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h2 class="titulo">BANCO LOCAL DE QUESTÕES</h2>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>QUESTÕES DISPONÍVEIS</h2>
+				<label for="filtrar-tabela">Filtre por comando:</label>
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nível</th>
+							<th>Tipo</th>
+							<th>Comando</th>
+							<th>Alternativa Correta</th>
+							<th>Alternativa incorreta #1</th>
+							<th>Alternativa incorreta #2</th>
+							<th>Alternativa incorreta #3</th>
+							<th>Dica</th>
+							<th>Ações</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-pacientes">
+					</tbody>
+				</table>
+				<span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
+
+				<button id="salvar-tabela" class="botao bto-principal">SALVAR TABELA</button>
+				<input type="file" id="carregar-tabela" name="carregar-tabela" class="botao bto-principal">CARREGAR TABELA</input>
+			</section>
+		</main>
+
+		<section class="container">
+		    <h2 id="titulo-form">Adicionar novo paciente</h2>
+			<ul id="mensagens-erro"></ul>
+		    <form id="form-adiciona">
+		        <div class="grupo">
+		            <label for="nivel">Nível:</label>
+		            <input id="nivel" name="nivel" type="text" placeholder="digite o nível da questão (1 a 4)" class="campo">
+		        </div>
+		        <div class="grupo">
+		            <label for="tipo">Tipo:</label>
+		            <input id="tipo" name="tipo" type="text" placeholder="digite o tipo/assunto da questão" class="campo campo-medio">
+		        </div>
+				<div class="grupo">
+		            <label for="dica">Link com dica:</label>
+		            <input id="dica" name="dica" type="text" placeholder="digite um link com um artigo que possa ajudar na questão" class="campo campo-medio">
+		        </div>
+		        <div class="">
+		            <label for="comando">Comando:</label>
+		            <input id="comando" name="comando" type="text" placeholder="digite o comando da questão" class="campo campo-medio">
+		        </div>
+		        <div class="">
+		            <label for="alternativaCorreta">Alternativa correta:</label>
+		            <input id="alternativaCorreta" name="alternativaCorreta" type="text" placeholder="digite a alternativa correta" class="campo campo-medio">
+		        </div>
+				<div class="">
+		            <label for="alternativaIncorreta1">Alternativa incorreta #1:</label>
+		            <input id="alternativaIncorreta1" name="alternativaIncorreta1" type="text" placeholder="digite a primeira alternativa incorreta" class="campo campo-medio">
+		        </div>
+				<div class="">
+		            <label for="alternativaIncorreta2">Alternativa incorreta #2:</label>
+		            <input id="alternativaIncorreta2" name="alternativaIncorreta2" type="text" placeholder="digite a segunda alternativa incorreta" class="campo campo-medio">
+		        </div>
+				<div class="">
+		            <label for="alternativaIncorreta3">Alternativa incorreta #3:</label>
+		            <input id="alternativaIncorreta3" name="alternativaIncorreta3" type="text" placeholder="digite a terceira alternativa incorreta" class="campo campo-medio">
+		        </div>
+				
+
+		        <button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+		    </form>
+		</section>
+
+		<script src="js/form.js" ></script>
+		<script src="js/filtra.js"></script>
+	</body>
+</html>
