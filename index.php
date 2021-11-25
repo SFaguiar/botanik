@@ -105,6 +105,7 @@
                     <p>Comando da questão: <span id="comandoGameOver">COMANDO</span></p>
                     <p>Resposta correta: <span id="respostaCorretaGameOver">RESPOSTA CORRETA</span></p>
                     <button id="gameOverReiniciar">Reiniciar Jogo</button>
+                    <button href = "https://docs.google.com/forms/d/1oxdRm7G3wI7gnSAEBvZDNI3BKAtwU_mNSWdM7vMDWn0/edit?usp=sharing" id="botaoFormulario"> Ajude-nos a melhorar o jogo </button>
                 </main>
             </div> 
 
