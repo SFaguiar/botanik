@@ -100,8 +100,8 @@ Esse projeto atualmente (09/11/2020) não apresenta nenhuma licença, portanto �
 Créditos
 -------
 
-Desenvolvedor:
-Samuel Figueira Aguiar
+Desenvolvedores:
+Járlesson Gama A. Júnior, Samuel Figueira Aguiar
 
 Orientadores:
 Prof. Dr. Dionne Cavalcante
