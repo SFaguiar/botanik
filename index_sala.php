@@ -1,24 +1,7 @@
 <?php 
-    require_once "conexao.php";
-
-    function prepararListaDePerguntas($nivel, $conexao){
-        $query = "SELECT * FROM `perguntas_jogo` WHERE `nivel` = ".$nivel;
-        $stmt = $conexao->query($query);
-        $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        for ($i = 0; $i < count($lista); $i++) {
-            if ($lista[$i]['imagem'] != ""){
-                $lista[$i]['imagem'] = "1M4G3M";
-            }
-        }
-        return $lista;
-    }
-
-    $perguntasProntas = array(
-        1 => prepararListaDePerguntas(1, $conexao),
-        2 => prepararListaDePerguntas(2, $conexao),
-        3 => prepararListaDePerguntas(3, $conexao),
-        4 => prepararListaDePerguntas(4, $conexao),
-    );
+    require_once "includes/conexao.php";
+    // Centraliza a busca de dados do jogo e corrige a vulnerabilidade de SQL Injection
+    require_once "includes/game_data.php";
 
     
 ?>
@@ -80,13 +63,11 @@
         </div>
 
             <?php 
-                $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
-                if ($stmt->execute()) {
-                while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-                        echo "<a href='#' class='pop'>";
-                        echo "<img id='img".($rs->id)."' class='hidden imagem' src='data:image/jpeg;base64,".base64_encode($rs->imagem)."'/>";
-                        echo "</a>";
-                    }
+                // Renderiza as imagens preparadas pelo game_data.php
+                foreach ($imagensProntas as $img) {
+                    echo "<a href='#' class='pop'>
+                            <img id='img{$img['id']}' class='hidden imagem' src='{$img['src']}'/>
+                          </a>";
                 }
             ?>
 

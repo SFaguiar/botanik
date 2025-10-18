@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once "conexao.php";
+    require_once "includes/conexao.php";
 
     // Se algum dos campos do login não for preenchido, redireciona para a página de login.
     if (empty($_POST['email']) || empty($_POST['senha'])){

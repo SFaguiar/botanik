@@ -1,27 +1,7 @@
 <?php 
- require_once "conexao.php";
-
- function prepararListaDePerguntas(int $nivel, PDO $conexao): array
- {
-     $stmt = $conexao->prepare("SELECT * FROM `perguntas_jogo` WHERE `nivel` = :nivel");
-     $stmt->bindParam(':nivel', $nivel, PDO::PARAM_INT);
-     $stmt->execute();
-     $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
-     foreach ($lista as &$item) {
-         if (!empty($item['imagem'])) {
-             $item['imagem'] = "1M4G3M"; // Placeholder para não enviar o binário da imagem no JSON inicial
-         }
-     }
-     return $lista;
- }
-
- $conexao = getConexao();
- $perguntasProntas = array(
-  1 => prepararListaDePerguntas(1, $conexao),
-  2 => prepararListaDePerguntas(2, $conexao),
-  3 => prepararListaDePerguntas(3, $conexao),
-  4 => prepararListaDePerguntas(4, $conexao),
- );
+  require_once "includes/conexao.php";
+  // Centraliza a busca de dados do jogo
+  require_once "includes/game_data.php";
 
 ?>
 <!DOCTYPE html>
@@ -112,13 +92,11 @@
    </div> 
 
    <?php 
-    $stmt = $conexao->prepare("SELECT id, imagem FROM perguntas_jogo WHERE imagem IS NOT NULL AND imagem != ''");
-    $stmt->execute();
-    while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-        echo "<a href='#' class='pop'>";
-        // Usar htmlspecialchars para segurança, embora o conteúdo seja do seu DB.
-        echo "<img id='img" . htmlspecialchars($rs->id, ENT_QUOTES, 'UTF-8') . "' class='hidden imagem' src='data:image/jpeg;base64," . base64_encode($rs->imagem) . "'/>";
-        echo "</a>";
+    // Renderiza as imagens preparadas pelo game_data.php
+    foreach ($imagensProntas as $img) {
+        echo "<a href='#' class='pop'>
+                <img id='img{$img['id']}' class='hidden imagem' src='{$img['src']}'/>
+              </a>";
     }
    ?>
 
