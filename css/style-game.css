@@ -1,4 +1,4 @@
-.jogo {
+.game-area {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -8,7 +8,7 @@
     color: #2f8f00; 
 }
 
-.comando {
+.question-command {
     text-align: center;
     letter-spacing: 0px;
     overflow-y: auto;
@@ -52,7 +52,7 @@
     height: 30%;
 }
 
-.grupo-botoes-resposta {
+.answer-buttons-group {
     display: grid;
     grid-template-rows: repeat(4, 25%);
     gap: 5%;
@@ -69,7 +69,7 @@
 
 }
 
-.botao-resposta {
+.btn-answer {
     background-color: #eeed;
     font-family: 'Rubik', sans-serif;
     color: #2f8f00;
@@ -92,7 +92,7 @@
     
 }
 
-.grupo-botoes-ajuda {
+.help-buttons-group {
     display: grid;
     grid-template-columns:repeat(3, 100%);
     gap: 10%;
@@ -108,7 +108,7 @@
 
 }
 
-.botao-ajuda {
+.btn-help {
     text-align: center;
     font-size: 100%;
 
@@ -118,11 +118,11 @@
     border: none;
 }
 
-.grupo-botoes-ajuda button img {
+.help-buttons-group button img {
     
 }
 
-.grupo-botoes-controle {
+.control-buttons-group {
     display: grid;
     grid-template-columns:repeat(3, 33.333%);
     gap: 5%;
@@ -148,7 +148,7 @@
     border-color: #dc3545dd;
 }
 
-.grupo-botoes-controle button {
+.control-buttons-group button {
     background-color: #343a40;
     border: 1px solid transparent;
     border-color: #343a40;
@@ -217,7 +217,7 @@
     outline: 0;
 }
 
-.confirmacao-alternativa-popup {
+.confirmation-popup {
     position: fixed;
     left: 0;
     top: 0;
@@ -228,7 +228,7 @@
     transition: opacity 0.3s 0s, visibility 0s 0.3s;
 }
 
-.confirmacao-alternativa-popup-container {
+.popup-container {
     position: relative;
     top: 50%;
     width: 90%;
@@ -241,28 +241,28 @@
     
 }
 
-.confirmacao-alternativa-popup-container p {
+.popup-container p {
     padding: 3em 1em;
     color: #000000;
 }
 
-.cd-buttons{
+.popup-buttons{
     padding-left: 0;
 }
 
-.confirmacao-alternativa-popup-container .cd-buttons:after {
+.popup-container .popup-buttons:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.confirmacao-alternativa-popup-container .cd-buttons li {
+.popup-container .popup-buttons li {
     list-style-type: none;
     float: left;
     width: 50%;
 }
 
-.confirmacao-alternativa-popup-container .cd-buttons a {
+.popup-container .popup-buttons a {
     display: block;
     height: 60px;
     line-height: 60px;
@@ -271,13 +271,13 @@
     transition: background-color 0.2s;
 }
 
-.confirmacao-alternativa-popup-container .cd-buttons li:first-child a {
+.popup-container .popup-buttons li:first-child a {
     background: #fc7169;
     border-radius: 0 0 0 .25em;
     list-style-type: none;
 }
 
-.confirmacao-alternativa-popup-container .cd-buttons li:last-child a {
+.popup-container .popup-buttons li:last-child a {
     background: #b6bece;
     border-radius: 0 0 .25em 0;
     list-style-type: none;
@@ -394,7 +394,7 @@
     transform: translate(-50%, -50%);
 }
 
-.imagem-carta{
+.card-image{
     position: relative;
     width: 100%;
     height: 60%;
@@ -403,7 +403,7 @@
     padding: 3%;
 }
 
-.botao-matar-alternativas {
+.btn-kill-answer {
     display: block;
     position: static;
     margin: 0% 3% 3% 3%;
@@ -454,7 +454,7 @@
     opacity: 1;
 }
 
-.container-principal-ajuda {
+.help-popup-container {
     position: absolute;
     width: 50%;
 
@@ -472,14 +472,14 @@
 
 }
 
-.container-principal-ajuda .header {
+.help-popup-container .header {
     display: grid;
     grid-template-columns:repeat(2, auto);
     margin: 1%;
     width: 98%;
 }
 
-.container-principal-ajuda h2 {
+.help-popup-title {
     color: black;
     display: inline-block;
     text-align: center;
@@ -493,7 +493,7 @@
     padding-bottom: 1%;
 }
 
-.container-principal-ajuda .xis {
+.btn-close-popup {
     color: black;
     
     display: inline-block;
@@ -505,7 +505,7 @@
     border: 0px solid #00000000;
 }
 
-.container-principal-ajuda img {
+.help-popup-container img {
     display: block;
     margin: 2%;
     margin-left: auto;
@@ -515,7 +515,7 @@
     border-radius: .25em .25em .25em .25em;
 }
 
-.container-principal-ajuda p {
+.help-popup-container p {
     color: black;
     display: block;
     margin: 1%;
@@ -523,7 +523,7 @@
     height: 10%;
 }
 
-.container-principal-ajuda #botaoDica{
+.help-popup-container .btn-hint{
     color: black;
     display: block;
     padding: 1%;
@@ -534,13 +534,13 @@
     border-radius: 0 0 .25em .25em;
 }
 
-#quatro-cartas {
+#card-deck {
 	width: 940px;
 	margin: 0 auto;
 	padding: 50px 0;
 }
 
-#quatro-cartas li {
+#card-deck li {
 	display: inline-block;
 	text-align: center;
 	width: 30%;
@@ -550,7 +550,7 @@
 	box-sizing: border-box;
 }
 
-#icone-cartas, #icone-dicas, #icone-pulo {
+.help-icon {
     height: 20px;
     width: 20px;
     margin-right: 1%;
@@ -606,7 +606,7 @@
 }
 
 @media (max-width: 481px) {
-    .comando {
+    .question-command {
         background-color: #eeec;
         text-align: justify;
         padding: 2%;
@@ -635,7 +635,7 @@
     
     }
 
-    .grupo-botoes-resposta {
+    .answer-buttons-group {
         display: inline-block;
         position: fixed;
         top: 37%;
@@ -645,7 +645,7 @@
         text-align: center;
     }
     
-    .botao-resposta {
+    .btn-answer {
         background-color: #eeed;
         font-family: 'Rubik', sans-serif;
         color: #2f8f00;
@@ -663,7 +663,7 @@
         margin: 1% 0;
     }
 
-    .grupo-botoes-ajuda {
+    .help-buttons-group {
         display: grid;
         grid-template-columns: repeat(3, 33.3333%);
         gap: 1%;
@@ -675,7 +675,7 @@
         margin: 0;
     }
 
-    .botao-ajuda {
+    .btn-help {
         text-align: center;
         font-size: 100%;
         height: 100%;
@@ -685,7 +685,7 @@
         box-shadow: 4px 7px #2229;
     }
 
-    .grupo-botoes-controle {
+    .control-buttons-group {
         display: grid;
         grid-template-columns: repeat(2, 50%);
         gap: 5%;
@@ -696,7 +696,7 @@
         
     }
     
-    .grupo-botoes-controle button {
+    .control-buttons-group button {
         border: 1px solid transparent;
         width: 100%;
         height: 150%;

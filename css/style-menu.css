@@ -1,15 +1,15 @@
-.menu-principal {
+.main-menu {
     position: fixed;
     top: 20vh;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.cabecalho {
+.main-menu .header {
     margin: 7% 0;
 }
 
-#titulo {
+.header .game-title {
     display: block;
     font-size: 7em;
     font-weight: 300;
@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-#subtitulo {
+.header .game-subtitle {
     display: block;
     font-family: 'Rubik';
     font-size: 1.1em;
@@ -29,13 +29,13 @@
 
 }
 
-.grupo-botoes-menu-principal {
+.menu-buttons {
     display: grid;
     grid-template-columns:repeat(1, 100%);
     gap: 10%;
 }
 
-.botao-do-menu-principal {
+.btn-menu {
     background-color: #2f8f00;
     width: 75%;
     padding: 10px;
@@ -49,7 +49,7 @@
     margin: auto;
 }
 
-.botao-do-menu-principal:hover{
+.btn-menu:hover{
     background-color: white;
     color: #2f8f00;
 }
@@ -110,14 +110,14 @@
         justify-content: center;
     }
     
-    #titulo {
+    .game-title {
         font-size: 20vw;
         font-weight: 300;
         line-height: 1.2;
         text-align: center;
     }
 
-    #subtitulo {
+    .game-subtitle {
         font-size: 4vw;
         font-weight: 300;
         line-height: 1.2;
@@ -125,14 +125,14 @@
         text-align: center;
     }
 
-    .grupo-botoes-menu-principal{
+    .menu-buttons {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
     
-    .botao-do-menu-principal{
+    .btn-menu {
         margin: 2.5%;
     }
 }

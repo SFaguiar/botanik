@@ -78,35 +78,42 @@ function baixar () {
 const template = [
   {
     selector: 'documento',
+    selector: 'document',
     fontFamily: "'Impact', 'Charcoal', sans-serif",
     backgroundColor: ''
   },
   {
     selector: 'titulo',
+    selector: 'title',
     color: '',
     text: ''
   },
   {
     selector: 'subtitulo',
+    selector: 'subtitle',
     color: '',
     text: ''
   },
   {
     selector: 'botao-menu',
+    selector: 'menu-button',
     backgroundColor: '',
     borderColor: ''
   },
   {
     selector: 'comando',
+    selector: 'command',
     color: ''
   },
   {
     selector: 'botao-resposta',
+    selector: 'answer-button',
     backgroundColor: '',
     borderColor: ''
   },
   {
     selector: 'botao-ajuda',
+    selector: 'help-button',
     backgroundColor: '',
     borderColor: ''
   }

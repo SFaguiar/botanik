@@ -1,59 +1,57 @@
-var seletoresValidos = ['documento', 'titulo', 'subtitulo', 'botao-menu', 'comando', 'botao-resposta', 'botao-ajuda'];
-for (i = 0; i < configuracoes.length; i++) {
-    console.log(configuracoes[i].selector)
-    seletorEhValido = seletoresValidos.includes(configuracoes[i].selector);
-    if (seletorEhValido) {
-        switch (configuracoes[i].selector) {
-            case 'documento':
+const validSelectors = ['document', 'title', 'subtitle', 'menu-button', 'command', 'answer-button', 'help-button'];
+for (let i = 0; i < configuracoes.length; i++) {
+    const config = configuracoes[i];
+    console.log(config.selector);
+    const isSelectorValid = validSelectors.includes(config.selector);
+    if (isSelectorValid) {
+        switch (config.selector) {
+            case 'document':
                 // Tratamento para o fundo e para a fonte:
-                document.querySelector("*").style.backgroundImage = 'none';
-                document.querySelector("*").style.backgroundColor = configuracoes[i].backgroundColor;
-                document.querySelector("*").style.fontFamily = configuracoes[i].fontFamily;
+                document.querySelector("body").style.backgroundImage = 'none';
+                document.querySelector("body").style.backgroundColor = config.backgroundColor;
+                document.querySelector("body").style.fontFamily = config.fontFamily;
                 break;
-            case 'titulo':
+            case 'title':
                 // Tratamento para o título:
-                document.getElementById("titulo").innerText = configuracoes[i].text;
+                document.querySelector(".game-title").innerText = config.text;
                 break;
-            case 'subtitulo':
+            case 'subtitle':
                 // Tratamento para subtitulo:
-                document.getElementById("subtitulo").innerText = configuracoes[i].text;
+                document.querySelector(".game-subtitle").innerText = config.text;
                 break;
-            case 'botao-menu':
+            case 'menu-button':
                 // Tratamento para botões:
-                const botoesMenu = document.querySelectorAll('.botao-do-menu-principal');
-                for (j = 0; j < botoesMenu.length; j++) {
+                const menuButtons = document.querySelectorAll('.btn-menu');
+                menuButtons.forEach(button => {
                     // Cor do botão:
-                    botoesMenu[j].style.backgroundColor = configuracoes[i].backgroundColor;
+                    button.style.backgroundColor = config.backgroundColor;
                     // Cor da borda do botão:
-                    botoesMenu[j].style.borderColor = configuracoes[i].borderColor;
+                    button.style.borderColor = config.borderColor;
                     // Cor da letra do botão:
-                    botoesMenu[j].style.color = configuracoes[i].color;
-                }
+                    button.style.color = config.color;
+                });
                 break;
-            case 'comando':
-                document.querySelector('.comando').style.color = configuracoes[i].color;
+            case 'command':
+                document.querySelector('.question-command').style.color = config.color;
                 break;
-            case 'botao-resposta':
-                const botoesResposta = document.querySelectorAll('.botao-resposta');
-                for (j = 0; j < botoesResposta.length; j++) {
+            case 'answer-button':
+                const answerButtons = document.querySelectorAll('.btn-answer');
+                answerButtons.forEach(button => {
                     // Cor do botão:
-                    botoesResposta[j].style.backgroundColor = configuracoes[i].backgroundColor;
+                    button.style.backgroundColor = config.backgroundColor;
                     // Cor da borda do botão:
-                    botoesResposta[j].style.borderColor = configuracoes[i].borderColor;
+                    button.style.borderColor = config.borderColor;
                     // Cor da letra do botão:
-                    botoesResposta[j].style.color = configuracoes[i].color;
-                }
+                    button.style.color = config.color;
+                });
                 break;
-            case 'botao-ajuda':
-                const botoesAjuda = document.querySelectorAll('.botao-ajuda');
-                for (j = 0; j < botoesAjuda.length; j++) {
-                    // Cor do botão:
-                    botoesAjuda[j].style.backgroundColor = configuracoes[i].backgroundColor;
-                    // Cor da borda do botão:
-                    botoesAjuda[j].style.borderColor = configuracoes[i].borderColor;
-                    // Cor da letra do botão:
-                    botoesAjuda[j].style.color = configuracoes[i].color;
-                }
+            case 'help-button':
+                const helpButtons = document.querySelectorAll('.btn-help');
+                helpButtons.forEach(button => {
+                    button.style.backgroundColor = config.backgroundColor;
+                    button.style.borderColor = config.borderColor;
+                    button.style.color = config.color;
+                });
                 break;
         }
     }

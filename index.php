@@ -37,45 +37,45 @@
   </div>
 
    <!--- MENU PRINCIPAL --->
-   <div id="menuPrincipal" class="menu-principal">
-    <div id="cabecalho" class="cabecalho">
-     <h1 id="titulo">BOTANIK</h1>
-     <h2 id="subtitulo">Jogo de perguntas e respostas para ensino de Botânica</h2>
+   <div id="main-menu" class="main-menu">
+    <div class="header">
+     <h1 class="game-title">BOTANIK</h1>
+     <h2 class="game-subtitle">Jogo de perguntas e respostas para ensino de Botânica</h2>
     </div>
-    <div class="grupo-botoes-menu-principal">
-     <button id="botaoStart" class="botao-do-menu-principal">Começar</button>
-     <button id="botaoSala" class="botao-do-menu-principal hidden">Jogar em Sala</button>
-     <button id="botaoRegras" class="botao-do-menu-principal">Saiba Mais</button>
+    <div class="menu-buttons">
+     <button id="btn-start" class="btn-menu">Começar</button>
+     <button id="btn-room" class="btn-menu hidden">Jogar em Sala</button>
+     <button id="btn-rules" class="btn-menu">Saiba Mais</button>
     </div>
    </div>
    <!--- O JOGO --->
-   <div id="jogo" class="jogo hidden">
-     <p id="pergunta" class="comando">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non varius ante, sed pulvinar est. Suspendisse imperdiet erat vel viverra dignissim. Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique. Cras sapien dolor, eleifend et efficitur et, dictum ac urna. Sed lorem metus, lacinia nec augue nec, euismod vehicula sapien. Etiam pretium odio ultricies rhoncus gravida. Aliquam eget est sit amet nisi semper interdum ac id risus. Fusce eu dui suscipit, tincidunt purus et, commodo quam. Sed dui nisi, feugiat sed leo eget, vestibulum tempor nisl. Mauris condimentum sem ac mi euismod, quis condimentum odio gravida. Cras ornare libero nec convallis congue. Fusce suscipit lobortis felis nec elementum. Nam vitae nulla tristique, dignissim nunc a, pretium eros. Proin feugiat laoreet sodales. Ut eros arcu, ultricies sit amet porta vitae, mattis id ex. </p>
-     <div id="imagemPlaceholder"></div>
-     <div id="botoesReposta" class="grupo-botoes-resposta">
-      <button id="botaoAlternativa1" class="botao-resposta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button>
-      <button id="botaoAlternativa2" class="botao-resposta">Proin non varius ante, sed pulvinar est.</button>
-      <button id="botaoAlternativa3" class="botao-resposta">Suspendisse imperdiet erat vel viverra dignissim.</button>
-      <button id="botaoAlternativa4" class="botao-resposta">Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique.</button>
+   <div id="game-area" class="game-area hidden">
+     <p id="question-text" class="question-command">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non varius ante, sed pulvinar est. Suspendisse imperdiet erat vel viverra dignissim. Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique. Cras sapien dolor, eleifend et efficitur et, dictum ac urna. Sed lorem metus, lacinia nec augue nec, euismod vehicula sapien. Etiam pretium odio ultricies rhoncus gravida. Aliquam eget est sit amet nisi semper interdum ac id risus. Fusce eu dui suscipit, tincidunt purus et, commodo quam. Sed dui nisi, feugiat sed leo eget, vestibulum tempor nisl. Mauris condimentum sem ac mi euismod, quis condimentum odio gravida. Cras ornare libero nec convallis congue. Fusce suscipit lobortis felis nec elementum. Nam vitae nulla tristique, dignissim nunc a, pretium eros. Proin feugiat laoreet sodales. Ut eros arcu, ultricies sit amet porta vitae, mattis id ex. </p>
+     <div id="image-placeholder"></div>
+     <div id="answer-buttons" class="answer-buttons-group">
+      <button id="btn-alt-1" class="btn-answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</button>
+      <button id="btn-alt-2" class="btn-answer">Proin non varius ante, sed pulvinar est.</button>
+      <button id="btn-alt-3" class="btn-answer">Suspendisse imperdiet erat vel viverra dignissim.</button>
+      <button id="btn-alt-4" class="btn-answer">Pellentesque sed neque massa. Ut viverra purus a arcu aliquet tristique.</button>
      </div>
-     <div class="grupo-botoes-ajuda">
-      <button id="botaoCartas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img id="icone-cartas" src="imagens/card-ico.webp"><span id="cartas-restantes"></span></button>
-      <button id="botaoPlacas" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img id="icone-dicas" src="imagens/help-ico.webp"><span id="dicas-restantes"></span></button>
-      <button id="botaoPula" class="botao-ajuda" data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img id="icone-pulo" src="imagens/pular-ico.webp"><span id="pulos-restantes"></span></button>
+     <div class="help-buttons-group">
+      <button id="btn-cards" class="btn-help" data-toggle="tooltip" data-placement="top" title="Abrir uma carta para eliminar alguma(s) alternativa(s) incorreta(s)."><img class="help-icon" src="imagens/card-ico.webp"><span id="cards-remaining"></span></button>
+      <button id="btn-hints" class="btn-help" data-toggle="tooltip" data-placement="top" title="Dá o link para um artigo como uma dica na internet."><img class="help-icon" src="imagens/help-ico.webp"><span id="hints-remaining"></span></button>
+      <button id="btn-skip" class="btn-help" data-toggle="tooltip" data-placement="top" title="Pula a pergunta atual, mas não será contada como ponto."><img class="help-icon" src="imagens/pular-ico.webp"><span id="skips-remaining"></span></button>
      </div>
-     <div class="grupo-botoes-controle">
-      <button id="botaoReiniciar" class="botao-controle">Reiniciar</button>
+     <div class="control-buttons-group">
+      <button id="btn-restart" class="btn-control">Reiniciar</button>
       <button id="score">
        <div class="container">
         <div class="vertical-center">
          <div class="progress-bar">
           PROGRESSO
-          <div style="width: 50%;"></div>
+          <div></div>
          </div>
         </div>
        </div>
       </button>
-      <button id="botaoProximo" class="botao-controle">Próximo</button>
+      <button id="btn-next" class="btn-control">Próximo</button>
      </div>
    </div>
    <div class="game-over hidden" id="telaGameOver">
@@ -83,10 +83,10 @@
      <h5>Game Over!</h5>
     </header>
     <main>
-     <p>Pontuação final: <span id="finalScore">PONTUACAO</span></p>
-     <p>Comando da questão: <span id="comandoGameOver">COMANDO</span></p>
-     <p>Resposta correta: <span id="respostaCorretaGameOver">RESPOSTA CORRETA</span></p>
-     <button id="gameOverReiniciar">Reiniciar Jogo</button>
+     <p>Pontuação final: <span id="final-score">PONTUACAO</span></p>
+     <p>Comando da questão: <span id="game-over-command">COMANDO</span></p>
+     <p>Resposta correta: <span id="game-over-answer">RESPOSTA CORRETA</span></p>
+     <button id="btn-game-over-restart">Reiniciar Jogo</button>
      <button href = "https://docs.google.com/forms/d/1oxdRm7G3wI7gnSAEBvZDNI3BKAtwU_mNSWdM7vMDWn0/edit?usp=sharing" id="botaoFormulario"> Ajude-nos a melhorar o jogo </button>
     </main>
    </div> 
@@ -100,27 +100,27 @@
     }
    ?>
 
-   <div id="c-alternativa" class="confirmacao-alternativa-popup hidden">
-	   <div class="confirmacao-alternativa-popup-container">
+   <div id="confirm-answer-popup" class="confirmation-popup hidden">
+	   <div class="popup-container">
 		   <p>Você confirma que selecionou a alternativa?</p>
-		   <ul class="cd-buttons">
-      <li id="c-alternativa-confirmar"><a>Sim</a></li>
-      <li id="c-alternativa-negar"><a>Não</a></li>
+		   <ul class="popup-buttons">
+      <li id="btn-confirm-answer"><a>Sim</a></li>
+      <li id="btn-deny-answer"><a>Não</a></li>
 		   </ul>
     </div>
    </div>
 
-   <div id="c-ajuda" class="confirmacao-alternativa-popup hidden">
-	   <div class="confirmacao-alternativa-popup-container">
+   <div id="confirm-help-popup" class="confirmation-popup hidden">
+	   <div class="popup-container">
 		   <p>Você confirma que selecionou a ajuda?</p>
-		   <ul class="cd-buttons">
-      <li id="c-ajuda-confirmar"><a>Sim</a></li>
-      <li id="c-ajuda-negar"><a>Não</a></li>
+		   <ul class="popup-buttons">
+      <li id="btn-confirm-help"><a>Sim</a></li>
+      <li id="btn-deny-help"><a>Não</a></li>
 		   </ul>
     </div>
    </div>
    
-   <ul id="quatro-cartas" class="hidden">
+   <ul id="card-deck" class="hidden">
     <li>
      <label>
       <div class="container-principal-carta" id="card1">
@@ -128,8 +128,8 @@
        <div class="carta">
         <div class="carta-frente">
          <div class="titulo-carta-frente" id="tituloCarta1">REMOVER ALTERNATIVAS</div>
-         <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
-         <button id="botaoMatarAlternativas1" class="botao-matar-alternativas">Clique aqui</button>
+         <img src="imagens/background_quadrado-1.webp" class="card-image">
+         <button class="btn-kill-answer">Clique aqui</button>
         </div>
         <div class="carta-costa">
          <div class="contorno-carta">
@@ -149,8 +149,8 @@
        <div class="carta">
         <div class="carta-frente">
          <div class="titulo-carta-frente" id="tituloCarta2">REMOVER ALTERNATIVAS</div>
-         <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
-         <button id="botaoMatarAlternativas2" class="botao-matar-alternativas">Clique aqui</button>
+         <img src="imagens/background_quadrado-1.webp" class="card-image">
+         <button class="btn-kill-answer">Clique aqui</button>
         </div>
         <div class="carta-costa">
          <div class="contorno-carta">
@@ -170,8 +170,8 @@
        <div class="carta">
         <div class="carta-frente">
          <div class="titulo-carta-frente" id="tituloCarta3">REMOVER ALTERNATIVAS</div>
-         <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
-         <button id="botaoMatarAlternativas3" class="botao-matar-alternativas">Clique aqui</button>
+         <img src="imagens/background_quadrado-1.webp" class="card-image">
+         <button class="btn-kill-answer">Clique aqui</button>
         </div>
         <div class="carta-costa">
          <div class="contorno-carta">
@@ -191,8 +191,8 @@
        <div class="carta">
         <div class="carta-frente">
          <div class="titulo-carta-frente" id="tituloCarta4">REMOVER ALTERNATIVAS</div>
-         <img src="imagens/background_quadrado-1.webp" class="imagem-carta">
-         <button id="botaoMatarAlternativas4" class="botao-matar-alternativas">Clique aqui</button>
+         <img src="imagens/background_quadrado-1.webp" class="card-image">
+         <button class="btn-kill-answer">Clique aqui</button>
         </div>
         <div class="carta-costa">
          <div class="contorno-carta">
@@ -207,22 +207,22 @@
     </li>
    </ul>
 
-   <div id="container-principal-ajuda-dica" class="container-principal-ajuda hidden">
+   <div id="hint-popup" class="help-popup-container hidden">
     <div style="width: 100%; height:100%; overflow: auto;">
      <div class="header">
-      <h2 class="container-ajuda-titulo">Ajuda disponível!</h2>
-      <button class="xis" onclick="document.getElementById('container-principal-ajuda-dica').classList.add('hidden');">X</button>
+      <h2 class="help-popup-title">Ajuda disponível!</h2>
+      <button class="btn-close-popup" onclick="document.getElementById('hint-popup').classList.add('hidden');">X</button>
      </div>
      <img src="imagens/computador-1.webp">
-     <button id="botaoDica" class="botaoDica" onclick="window.open(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].dica)">Clique aqui para abrir uma página com a dica.</button>
+     <button id="btn-open-hint" class="btn-hint" onclick="window.open(gameState.currentQuestion.dica)">Clique aqui para abrir uma página com a dica.</button>
     </div>
    </div>
 
-   <div id="container-principal-ajuda-pulo" class="container-principal-ajuda hidden">
+   <div id="skip-popup" class="help-popup-container hidden">
     <div style="width: 100%; height:100%; overflow: auto;">
      <div class="header">
-      <h2 class="container-ajuda-titulo">Questão pulada!</h2>
-      <button class="xis" onclick="document.getElementById('container-principal-ajuda-pulo').classList.add('hidden');">X</button>
+      <h2 class="help-popup-title">Questão pulada!</h2>
+      <button class="btn-close-popup" onclick="document.getElementById('skip-popup').classList.add('hidden');">X</button>
      </div>
      <img src="imagens/salto-1.webp">
     </div>

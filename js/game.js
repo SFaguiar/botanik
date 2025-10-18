@@ -1,102 +1,125 @@
 // Criação de XML HTTP Request para a extração de estatísticas de acertos e erros:
-var xhr = new XMLHttpRequest()
+const xhr = new XMLHttpRequest();
 
 // Criação de referências para objetos dos DOM:
-/* --- MENU PRINCIPAL --- */
-const bgAnimado = document.getElementById('bg-animado')
-const menuPrincipal = document.getElementById('menuPrincipal')
-const menuConfiguracoes = document.getElementById('menuConfiguracoes')
-const jogo = document.getElementById('jogo')
-const titulo = document.getElementById('titulo')
-const botaoStart = document.getElementById('botaoStart')
-const botaoSala = document.getElementById('botaoSala')
-const botaoRegras = document.getElementById('botaoRegras')
+const UI = {
+  mainMenu: document.getElementById('main-menu'),
+  gameArea: document.getElementById('game-area'),
+  btnStart: document.getElementById('btn-start'),
+  btnRoom: document.getElementById('btn-room'),
+  btnRules: document.getElementById('btn-rules'),
 
-/* --- O JOGO --- */
-const displayScore = document.getElementById('score')
-const textoDaPergunta = document.getElementById('pergunta')
-const elementoDosBotoesDeResposta = document.getElementById('botoesReposta')
-const botoesResposta = document.querySelectorAll('.botao-resposta')
-const botao1 = document.getElementById('botaoAlternativa1')
-const botao2 = document.getElementById('botaoAlternativa2')
-const botao3 = document.getElementById('botaoAlternativa3')
-const botao4 = document.getElementById('botaoAlternativa4')
-const botaoProximo = document.getElementById('botaoProximo')
-const botaoReiniciar = document.getElementById('botaoReiniciar')
+  // Game Area
+  scoreDisplay: document.getElementById('score'),
+  questionText: document.getElementById('question-text'),
+  answerButtonsContainer: document.getElementById('answer-buttons'),
+  btnNext: document.getElementById('btn-next'),
+  btnRestart: document.getElementById('btn-restart'),
+  
+  // Answer Buttons (created dynamically)
+  btnAlt1: document.getElementById('btn-alt-1'),
+  btnAlt2: document.getElementById('btn-alt-2'),
+  btnAlt3: document.getElementById('btn-alt-3'),
+  btnAlt4: document.getElementById('btn-alt-4'),
 
-const containerConfirmacaoAlternativa = document.getElementById('c-alternativa')
-const botaoConfirmarAlternativa = document.getElementById('c-alternativa-confirmar')
-const botaoNegarAlternativa = document.getElementById('c-alternativa-negar')
+  // Popups
+  confirmAnswerPopup: document.getElementById('confirm-answer-popup'),
+  btnConfirmAnswer: document.getElementById('btn-confirm-answer'),
+  btnDenyAnswer: document.getElementById('btn-deny-answer'),
+  confirmHelpPopup: document.getElementById('confirm-help-popup'),
+  btnConfirmHelp: document.getElementById('btn-confirm-help'),
+  btnDenyHelp: document.getElementById('btn-deny-help'),
+  hintPopup: document.getElementById('hint-popup'),
+  skipPopup: document.getElementById('skip-popup'),
 
-const containerConfirmacaoAjuda = document.getElementById('c-ajuda')
-const botaoConfirmarAjuda = document.getElementById('c-ajuda-confirmar')
-const botaoNegarAjuda = document.getElementById('c-ajuda-negar')
-const botaoFecharContainerConfirmacaoAjuda = document.getElementById('c-ajuda-fechar')
+  // Game Over
+  gameOverScreen: document.getElementById('telaGameOver'),
+  finalScore: document.getElementById('final-score'),
+  gameOverCommand: document.getElementById('game-over-command'),
+  gameOverAnswer: document.getElementById('game-over-answer'),
+  btnGameOverRestart: document.getElementById('btn-game-over-restart'),
 
-const telaGameOver = document.getElementById('telaGameOver')
-const gameOverReiniciar = document.getElementById('gameOverReiniciar')
+  // Helps
+  helpButtons: document.querySelectorAll('.btn-help'),
+  btnCards: document.getElementById('btn-cards'),
+  btnHints: document.getElementById('btn-hints'),
+  btnSkip: document.getElementById('btn-skip'),
+  cardsRemaining: document.getElementById('cards-remaining'),
+  hintsRemaining: document.getElementById('hints-remaining'),
+  skipsRemaining: document.getElementById('skips-remaining'),
 
-/* --- AJUDAS --- */
-const botoesAjuda = document.querySelectorAll('.botao-ajuda')
-const containerDaImagem = document.getElementById('containerDaImagem')
-const botaoCartas = document.getElementById('botaoCartas')
-const botaoPlacas = document.getElementById('botaoPlacas')
-const botaoPula = document.getElementById('botaoPula')
-const botaoCancelar = document.getElementById('botaoCancelar')
-const botaoFecharImagem = document.getElementById('botaoFecharImagem')
-const caixaCartaVirada1 = document.getElementById('caixaCartaVirada1')
-const caixaCartaVirada2 = document.getElementById('caixaCartaVirada2')
-const caixaCartaVirada3 = document.getElementById('caixaCartaVirada3')
-const caixaCartaVirada4 = document.getElementById('caixaCartaVirada4')
-
-const cartas = document.getElementById('quatro-cartas')
-const card1 = document.getElementById('card1')
-const card2 = document.getElementById('card2')
-const card3 = document.getElementById('card3')
-const card4 = document.getElementById('card4')
+  // Cards
+  cardDeck: document.getElementById('card-deck'),
+  cards: [
+    document.getElementById('card1'),
+    document.getElementById('card2'),
+    document.getElementById('card3'),
+    document.getElementById('card4')
+  ],
+  cardCheckboxes: [
+    document.getElementById('caixaCartaVirada1'),
+    document.getElementById('caixaCartaVirada2'),
+    document.getElementById('caixaCartaVirada3'),
+    document.getElementById('caixaCartaVirada4')
+  ],
+  cardTitles: document.querySelectorAll('.titulo-carta-frente'),
+  killAnswerButtons: document.querySelectorAll('.btn-kill-answer')
+};
 
 /* --- AUDIO --- */
-
-const somCorreto = new Audio('sons/certo.wav')
-const somErrado = new Audio('sons/errado.wav')
-const somAjuda = new Audio('sons/ajuda.wav')
+const sounds = {
+  correct: new Audio('sons/certo.wav'),
+  wrong: new Audio('sons/errado.wav'),
+  help: new Audio('sons/ajuda.wav')
+};
 
 // Criação e definição de variáveis globais:
-let ajudas, ajudaSelecionada, botaoSelecionado, indiceDaPerguntaAtual, nivelAtual, numeroDePerguntas, perguntaAtual, perguntaAtualTemImagem, perguntasEmbaralhadas, resposta, score, intAle1a3
-let jaAbriuACarta = false
-let confirmado = false
+const gameState = {
+  helps: { cards: 0, hints: 0, skips: 0 },
+  selectedHelp: null,
+  selectedButton: null,
+  currentQuestionIndex: 0,
+  currentLevel: 0,
+  totalQuestions: 30,
+  currentQuestion: {},
+  hasImage: false,
+  shuffledQuestions: [],
+  correctAnswer: null,
+  score: 0,
+  randomInt1to3: 0,
+  hasCardBeenOpened: false
+};
 
 // Funções do jogo:
-function iniciarJogo () {
-  telaGameOver.classList.add('hidden')
-  menuPrincipal.classList.add('hidden')
-  jogo.classList.remove('hidden')
-  travarBotao(botaoReiniciar)
-  travarBotao(botaoProximo)
-  removerImagem()
-  destravarTodasAjudas()
-  resetarCoresAlternativas()
-  manipularBotoes('todosMenosControles', 'mostrar')
+function startGame () {
+  UI.gameOverScreen.classList.add('hidden');
+  UI.mainMenu.classList.add('hidden');
+  UI.gameArea.classList.remove('hidden');
+  lockButton(UI.btnRestart);
+  lockButton(UI.btnNext);
+  removeImage();
+  unlockAllHelps();
+  resetAnswerColors();
+  toggleButtons('allButControls', 'show');
 
   // Embaralhamento de perguntas:
-  perguntasEmbaralhadas = []
-  perguntasEmbaralhadas[1] = perguntas[1].sort(() => Math.random() - 0.5)
-  perguntasEmbaralhadas[2] = perguntas[2].sort(() => Math.random() - 0.5)
-  perguntasEmbaralhadas[3] = perguntas[3].sort(() => Math.random() - 0.5)
-  perguntasEmbaralhadas[4] = perguntas[4].sort(() => Math.random() - 0.5)
+  gameState.shuffledQuestions = [];
+  gameState.shuffledQuestions[1] = perguntas[1].sort(() => Math.random() - 0.5);
+  gameState.shuffledQuestions[2] = perguntas[2].sort(() => Math.random() - 0.5);
+  gameState.shuffledQuestions[3] = perguntas[3].sort(() => Math.random() - 0.5);
+  gameState.shuffledQuestions[4] = perguntas[4].sort(() => Math.random() - 0.5);
 
   // Reinicialização das variáveis globais:
-  ajudas = [2, 4, 4, 5] // cartas, convidados, placas, pula, respectivamente.
-  indiceDaPerguntaAtual = 0
-  score = 0
-  nivelAtual = 0
-  numeroDePerguntas = 30
-  setProximaPergunta()
-  contarAjudasRestantes()
+  gameState.helps = { cards: 2, hints: 4, skips: 5 }; // cartas, dicas, pulos
+  gameState.currentQuestionIndex = 0;
+  gameState.score = 0;
+  gameState.currentLevel = 0;
+  setNextQuestion();
+  updateRemainingHelps();
 }
 
 // Função que calcula o nível atual do jogador baseado em sua pontuação no momento:
-function calcularNivel (score) {
+function calculateLevel (score) {
   if (score >= 0 && score <= 9) {
     return 1
   } else if (score >= 10 && score <= 19) {
@@ -111,94 +134,83 @@ function calcularNivel (score) {
 }
 
 // Função que prepara e exibe uma nova pergunta:
-function setProximaPergunta () {
-  resetStatus()
-  destravarAjudas()
-  atualizarBarraProgresso()
-  nivelAtual = calcularNivel(score)
+function setNextQuestion () {
+  resetStatus();
+  unlockHelps();
+  updateProgressBar();
+  gameState.currentLevel = calculateLevel(gameState.score);
   // seleciona a pergunta
-  mostrarPergunta(perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual])
+  showQuestion(gameState.shuffledQuestions[gameState.currentLevel][gameState.currentQuestionIndex]);
 
-  perguntaAtual = perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual]
-  resposta = perguntaAtual.alternativa1
+  gameState.currentQuestion = gameState.shuffledQuestions[gameState.currentLevel][gameState.currentQuestionIndex];
+  gameState.correctAnswer = gameState.currentQuestion.alternativa1;
 
-  let numeroAleatorio = Math.floor((Math.random() * 3) + 2)
-  if (numeroAleatorio === 2) {
-    respostaErradaAleatoria = perguntaAtual.alternativa2
-  } else if (numeroAleatorio === 3) {
-    respostaErradaAleatoria = perguntaAtual.alternativa3
-  } else if (numeroAleatorio === 4) {
-    respostaErradaAleatoria = perguntaAtual.alternativa4
-  }
-  manipularBotoes('todosMenosControles', 'mostrar')
-  if (perguntasEmbaralhadas[nivelAtual][indiceDaPerguntaAtual].imagem != '') {
-    if (perguntaAtual.id == (document.getElementById('img' + perguntaAtual.id).id).slice(3)) {
-      document.getElementById('img' + perguntaAtual.id).classList.remove('hidden')
-      perguntaAtualTemImagem = true
+  toggleButtons('allButControls', 'show');
+  if (gameState.currentQuestion.imagem !== '') {
+    const imgElement = document.getElementById('img' + gameState.currentQuestion.id);
+    if (imgElement) {
+      imgElement.classList.remove('hidden');
+      gameState.hasImage = true;
     }
   }
 }
 
 function resetStatus () {
-  travarBotao(botaoProximo)
-  while (elementoDosBotoesDeResposta.firstChild) {
-    elementoDosBotoesDeResposta.removeChild(elementoDosBotoesDeResposta.firstChild)
+  lockButton(UI.btnNext);
+  while (UI.answerButtonsContainer.firstChild) {
+    UI.answerButtonsContainer.removeChild(UI.answerButtonsContainer.firstChild);
   }
-  displayScore.classList.remove('hidden')
+  UI.scoreDisplay.classList.remove('hidden');
 }
 
 // Função que mostra, graficamente, uma nova pergunta:
-function mostrarPergunta (pergunta) {
-  resetarCoresAlternativas()
-  textoDaPergunta.innerText = '[' + pergunta.tipo + '] ' + pergunta.comando
-  posicionamento = Math.floor(Math.random() * 4)
-  if (posicionamento === 0) {
-    setBotao(botao1, pergunta, 1)
-    setBotao(botao2, pergunta, 2)
-    setBotao(botao3, pergunta, 3)
-    setBotao(botao4, pergunta, 4)
-  } else if (posicionamento === 1) {
-    setBotao(botao4, pergunta, 4)
-    setBotao(botao3, pergunta, 3)
-    setBotao(botao2, pergunta, 2)
-    setBotao(botao1, pergunta, 1)
-  } else if (posicionamento === 2) {
-    setBotao(botao3, pergunta, 3)
-    setBotao(botao4, pergunta, 4)
-    setBotao(botao1, pergunta, 1)
-    setBotao(botao2, pergunta, 2)
-  } else if (posicionamento === 3) {
-    setBotao(botao2, pergunta, 2)
-    setBotao(botao4, pergunta, 4)
-    setBotao(botao3, pergunta, 3)
-    setBotao(botao1, pergunta, 1)
-  }
+function showQuestion (question) {
+  resetAnswerColors();
+  UI.questionText.innerText = '[' + question.tipo + '] ' + question.comando;
+  
+  const alternatives = [
+    { text: question.alternativa1, isCorrect: true },
+    { text: question.alternativa2, isCorrect: false },
+    { text: question.alternativa3, isCorrect: false },
+    { text: question.alternativa4, isCorrect: false }
+  ].sort(() => Math.random() - 0.5);
+
+  const answerButtons = [UI.btnAlt1, UI.btnAlt2, UI.btnAlt3, UI.btnAlt4];
+
+  alternatives.forEach((alt, index) => {
+    const button = answerButtons[index];
+    button.innerText = alt.text;
+    // Store correctness info on the button itself
+    button.dataset.correct = alt.isCorrect;
+    button.addEventListener('click', selectAnswer);
+    UI.answerButtonsContainer.appendChild(button);
+  });
 }
 
 // Função que é acionada após a confirmação de alternativa:
-function confirmarAlternativa () {
-  let acertou
+function confirmAnswer () {
+  let acertou;
 
   // Modificações na exibição:
-  mudarCoresAlternativas()
-  travarAjudas()
+  changeAnswerColors();
+  lockHelps();
 
   // Envio de dados:
-  let id = perguntaAtual.id
-  let escolha
-  switch (botaoSelecionado.innerText) {
-    case perguntaAtual.alternativa1:
-      escolha = 'a'
-      break
-    case perguntaAtual.alternativa2:
-      escolha = 'b'
-      break
-    case perguntaAtual.alternativa3:
-      escolha = 'c'
-      break
-    case perguntaAtual.alternativa4:
-      escolha = 'd'
-      break
+  let id = gameState.currentQuestion.id;
+  let escolha;
+  switch (gameState.selectedButton.innerText) {
+    case gameState.currentQuestion.alternativa1:
+      escolha = 'a';
+      break;
+    case gameState.currentQuestion.alternativa2:
+      escolha = 'b';
+      break;
+    case gameState.currentQuestion.alternativa3:
+      escolha = 'c';
+      break;
+    case gameState.currentQuestion.alternativa4:
+      escolha = 'd';
+      break;
   }
 
   xhr.open('POST', 'enviar_estatistica.php')
@@ -206,69 +218,311 @@ function confirmarAlternativa () {
   xhr.send('id='+id+'&escolha='+escolha)
 
   // Verifica se acertou:
-  if (botaoSelecionado.innerText === resposta) {
+  if (gameState.selectedButton.dataset.correct === "true") {
     /* --- FLUXO PARA ACERTO --- */
     // Animação e sons:
-    somCorreto.play()
+    sounds.correct.play();
 
     // Modificações nas variáveis globais:
-    score += 1
-    acertou = true
+    gameState.score += 1;
+    acertou = true;
   } else {
     /* --- FLUXO PARA ERRO --- */
     // Animação e sons:
-    somErrado.play()
+    sounds.wrong.play();
 
     // Modificações nas variáveis globais:
-    acertou = false
+    acertou = false;
   }
 
   /* --- VERIFICAÇÃO DE FIM DE JOGO --- */
-  if (numeroDePerguntas > indiceDaPerguntaAtual + 1 && acertou == true) {
+  if (gameState.totalQuestions > gameState.currentQuestionIndex + 1 && acertou == true) {
     // Se o jogo ainda não terminou:
-    destravarBotao(botaoProximo)
+    unlockButton(UI.btnNext);
   } else {
     // Se o jogo terminou:
     /* FINALIZAÇÃO DO JOGO */
-    travarBotao(botaoProximo)
-    destravarBotao(botaoReiniciar)
+    lockButton(UI.btnNext);
+    unlockButton(UI.btnRestart);
   }
 
   // Mostra a caixa de confirmação de alternativa:
-  document.getElementById('c-alternativa').classList.add('hidden')
+  UI.confirmAnswerPopup.classList.add('hidden');
 }
 
-function confirmarAjuda () {
-  if (ajudaSelecionada === 'botaoCartas' || ajudaSelecionada === 'icone-cartas' || ajudaSelecionada === 'cartas-restantes') {
-    cartas.classList.remove('hidden')
-    containerConfirmacaoAjuda.classList.add('hidden')
-  } else if (ajudaSelecionada === 'botaoPlacas' || ajudaSelecionada === 'icone-dicas' || ajudaSelecionada === 'dicas-restantes') {
-    olharPlacas()
-    containerConfirmacaoAjuda.classList.add('hidden')
-  } else if (ajudaSelecionada === 'botaoPula' || ajudaSelecionada === 'icone-pulo' || ajudaSelecionada === 'pulos-restantes') {
-    pularPergunta()
-    containerConfirmacaoAjuda.classList.add('hidden')
+function confirmHelp () {
+  if (gameState.selectedHelp === 'btn-cards') {
+    UI.cardDeck.classList.remove('hidden');
+  } else if (gameState.selectedHelp === 'btn-hints') {
+    useHint();
+  } else if (gameState.selectedHelp === 'btn-skip') {
+    skipQuestion();
   } else {
-    console.log(ajudaSelecionada)
+    console.log(gameState.selectedHelp);
   }
-  somAjuda.play()
+  UI.confirmHelpPopup.classList.add('hidden');
+  sounds.help.play();
 }
 
 // Função que colore as alternativas após a confirmação da seleção:
-function mudarCoresAlternativas () {
-  // Muda a cor da alternativa correta para verde:
-  botoesResposta[0].style.backgroundColor = '#28a745'
+function changeAnswerColors () {
+  const answerButtons = UI.answerButtonsContainer.querySelectorAll('.btn-answer');
+  answerButtons.forEach(button => {
+    if (button.dataset.correct === "true") {
+      button.style.backgroundColor = '#28a745'; // green
+    } else {
+      button.style.backgroundColor = '#dc3546'; // red
+    }
+    button.disabled = true;
+  });
+}
 
-  // Muda a cor das alternativas erradas para vermelho:
-  for (let i = 1; i < botoesResposta.length; i++) {
-    botoesResposta[i].style.backgroundColor = '#dc3546'
+// Função que descolore as alternativas após uma nova questão ser exibida:
+function resetAnswerColors () {
+  const answerButtons = UI.answerButtonsContainer.querySelectorAll('.btn-answer');
+  const defaultColor = configuracoes ? configuracoes[5].backgroundColor : '';
+  answerButtons.forEach(button => {
+    button.style.backgroundColor = defaultColor;
+    button.disabled = false;
+  });
+}
+
+// Trava todos os botões de ajuda disponíveis:
+function lockHelps () {
+  UI.helpButtons.forEach(button => button.disabled = true);
+}
+
+function unlockHelps () {
+  if (gameState.helps.cards > 0) UI.btnCards.disabled = false;
+  if (gameState.helps.hints > 0) UI.btnHints.disabled = false;
+  if (gameState.helps.skips > 0) UI.btnSkip.disabled = false;
+}
+
+function selectAnswer (e) {
+  gameState.selectedButton = e.target;
+  UI.confirmAnswerPopup.classList.remove('hidden');
+}
+
+function toggleButtons (group, action) {
+  const buttonsToShow = [];
+  const buttonsToHide = [];
+  const allButtons = [UI.btnAlt1, UI.btnAlt2, UI.btnAlt3, UI.btnAlt4, UI.btnCards, UI.btnHints, UI.btnSkip];
+
+  if (group === 'allButControls') {
+    if (action === 'show') {
+      allButtons.forEach(btn => btn.classList.remove('hidden'));
+    } else {
+      allButtons.forEach(btn => btn.classList.add('hidden'));
+    }
   }
+  // Add other groups if needed
+}
+
+function removeImage () {
+  // Se a pergunta respondida anteriormente tem uma imagem:
+  if (gameState.hasImage) {
+    const imgElement = document.getElementById('img' + gameState.currentQuestion.id);
+    if (imgElement) {
+      imgElement.classList.add('hidden');
+    }
+    gameState.hasImage = false;
+  }
+}
+
+function goToNextQuestion () {
+  removeImage();
+  gameState.currentQuestionIndex++;
+  setNextQuestion();
+}
+
+function skipQuestion () {
+  if ((gameState.helps.skips > 0) && (gameState.score < 31)) {
+    UI.skipPopup.classList.remove('hidden');
+    goToNextQuestion();
+    gameState.helps.skips -= 1;
+    if (gameState.helps.skips === 0) {
+      lockButton(UI.btnSkip);
+    }
+    updateRemainingHelps();
+  }
+}
+
+function triggerHelp (e) {
+  gameState.selectedHelp = e.currentTarget.id;
+  UI.confirmHelpPopup.classList.remove('hidden');
+}
+
+function updateRemainingHelps () {
+  UI.cardsRemaining.innerText =' (' + gameState.helps.cards + 'x)';
+  UI.hintsRemaining.innerText = ' (' + gameState.helps.hints + 'x)';
+  UI.skipsRemaining.innerText = ' (' + gameState.helps.skips + 'x)';
+}
+
+function openCards () {
+  if (gameState.helps.cards > 0) {
+    const eliminatedCount = gameState.randomInt1to3;
+    console.log('Carta aberta! Eliminada(s) ' + eliminatedCount + ' alternativa(s) errada(s)!');
+    
+    const answerButtons = Array.from(UI.answerButtonsContainer.querySelectorAll('.btn-answer'));
+    const wrongAnswers = answerButtons.filter(btn => btn.dataset.correct !== "true");
+    
+    for (let i = 0; i < eliminatedCount && i < wrongAnswers.length; i++) {
+      wrongAnswers[i].classList.add('hidden');
+    }
+
+    gameState.helps.cards--;
+    if (gameState.helps.cards === 0) {
+      lockButton(UI.btnCards);
+    }
+    UI.cardDeck.classList.add('hidden');
+    UI.cardCheckboxes.forEach(cb => cb.checked = false);
+    UI.cards.forEach(card => card.classList.remove('hidden'));
+    updateRemainingHelps();
+
+    UI.cardTitles.forEach(title => title.innerText = 'REMOVER ALTERNATIVA(S)');
+  }
+  gameState.hasCardBeenOpened = false;
+}
+
+function hideOtherCards (e) {
+  let selectedCardId = e.currentTarget.id;
+  let selectedCardIndex = -1;
+
+  UI.cardCheckboxes.forEach((cb, index) => {
+    if (cb.id === selectedCardId) {
+      selectedCardIndex = index;
+    }
+  });
+
+  if (selectedCardIndex !== -1) {
+    UI.cards.forEach((card, index) => {
+      if (index !== selectedCardIndex) {
+        card.classList.add('hidden');
+      }
+    });
+
+    if (gameState.hasCardBeenOpened === false) {
+      gameState.randomInt1to3 = Math.floor((Math.random() * 3) + 1);
+      gameState.hasCardBeenOpened = true;
+    }
+    
+    UI.cardTitles[selectedCardIndex].innerText = 'REMOVER ' + gameState.randomInt1to3 + ' ALTERNATIVA(S)';
+  }
+}
+
+// Placas === Dica.
+function useHint () {
+  if (gameState.helps.hints > 0) {
+    UI.hintPopup.classList.remove('hidden');
+    gameState.helps.hints--;
+    if (gameState.helps.hints === 0) {
+      lockButton(UI.btnHints);
+    }
+    updateRemainingHelps();
+  }
+}
+
+function lockButton (button) {
+  button.disabled = true;
+  button.classList.add('btn-danger');
+}
+
+function unlockButton (button) {
+  button.disabled = false;
+  button.classList.remove('btn-danger');
+}
+
+function unlockAllHelps () {
+  UI.helpButtons.forEach(button => unlockButton(button));
+}
+
+function showGameOverScreen () {
+  UI.gameArea.classList.add('hidden');
+  UI.gameOverScreen.classList.remove('hidden');
+  UI.finalScore.innerText = gameState.score;
+  UI.gameOverCommand.innerText = gameState.currentQuestion.comando;
+  UI.gameOverAnswer.innerText = gameState.correctAnswer;
+}
+
+function updateProgressBar () {
+  let progress = (gameState.score / gameState.totalQuestions) * 100;
+  document.querySelector('.progress-bar div').style.width = progress + '%';
+}
+
+$(function () {
+  $('.pop').on('click', function () {
+    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+    $('#imagemodal').modal('show');
+  });
+});
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+
+/* DEBUG */
+
+function DEBUG_SETQUESTION (shuffledQuestions, level, index) {
+  UI.scoreDisplay.innerText ='DEBUG MODE';
+  showQuestion(shuffledQuestions[level][index]);
+  gameState.currentQuestion = shuffledQuestions[level][index];
+  gameState.correctAnswer = shuffledQuestions[level][index].alternativa1;
+
+  toggleButtons('allButControls', 'show');
+  if (gameState.currentQuestion.imagem !== '') {
+    const imgElement = document.getElementById('img' + gameState.currentQuestion.id);
+    if (imgElement) {
+      imgElement.classList.remove('hidden');
+    }
+  }
+}
+
+function DEBUG_KILLALTERNATIVES () {
+  UI.btnAlt2.classList.add('hidden');
+  UI.btnAlt3.classList.add('hidden');
+  UI.btnAlt4.classList.add('hidden');
+}
+
+function DEBUG_INFINITEHELPS () {
+  gameState.helps.cards = 1000;
+  gameState.helps.hints = 1000;
+  gameState.helps.skips = 1000;
+}
+
+// Atribuição de eventos para botões presentes no jogo:
+/* --- MENU PRINCIPAL --- */
+UI.btnStart.addEventListener('click', startGame);
+UI.btnRoom.addEventListener('click', () => {window.location.href = 'index_sala.php'});
+UI.btnRules.addEventListener('click', () => {window.location.href = 'informacoes.php'});
+
+/* --- CONTROLES --- */
+UI.btnNext.addEventListener('click', goToNextQuestion);
+UI.btnRestart.addEventListener('click', showGameOverScreen);
+
+UI.btnConfirmAnswer.addEventListener('click', confirmAnswer);
+UI.btnDenyAnswer.addEventListener('click', () => { UI.confirmAnswerPopup.classList.add('hidden'); });
+
+UI.btnConfirmHelp.addEventListener('click', confirmHelp);
+UI.btnDenyHelp.addEventListener('click', () => { UI.confirmHelpPopup.classList.add('hidden'); });
+
+/* --- AJUDAS --- */
+UI.btnCards.addEventListener('click', triggerHelp);
+UI.btnHints.addEventListener('click', triggerHelp);
+UI.btnSkip.addEventListener('click', triggerHelp);
+
+UI.cards.forEach(card => card.addEventListener('click', hideOtherCards));
+
+UI.btnGameOverRestart.addEventListener('click', startGame);
+
+UI.killAnswerButtons.forEach(item => {
+  item.addEventListener('click', openCards);
+});
 
   // Desabilita os botões para não serem clicados após a confirmação:
   for (let i = 0; i < botoesResposta.length; i++) {
     botoesResposta[i].disabled = true
   }
-}
 
 // Função que descolore as alternativas após uma nova questão ser exibida:
 function resetarCoresAlternativas () {
