@@ -1,18 +1,21 @@
 <?php 
  require_once "conexao.php";
 
- function prepararListaDePerguntas($nivel, $conexao){
-  $query = "SELECT * FROM `perguntas_jogo` WHERE `nivel` = ".$nivel;
-  $stmt = $conexao->query($query);
-  $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  for ($i = 0; $i < count($lista); $i++) {
-   if ($lista[$i]['imagem'] != ""){
-    $lista[$i]['imagem'] = "1M4G3M";
-   }
-  }
-  return $lista;
+ function prepararListaDePerguntas(int $nivel, PDO $conexao): array
+ {
+     $stmt = $conexao->prepare("SELECT * FROM `perguntas_jogo` WHERE `nivel` = :nivel");
+     $stmt->bindParam(':nivel', $nivel, PDO::PARAM_INT);
+     $stmt->execute();
+     $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
+     foreach ($lista as &$item) {
+         if (!empty($item['imagem'])) {
+             $item['imagem'] = "1M4G3M"; // Placeholder para não enviar o binário da imagem no JSON inicial
+         }
+     }
+     return $lista;
  }
 
+ $conexao = getConexao();
  $perguntasProntas = array(
   1 => prepararListaDePerguntas(1, $conexao),
   2 => prepararListaDePerguntas(2, $conexao),
@@ -20,7 +23,6 @@
   4 => prepararListaDePerguntas(4, $conexao),
  );
 
- 
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -110,13 +112,13 @@
    </div> 
 
    <?php 
-    $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE imagem != ''");
-    if ($stmt->execute()) {
+    $stmt = $conexao->prepare("SELECT id, imagem FROM perguntas_jogo WHERE imagem IS NOT NULL AND imagem != ''");
+    $stmt->execute();
     while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
-      echo "<a href='#' class='pop'>";
-      echo "<img id='img".($rs->id)."' class='hidden imagem' src='data:image/jpeg;base64,".base64_encode($rs->imagem)."'/>";
-      echo "</a>";
-     }
+        echo "<a href='#' class='pop'>";
+        // Usar htmlspecialchars para segurança, embora o conteúdo seja do seu DB.
+        echo "<img id='img" . htmlspecialchars($rs->id, ENT_QUOTES, 'UTF-8') . "' class='hidden imagem' src='data:image/jpeg;base64," . base64_encode($rs->imagem) . "'/>";
+        echo "</a>";
     }
    ?>
 

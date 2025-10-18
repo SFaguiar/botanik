@@ -33,9 +33,6 @@
                 <p>Esse aplicativo educacional consiste em um jogo de perguntas e respostas (quiz) que abordam os temas botânicos aprendidos no ensino médio. Esperamos que o ambiente de jogo, propiciado ao utilizar o aplicativo, estimule os alunos a aprender botânica, melhorando o seu ensino no ensino médio.</p>
                 <p>Ela aprende a pensar criando, sozinha ou com a ajuda de alguém, e interiorizando progressivamente versões mais adequadas das ferramentas “intelectuais” que lhe apresentam e lhe ensinam ativamente os adultos a sua volta”.</p>
                 <h2>Contribua!</h2>
-                <p>Caso encontre um bug ou tenha alguma sugestão, envie uma mensagem para:</p>
-                    <p><strong>E-mail:</strong> RFLMNaguiar@gmail.com</p>
-                    <p><strong>Número:</strong> (91) 9 8958-3499 </p>
                 <p>Se quiser ajudar com o desenvolvimento ativamente:</p>
                     <p><strong>Código fonte:</strong> <a href="https://github.com/RFLMNaguiar/botanik">https://github.com/RFLMNaguiar/botanik</a></p>
                 <h2>Créditos</h2>
