@@ -2,12 +2,15 @@
   require_once "conexao.php";
   require_once "verifica_login.php";
   if (isset($_REQUEST["salvo"]) && ($_REQUEST["salvo"] == true)) {
-    echo "QUESTÃO NOVA SALVA COM SUCESSO!";
+    echo "<div class='alert alert-success'>QUESTÃO NOVA SALVA COM SUCESSO!</div>";
   }
+  $conexao = getConexao();
 
   function prepararListaDePerguntas($nivel, $conexao){
-    $query = "SELECT * FROM `perguntas_jogo` WHERE `nivel` = ".$nivel;
-    $stmt = $conexao->query($query);
+    // Usar prepared statements para prevenir SQL Injection
+    $stmt = $conexao->prepare("SELECT * FROM `perguntas_jogo` WHERE `nivel` = :nivel");
+    $stmt->bindParam(':nivel', $nivel, PDO::PARAM_INT);
+    $stmt->execute();
     $lista = $stmt->fetchAll(PDO::FETCH_ASSOC);
     for ($i = 0; $i < count($lista); $i++) {
         if ($lista[$i]['imagem'] != ""){

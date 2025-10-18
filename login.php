@@ -46,6 +46,11 @@
         <main>
             <div class="header-container">
                 <h1>Faça o login para continuar.</h1>
+                <?php
+                    if(isset($_SESSION['nao_autenticado'])):
+                ?>
+                <div class="alert alert-danger">ERRO: Usuário ou senha inválidos.</div>
+                <?php unset($_SESSION['nao_autenticado']); endif; ?>
             </div>
             <div class="form-container form-group">
                 <form action="validar_login.php" method="POST" name="formC" enctype="multipart/form-data" >

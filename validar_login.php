@@ -8,9 +8,13 @@
         exit();
     } 
 
+    $conexao = getConexao();
     $email =$_POST['email'];
     $senha = $_POST['senha'];
-    $stmt = $conexao->prepare("SELECT COUNT(*) FROM login WHERE email = '$email' and senha ='$senha'");
+    // Usar prepared statements para prevenir SQL Injection
+    $stmt = $conexao->prepare("SELECT COUNT(*) FROM login WHERE email = :email and senha = :senha");
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':senha', $senha);
     $stmt->execute();
     $loginsCompativeis = $stmt->fetchColumn(); 
     
@@ -23,3 +27,4 @@
         header('Location: login.php');
         exit();
     }
+    

@@ -45,17 +45,18 @@ $dsn = 'mysql:host=localhost;dbname=st_botanik';
 A tabela "perguntas_jogo" deve apresentar a seguinte estrutura para funcionar corretamente:
 
 CREATE TABLE `perguntas_jogo` (
-  `id` int(11) NOT NULL,
-  `nivel` tinyint(5) NOT NULL,
-  `tipo` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `comando` text COLLATE utf8_unicode_ci NOT NULL,
-  `imagem` mediumblob DEFAULT NULL,
-  `alternativa1` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `alternativa2` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `alternativa3` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `alternativa4` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `dica` varchar(100) COLLATE utf8_unicode_ci NOT NULL
-)
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nivel` TINYINT(5) NOT NULL,
+  `tipo` VARCHAR(45) COLLATE utf8_unicode_ci NOT NULL,
+  `comando` TEXT COLLATE utf8_unicode_ci NOT NULL,
+  `imagem` MEDIUMBLOB DEFAULT NULL,
+  `alternativa1` VARCHAR(200) COLLATE utf8_unicode_ci NOT NULL,
+  `alternativa2` VARCHAR(200) COLLATE utf8_unicode_ci NOT NULL,
+  `alternativa3` VARCHAR(200) COLLATE utf8_unicode_ci NOT NULL,
+  `alternativa4` VARCHAR(200) COLLATE utf8_unicode_ci NOT NULL,
+  `dica` VARCHAR(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+);
 
 Também será necessário a tabela de visitas, para rastrear as visitações ao site:
 

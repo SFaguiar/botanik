@@ -3,6 +3,15 @@
   require_once "verifica_login.php";
   $q = "SELECT * FROM perguntas_jogo WHERE id = ".$_POST['id'];
   $stmt = $conexao->query($q);
+
+  if (!isset($_GET['id'])) {
+      header('Location: CRUD_questoes.php');
+      exit();
+  }
+  $conexao = getConexao();
+  $stmt = $conexao->prepare("SELECT * FROM perguntas_jogo WHERE id = :id");
+  $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+  $stmt->execute();
   $questao = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
@@ -15,17 +24,20 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/style-crud.css">
       <title>Editando questão de ID <?php print_r($_POST['id']) ?></title>
+      <title>Editando questão de ID <?php echo htmlspecialchars($_GET['id']); ?></title>
     </head>
 
     <body>
     <header>
       <h1>Editando questão de ID <?php print_r($_POST['id']) ?>.</h1>
+      <h1>Editando questão de ID <?php echo htmlspecialchars($_GET['id']); ?>.</h1>
     </header>
     <!--- FORMULÁRIO --->
     <div class="create">
     <div class="form-group">
       <form action="tratar.php" method="POST" name="formU" enctype="multipart/form-data" >
         <input type="hidden" name="id" value=<?php print_r($_POST['id']) ?>>
+        <input type="hidden" name="id" value="<?php echo htmlspecialchars($questao['id']); ?>">
         <input type="hidden" name="acao" value="editar"/>
         <div class="row">
           <div class="col">
@@ -64,11 +76,13 @@
             <div class="col">
               <label for="comando-form">Comando da questão:
                 <textarea class="form-control" name="comando" id="comando-form"><?php print($questao['comando']); ?></textarea>
+                <textarea class="form-control" name="comando" id="comando-form"><?php echo htmlspecialchars($questao['comando']); ?></textarea>
               </label>
             </div>
             <div class="col">
               <label for="alternativa1-form">Alternativa Correta:
                 <textarea class="form-control" name="alternativa1" id="alternativa1-form"><?php print($questao['alternativa1']); ?></textarea>
+                <textarea class="form-control" name="alternativa1" id="alternativa1-form"><?php echo htmlspecialchars($questao['alternativa1']); ?></textarea>
               </label>
             </div>
           </div>
@@ -76,11 +90,13 @@
             <div class="col">
               <label for="alternativa2-form">Primeira alternativa incorreta:
                 <textarea class="form-control" name="alternativa2" id="alternativa2-form"><?php print($questao['alternativa2']); ?></textarea>
+                <textarea class="form-control" name="alternativa2" id="alternativa2-form"><?php echo htmlspecialchars($questao['alternativa2']); ?></textarea>
               </label>
             </div>
             <div class="col">
               <label for="alternativa3-form"> Segunda alternativa incorreta:
                 <textarea class="form-control" name="alternativa3" id="alternativa3-form"><?php print($questao['alternativa3']); ?></textarea>
+                <textarea class="form-control" name="alternativa3" id="alternativa3-form"><?php echo htmlspecialchars($questao['alternativa3']); ?></textarea>
               </label>
             </div>
           </div>
@@ -88,11 +104,13 @@
             <div class="col">
               <label for="alternativa4-form">Terceira alternativa incorreta:
                 <textarea class="form-control" name="alternativa4"  id="alternativa4-form"><?php print($questao['alternativa4']); ?></textarea>
+                <textarea class="form-control" name="alternativa4"  id="alternativa4-form"><?php echo htmlspecialchars($questao['alternativa4']); ?></textarea>
               </label>
             </div>
             <div class="col">
               <label for="dica-form">Link para página com dica:
                 <textarea class="form-control" name="dica"  id="dica-form"><?php print($questao['dica']); ?></textarea>
+                <textarea class="form-control" name="dica"  id="dica-form"><?php echo htmlspecialchars($questao['dica']); ?></textarea>
               </label>
             </div>
           </div>
@@ -101,6 +119,7 @@
             <input id="entradaImagem" type="file" name="imagem" value="">
           </label> OU...
             Excluir imagem da questão: <input id="excluirImagem" type="checkbox" name="excluir" value="sim">
+            Excluir imagem atual da questão: <input id="excluirImagem" type="checkbox" name="excluir" value="sim">
             
             <script>
                 excluirImagem = getElementById('excluirImagem');
